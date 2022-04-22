@@ -14,5 +14,45 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
+});
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('/admin', function () {
+    return view('owner');
+});
+
+Route::get('/editkaryawan', function () {
+    return view('editkaryawan');
+});
+
+Route::get('/editmeja', function () {
+    return view('editmeja');
+});
+
+Route::get('/editkaryawan', function () {
+    return view('editkaryawan');
+});
+
+Route::get('/editkaryawan', function () {
+    return view('editkaryawan');
+});
+
+Route::get('/laporanbulanan', function () {
+    return view('laporanbulanan');
+});
+
+Route::get('/laporanharian', function () {
+    return view('laporanharian');
+});
+
+Route::get('/tambahkaryawan', function () {
+    return view('tambahkaryawan');
+});
+
+Route::get('/editmeja', function () {
+    return view('editmeja');
 });

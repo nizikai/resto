@@ -1,0 +1,83 @@
+*{
+    font-family: Nunito;
+    background-color: white;
+}
+
+/* LOGIN =======================================================================================*/
+
+#login .buttonlong{
+    background-color: #FF7C04;
+    font-weight: bold;
+    border-color: #FF7C04;
+    border: 2px solid #FF7C04;
+    border-radius: 10px;
+    color: white;
+    padding: 12px 35vw;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+#login .buttonlong:hover{
+    background-color: #fff4e4;
+    color: #ff7c04;
+}
+
+#login .row{
+    margin-left: 4vw;
+    margin-right: 0vw;
+}
+
+#login img{
+    height: 250px;
+    width: 250px;
+    margin-top: 30px;
+}
+
+#login .col-sm-10{
+    /* width: 100%; */
+    padding-right: 7vw;
+    padding-left: 3vw;
+}
+#login .form-control{
+    padding: 0.5vh;
+    border: 2px solid #ff7c04;
+    border-radius: 0.6rem;
+    box-shadow: none;
+    padding-left: 0.5vw;
+    padding-right: 1.5vw;
+    margin-right: 6vw;
+}
+#login .col-form-label{
+    font-family: Nunito;
+    font-weight: bold;
+    margin-left: -1vw;
+}
+
+/* EDIT MEJA =================================================================================================================== */
+
+#editmejatitle{
+    font-weight: bolder;
+    padding-left: 3vw;
+}
+
+
+
+
+
+/* coloumn */
+.column {
+    float: left;
+    width: 50%;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+
