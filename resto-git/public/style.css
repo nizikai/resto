@@ -33,7 +33,7 @@
 #login img{
     height: 250px;
     width: 250px;
-    margin-top: 30px;
+    margin-top: 13vh;
 }
 
 #login .col-sm-10{
@@ -59,25 +59,116 @@
 /* EDIT MEJA =================================================================================================================== */
 
 #editmejatitle{
-    font-weight: bolder;
-    padding-left: 3vw;
+    font-weight: 750;
+    padding-left: 4vw;
+    font-size: 28px;
+}
+
+#inputmeja{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+}
+
+.buttonsmall{
+    width: 25%;
+    background-color: #FF7C04;
+    border: 2px solid #FF7C04;
+    font-weight: bold;
+    border-color: #FF7C04;
+    border-radius: 10px;
+    color: white;
+    padding: 1.5vw 8vw;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    height: 11vw;
+}
+
+.buttonsmall:hover{
+    background-color: #fff4e4;
+    color: #ff7c04;
+}
+
+#tboxNewTable{
+    width: 65%;
+    border: 2px solid #ff7c04;
+    border-radius: 10px;
+    padding: 1.5vw 3vw;
+    height: 11vw;
+}
+
+#tboxNewTable:focus{
+    outline: 1px solid #ff7c04;
+}
+
+.line{
+    width: 90%;
+    border: 1px solid #ff7c04;
+}
+
+.tableCard{
+    width: 90vw;
+    height: 16vw;
+    background: #FF7C04 50%;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 
+/* EDIT KARYAWAN------------------------------------------------------------------------------------------- */
 
+/* TAMBAH KARYAWAN----------------------------------------------------------------------------------------- */
+#editkaryawantitle{
+    font-weight: 750;
+    padding-left: 4vw;
+    font-size: 28px;
+}
 
+.buttonlong{
+    background-color: #FF7C04;
+    font-weight: bold;
+    border-color: #FF7C04;
+    border: 2px solid #FF7C04;
+    border-radius: 10px;
+    color: white;
+    padding: 12px 35vw;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 12,5%;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    width: 90%;
+    /* left: 10%; */
+    margin-left: 5%;
+    margin-top:50%;
+}
 
-/* coloumn */
-.column {
-    float: left;
-    width: 50%;
-  }
+.buttonlong:hover{
+    background-color: #fff4e4;
+    color: #ff7c04;
+}
 
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+.tboxKaryawan{
+    width: 90%;
+    border: 2px solid #ff7c04;
+    border-radius: 10px;
+    padding: 1.5vw 3vw;
+    height: 11vw;
+    margin-left: 5%;
+    margin-top:5%;
+}
 
+.tboxKaryawan:focus{
+    outline: 1px solid #ff7c04;
+}
 
+#masukkan{
+    font-weight: 500;
+    padding-left: 4vw;
+    font-size: 14px;
+}
