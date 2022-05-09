@@ -56,3 +56,7 @@ Route::get('/tambahkaryawan', function () {
 Route::get('/editmeja', function () {
     return view('editmeja');
 });
+
+Route::get('/bayar', function () {
+    return view('bayar');
+});

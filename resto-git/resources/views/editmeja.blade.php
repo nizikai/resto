@@ -24,14 +24,26 @@
     <hr class = "line">
 
     {{-- disini nanti buat auto generate semua meja yang ada --}}
-
     <section id="allTable">
         <div class = "tableCard">
             <h6>
                 Meja 5
+                <img src="..\resource\Trash.png" alt="">
             </h6>
-
         </div>
+        <div class = "tableCard">
+            <h6>
+                Meja 5
+                <img src="..\resource\Trash.png" alt="">
+            </h6>
+        </div>
+        <div class = "tableCard">
+            <h6>
+                Meja 5
+                <img src="..\resource\Trash.png" alt="">
+            </h6>
+        </div>
+
     </section>
 
 

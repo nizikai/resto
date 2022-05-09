@@ -19,6 +19,7 @@
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
+    width: 86vw;
 }
 #login .buttonlong:hover{
     background-color: #fff4e4;
@@ -111,11 +112,27 @@
 }
 
 .tableCard{
+    padding-left: 5vw;
+}
+
+.tableCard h6{
     width: 90vw;
     height: 16vw;
-    background: #FF7C04 50%;
+    background: #ffe4cc;
     border-radius: 10px;
     padding: 10px;
+    z-index: -1;
+    color: black;
+    font-weight: bold;
+    padding: 5.5vmin;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.tableCard h6 img{
+    background: #ffe4cc;
 }
 
 
@@ -168,6 +185,109 @@
 }
 
 #masukkan{
+    font-weight: 500;
+    padding-left: 4vw;
+    font-size: 14px;
+}
+
+/* OWNER -------------------------------------------------------------------------------------- */
+
+#owner .buttonowner{
+    display: flex;
+    flex-direction: column;
+}
+
+#owner .title{
+    margin-top: 4vh;
+    margin-left: 4vw;
+    margin-bottom: 5vh;
+}
+
+#owner .title h1{
+    font-size: 35px;
+    font-weight: 750;
+}
+
+#owner .harian{
+    margin-top: -3vh;
+    margin-left: 4vw;
+}
+
+#owner .bulanan{
+    margin-top: 20vh;
+    margin-left: 4vw;
+}
+
+#owner .buttonowner #editkaryawan{
+    background-color: #FF7C04;
+    width: 90vw;
+    height: 5vh;
+    border-radius: 2vw;
+    border-style: none;
+    margin-bottom: 2vh;
+    margin-top: 35vh;
+    margin-left: 3vw;
+}
+
+#owner .buttonowner #editmeja{
+    background-color: #FF7C04;
+    width: 90vw;
+    height: 5vh;
+    border-radius: 2vw;
+    border-style: none;
+    margin-left: 3vw;
+}
+
+#owner input{
+    width: 86vw;
+    border-radius: 2vw;
+    padding-left: 2vw;
+    height: 4vh;
+    font-family: Nunito;
+    font-weight: bold;
+    border: 1px solid #FF7C04;
+}
+
+#owner input:focus{
+    outline: 2px solid #FF7C04;
+}
+
+#owner h5{
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    margin: 0;
+    margin-bottom: 1vh
+}
+
+#owner h6{
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    background-color: #FF7C04;
+    font-size: 15px;
+    margin: 0;
+    color: white;
+}
+
+#owner h1{
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+}
+#owner ::-webkit-input-placeholder {
+    margin-left: 5vw;
+ }
+::-webkit-calendar-picker-indicator {
+    margin-right: 2vw;
+}
+
+/* LAPORAN HARIAN --------------------------------------------------------------------------------------------------------------- */
+#laphariantitle{
+    font-weight: 750;
+    padding-left: 4vw;
+    font-size: 28px;
+}
+
+#pemasukan{
     font-weight: 500;
     padding-left: 4vw;
     font-size: 14px;

@@ -11,13 +11,20 @@
 <body>
 <section id = "owner">
     <div class = "title">
-        <h1>Owner</h1>
-        <h3>laporan harian</h3>
+      <h1>Owner</h1>
     </div>
-
-    <form
-
-
+    <div class = "harian">
+      <h5>Laporan harian</h5>
+      <input type = "date" id = "kalender">
+    </div>
+    <div class = "bulanan">
+      <h5>Laporan Bulanan</h5>
+      <input type = "month">
+    </div>
+    <div class = "buttonowner">
+      <button type="button" id = "editkaryawan"><h6>Edit Karyawan</h6></button>
+      <button type="button" id = "editmeja"><h6>Edit Meja</h6></button>
+    </div>
 </section>
 </body>
 </html>
