@@ -13,6 +13,9 @@
     <div class="title">
         <h1>Bayar</h1>
         <h2>Meja 1.12</h2>
+        <div class = "garis">
+
+        </div>
     </div>
     <table>
         <tr>
@@ -21,36 +24,29 @@
             <th>Harga</th>
         </tr>
         <tr>
-            <td>Alfreds Futterkiste</td>
-            <td>Maria Anders</td>
-            <td>Germany</td>
+            <td>Ayam Goreng</td>
+            <td>2 pcs</td>
+            <td>Rp 44.000</td>
         </tr>
         <tr>
-            <td>Centro comercial Moctezuma</td>
-            <td>Francisco Chang</td>
-            <td>Mexico</td>
+            <td>Ayam Bakar</td>
+            <td>1 pcs</td>
+            <td>Rp 23.000</td>
         </tr>
-        <tr>
-            <td>Ernst Handel</td>
-            <td>Roland Mendel</td>
-            <td>Austria</td>
-        </tr>
-        <tr>
-            <td>Island Trading</td>
-            <td>Helen Bennett</td>
-            <td>UK</td>
-        </tr>
-        <tr>
-            <td>Laughing Bacchus Winecellars</td>
-            <td>Yoshi Tannamuri</td>
-            <td>Canada</td>
-        </tr>
-        <tr>
-            <td>Magazzini Alimentari Riuniti</td>
-            <td>Giovanni Rovelli</td>
-            <td>Italy</td>
-        </tr>
-</table>
+    </table>
+    <div class = "">
+
+    </div>
+    <div class = "pembayaran">
+        <div class = "flex1">
+            <h1>Total Pembayaran</h1>
+            <h1>Rp 67.000</h1>
+        </div>
+        <div class = "flex2">
+            <input type="text" id="tboxbayar" name="bayar" placeholder="Masukkan jumlah uang yang diterima">
+            <button type="submit" class="buttonbayar">OK</button>
+        </div>
+    </div>
 </section>
 </body>
 </html>
