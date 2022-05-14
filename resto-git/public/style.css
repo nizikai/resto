@@ -292,3 +292,18 @@
     padding-left: 4vw;
     font-size: 14px;
 }
+
+
+
+/* BAYAR ------------------------------------------------------------------------------------------------------------------------ */
+
+#bayar table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+#bayar  td, th {
+    text-align: left;
+    padding: 8px;
+  }
