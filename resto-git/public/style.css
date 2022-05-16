@@ -288,7 +288,47 @@
     padding-left: 4vw;
     font-size: 28px;
 }
-
+#lapharian1 h4{
+    font-weight: 750;
+    padding-left: 0.5%;
+    font-size: 15px;
+}
+#lapharian1{
+    padding-left: 4vw;
+}
+#tabelmeja{
+    padding-left: 4px;
+}
+.tboxpemasukan{
+    width: 90%;
+    border: 0px;
+    background-color: #f8c89c;
+    border-radius: 10px;
+    padding: 1.5vw 3vw;
+    height: 11vw;
+    margin-left: 0.5%;
+    margin-top:0.5%;
+    margin-bottom:1.5%;
+    font-weight: 750;
+}
+.tboxtpesanan{
+    width: 90%;
+    border: 0px;
+    background-color: #f8c89c;
+    border-radius: 10px;
+    padding: 1.5vw 3vw;
+    height: 11vw;
+    margin-left: 0.5%;
+    margin-top:0.5%;
+    margin-bottom:0.5%;
+    font-weight: 750;
+}
+#laphariantable{
+    margin-left: 0.7%;
+}
+/* .table#tabelmeja{
+    padding-left: 4vw;
+} */
 /* #pemasukan{
     font-weight: 500;
     padding-left: 4vw;
@@ -657,6 +697,8 @@
     margin-top: 57vh;
 }
 
+/* pesanan =========================================================*/
 
-
-
+#pesanan .title h1{
+    font-weight:bolder;
+}
