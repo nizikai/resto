@@ -42,7 +42,7 @@
             <h4>Total Pembayaran</h4>
             <h4>Rp 67.000</h4>
         </div>
-        <div class = "flex2">
+        {{-- <div class = "flex2">
             <input type="text" id="tboxbayar" name="bayar" placeholder="Masukkan jumlah uang yang diterima">
             <button type="submit" class="buttonok">OK</button>
         </div>
@@ -52,9 +52,9 @@
         <div class = "text">
             <h4>Kembalian</h4>
             <h4>Rp 23.000</h4>
-        </div>
+        </div> --}}
         <div class = "button">
-            <button type="submit" class="buttonbayar">Bayar</button>
+            <button type="submit" class="buttonbayar">Konfirmasi Pesanan</button>
         </div>
 
     </div>

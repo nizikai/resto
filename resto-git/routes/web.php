@@ -64,3 +64,7 @@ Route::get('/editmeja', function () {
 Route::get('/bayar', function () {
     return view('bayar');
 });
+
+Route::get('/editpesanan', function () {
+    return view('editpesanan');
+});

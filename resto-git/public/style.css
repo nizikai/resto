@@ -207,7 +207,7 @@
 
 #owner .title h1{
     font-size: 35px;
-    font-weight: 750;
+    font-weight: 900;
 }
 
 #owner .harian{
@@ -256,10 +256,10 @@
 
 #owner h5{
     font-family: 'Nunito', sans-serif;
-    font-weight: bold;
     font-size: 25px;
     margin: 0;
-    margin-bottom: 1vh
+    margin-bottom: 1vh;
+    font-weight: 100;
 }
 
 #owner h6{
@@ -289,11 +289,11 @@
     font-size: 28px;
 }
 
-#pemasukan{
+/* #pemasukan{
     font-weight: 500;
     padding-left: 4vw;
     font-size: 14px;
-}
+} */
 
 
 
@@ -312,7 +312,7 @@
 #bayar table {
     font-family: Nunito;
     border-collapse: collapse;
-    width: 100%;
+    width: 114%;
 }
 
 #bayar  td, th {
@@ -322,15 +322,15 @@
 
 #bayar .title .garis{
     height: 0.4vh;
-    width: 90vw;
+    width: 92vw;
     background-color: #FF7C04;
     margin-left: 2vw;
     margin-bottom: 2vh;
 }
 
-#bayar .garis2{
+#bayar .garisabu{
     height: 0.4vh;
-    width: 90vw;
+    width: 92vw;
     background-color: gray;
     margin-left: 2vw;
     margin-top: 2vh;
@@ -342,6 +342,71 @@
     border-radius: 10px;
     height: 3.5vh;
 }
+
+#bayar .pembayaran .flex2{
+    margin-left: 2vw;
+}
+
+#bayar .pembayaran .flex2 .buttonok{
+    width: 27%;
+    background-color: #FF7C04;
+    border: 2px solid #FF7C04;
+    font-weight: bold;
+    border-color: #FF7C04;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    height: 4.5vh;
+    margin-left: 2vw;
+}
+
+#bayar .pembayaran .flex1 h4{
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+#bayar input{
+    padding-left: 1.5vw;
+}
+
+#bayar .pembayaran .flex1{
+    display: flex;
+    justify-content:space-between;
+}
+
+#bayar .bawahflex .button .buttonbayar{
+    width: 98%;
+    background-color: #FF7C04;
+    border: 2px solid #FF7C04;
+    font-weight: bold;
+    border-color: #FF7C04;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    height: 4.5vh;
+    margin-left: 1vw;
+}
+
+#bayar .bawahflex{
+    margin-top: 38vh;
+}
+
+#bayar .bawahflex .text{
+    display: flex;
+    justify-content:space-between;
+}
+
+#bayar .bawahflex .text h4{
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
 /* MENU --------------------------------------------------------------------------------------------------------------------------- */
 
 #menutitle{
@@ -406,17 +471,191 @@
 }
 
   /* IMAGE STYLES */
-  [type=radio] + img {
+[type=radio] + img {
     cursor: pointer;
-  }
+}
 
   /* CHECKED STYLES */
-  [type=radio]:checked + img {
+[type=radio]:checked + img {
     outline: 5px solid #ffcc9c;
     border-radius: 10px;
-  }
+}
+
+#tboxMenuSearch{
+    width: 65%;
+    border: 2px solid #ff7c04;
+    border-radius: 10px;
+    padding: 1.5vw 3vw;
+    height: 11vw;
+}
+
+#tboxMenuSearch:focus{
+    outline: 1px solid #ff7c04;
+}
+
+.menuCard{
+    padding-left: 4vw;
+}
+
+#menuCardPosition{
+    display: flex;
+    flex-direction: column;
+    background: #ffe4cc;
+}
+
+#menuCardDetail{
+    display: flex;
+    flex-direction: row;
+    background: #ffe4cc;
+    justify-content: space-between;
+    width: 81vw;
+}
+
+#inputJumlah{
+    background: #ffe4cc;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
 
 
+.menuCard h6{
+    width: 92vw;
+    height: 33vmin;
+    background: #ffe4cc;
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px;
+    z-index: -1;
+    color: black;
+    font-weight: bold;
+    padding: 5.5vmin;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menuCard p{
+    background: #ffe4cc;
+}
+
+#tboxNote{
+    width: 92vw;
+    border: 2px solid #ff7c04;
+    border-radius: 0px 0px 10px 10px;
+    padding: 1.5vw 3vw;
+    height: 11vw;
+    transform: translateY(-5vw);
+}
+
+#tboxNote:focus{
+    outline: 1px solid #ff7c04;
+}
+
+
+
+#tboxJumlahMenu{
+    width: 40%;
+    border: 2px solid #ff7c04;
+    border-radius: 10px;
+    padding: 1.5vw 3vw;
+    height: 10vw;
+    transform: translate(0, 1vw);
+
+}
+
+#tboxJumlahMenu:focus{
+    outline: 1px solid #ff7c04;
+}
+
+.buttonok{
+    width: 25%;
+    background-color: #FF7C04;
+    border: 2px solid #FF7C04;
+    font-weight: bold;
+    border-color: #FF7C04;
+    border-radius: 10px;
+    color: white;
+    padding: 1.5vw 5vw;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    height: 10vw;
+    transform: translate(1vw, 0);
+
+}
+
+.buttonok:hover{
+    background-color: #fff4e4;
+    color: #ff7c04;
+}
+
+/* Edit Pesanan ==================================================== */
+#editpesanan .title h1{
+    margin-left: 2vw;
+    font-weight: 800;
+    font-size: 9vw;
+}
+
+#editpesanan .title h2{
+    margin-left: 2vw;
+    font-size: 4.5vw;
+}
+
+#editpesanan table {
+    font-family: Nunito;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#editpesanan  td, th {
+    text-align: left;
+    padding: 8px;
+}
+
+#editpesanan  td img{
+    margin-left: 4vw;
+}
+
+
+#editpesanan .title .garis{
+    height: 0.4vh;
+    width: 92vw;
+    background-color: #FF7C04;
+    margin-left: 2vw;
+    margin-bottom: 2vh;
+}
+
+#editpesanan .garisabu{
+    height: 0.4vh;
+    width: 92vw;
+    background-color: gray;
+    margin-left: 2vw;
+    margin-top: 2vh;
+}
+
+#editpesanan .bawahflex .button .buttonsimpan{
+    width: 98%;
+    background-color: #FF7C04;
+    border: 2px solid #FF7C04;
+    font-weight: bold;
+    border-color: #FF7C04;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    height: 4.5vh;
+    margin-left: 1vw;
+}
+
+#editpesanan .bawahflex{
+    margin-top: 57vh;
+}
 
 
 

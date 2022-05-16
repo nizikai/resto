@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-    <title>Bayar</title>
+    <title>Edit Pesanan</title>
 </head>
 <body>
-<section id = "bayar">
+<section id = "editpesanan">
     <div class="title">
-        <h1>Bayar</h1>
+        <h1>Edit Pesanan</h1>
         <h2>Meja 1.12</h2>
         <div class = "garis">
 
@@ -22,41 +22,29 @@
             <th>Menu</th>
             <th>Jumlah</th>
             <th>Harga</th>
+            <th>Hapus</th>
         </tr>
         <tr>
             <td>Ayam Goreng</td>
             <td>2 pcs</td>
             <td>Rp 44.000</td>
+            <td class = "gambar"><img src="..\resource\Trash.png"></td>
         </tr>
         <tr>
             <td>Ayam Bakar</td>
             <td>1 pcs</td>
             <td>Rp 23.000</td>
+            <td class = "gambar"><img src="..\resource\Trash.png"></td>
         </tr>
     </table>
     <div class = "garisabu">
 
     </div>
-    <div class = "pembayaran">
-        <div class = "flex1">
-            <h4>Total Pembayaran</h4>
-            <h4>Rp 67.000</h4>
-        </div>
-        <div class = "flex2">
-            <input type="text" id="tboxbayar" name="bayar" placeholder="Masukkan jumlah uang yang diterima">
-            <button type="submit" class="buttonok">OK</button>
-        </div>
-    </div>
 
     <div class = "bawahflex">
-        <div class = "text">
-            <h4>Kembalian</h4>
-            <h4>Rp 23.000</h4>
-        </div>
         <div class = "button">
-            <button type="submit" class="buttonbayar">Bayar</button>
+            <button type="submit" class="buttonsimpan">Simpan</button>
         </div>
-
     </div>
 </section>
 </body>

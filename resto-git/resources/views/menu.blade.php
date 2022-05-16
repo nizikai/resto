@@ -19,7 +19,9 @@
         <h6 id = "labelmenumeja">Meja 1.12</h6>
         <button type="submit" id="buttonpilihmeja">Pilih Meja</button>
     </section>
+
     <hr class = "line">
+
     <section id="menukategori">
         <label>
             <input type="radio" name="radio" value="food" checked>
@@ -36,5 +38,106 @@
             <img src="./resource/snack.png">
           </label>
     </section>
+    <br>
+    <center>
+        <section id = "inputMeja">
+            <input type="text" id="tboxMenuSearch" name="menuSearch" placeholder="Cari menu">
+            <button type="submit" class="buttonsmall">Cari</button>
+        </section>
+    </center>
+    <br>
+    <section id="allMenu">
+        <div class = "menuCard">
+            <h6>
+                <section id = "menuCardPosition">
+
+                    <section id = "menuCardDetail">
+                        Ayam Bakar
+                        <p>Rp. 20.000</p>
+                    </section>
+
+                    <section id = "inputJumlah">
+                        <input type="text" id="tboxJumlahMenu" name="jumlahMenu" placeholder="Jumlah">
+                        <button type="submit" class="buttonok">OK</button>
+                    </section>
+
+                </section>
+            </h6>
+            <input type="text" id="tboxNote" name="Note" placeholder="Catatan">
+
+            <h6>
+                <section id = "menuCardPosition">
+
+                    <section id = "menuCardDetail">
+                        Ayam Goreng
+                        <p>Rp. 22.000</p>
+                    </section>
+
+                    <section id = "inputJumlah">
+                        <input type="text" id="tboxJumlahMenu" name="jumlahMenu" placeholder="Jumlah">
+                        <button type="submit" class="buttonok">OK</button>
+                    </section>
+
+                </section>
+            </h6>
+            <input type="text" id="tboxNote" name="Note" placeholder="Catatan">
+
+
+            <h6>
+                <section id = "menuCardPosition">
+
+                    <section id = "menuCardDetail">
+                        Ayam Goreng
+                        <p>Rp. 22.000</p>
+                    </section>
+
+                    <section id = "inputJumlah">
+                        <input type="text" id="tboxJumlahMenu" name="jumlahMenu" placeholder="Jumlah">
+                        <button type="submit" class="buttonok">OK</button>
+                    </section>
+
+                </section>
+            </h6>
+            <input type="text" id="tboxNote" name="Note" placeholder="Catatan">
+
+            <h6>
+                <section id = "menuCardPosition">
+
+                    <section id = "menuCardDetail">
+                        Ayam Goreng
+                        <p>Rp. 22.000</p>
+                    </section>
+
+                    <section id = "inputJumlah">
+                        <input type="text" id="tboxJumlahMenu" name="jumlahMenu" placeholder="Jumlah">
+                        <button type="submit" class="buttonok">OK</button>
+                    </section>
+
+                </section>
+            </h6>
+            <input type="text" id="tboxNote" name="Note" placeholder="Catatan">
+
+            <h6>
+                <section id = "menuCardPosition">
+
+                    <section id = "menuCardDetail">
+                        Ayam Goreng
+                        <p>Rp. 22.000</p>
+                    </section>
+
+                    <section id = "inputJumlah">
+                        <input type="text" id="tboxJumlahMenu" name="jumlahMenu" placeholder="Jumlah">
+                        <button type="submit" class="buttonok">OK</button>
+                    </section>
+
+                </section>
+            </h6>
+            <input type="text" id="tboxNote" name="Note" placeholder="Catatan">
+        </div>
+    </section>
+
+    <br>
+    <br>
+    <br>
 </body>
 </html>
