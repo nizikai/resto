@@ -17,6 +17,18 @@ Route::get('/', function () {
     return view('login');
 });
 
+Route::get('/pesananditerima', function () {
+    return view('pesananditerima');
+});
+
+Route::get('/pembayaranselesai', function () {
+    return view('pembayaranselesai');
+});
+
+Route::get('/konfirmasipesanan', function () {
+    return view('konfirmasipesanan');
+});
+
 Route::get('/login', function () {
     return view('login');
 });
@@ -25,7 +37,7 @@ Route::get('/menu', function () {
     return view('menu');
 });
 
-Route::get('/admin', function () {
+Route::get('/owner', function () {
     return view('owner');
 });
 
@@ -57,9 +69,9 @@ Route::get('/tambahkaryawan', function () {
     return view('tambahkaryawan');
 });
 
-Route::get('/editmeja', function () {
-    return view('editmeja');
-});
+// Route::get('/editmeja', function () {
+//     return view('editmeja');
+// });
 
 Route::get('/bayar', function () {
     return view('bayar');
@@ -72,3 +84,20 @@ Route::get('/editpesanan', function () {
 Route::get('/pesanan', function () {
     return view('pesanan');
 });
+
+Route::get('/editmenu', function () {
+    return view('editmenu');
+});
+
+Route::get('/tambahmenu', function () {
+    return view('tambahmenu');
+});
+
+Route::get('/aturmenu', function () {
+    return view('aturmenu');
+});
+
+Route::get('/editmeja', 'App\Http\Controllers\restoController@send_editMeja');
+
+Route::get('/login', 'App\Http\Controllers\restocontroller@loginIndex');
+Route::post('/login', 'App\Http\Controllers\restocontroller@send_login');

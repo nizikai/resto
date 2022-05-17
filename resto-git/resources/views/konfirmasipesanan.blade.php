@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-    <title>Bayar</title>
+    <title>Konfirmasi Pesanan</title>
 </head>
 <body>
-<section id = "bayar">
+<section id = "konfirmpesanan">
     <div class="title">
-        <h1>Bayar</h1>
+        <h1>Konfirmasi Pesanan</h1>
         <h2>Meja 1.12</h2>
         <div class = "garis">
 
@@ -42,21 +42,10 @@
             <h4>Total Pembayaran</h4>
             <h4>Rp 67.000</h4>
         </div>
-        {{-- <div class = "flex2">
-            <input type="text" id="tboxbayar" name="bayar" placeholder="Masukkan jumlah uang yang diterima">
-            <button type="submit" class="buttonok">OK</button>
-        </div>
+
+    <div class = "button">
+        <button type="submit" class="buttonkonfirm">Konfirmasi Pesanan</button>
     </div>
-
-    <div class = "bawahflex">
-        <div class = "text">
-            <h4>Kembalian</h4>
-            <h4>Rp 23.000</h4>
-        </div> --}}
-        <div class = "button">
-            <button type="submit" class="buttonbayar">Konfirmasi Pesanan</button>
-        </div>
-
     </div>
 </section>
 </body>

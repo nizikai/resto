@@ -17,10 +17,23 @@
 <h1 id = "laphariantitle">Laporan Harian</h1><br>
 
 <section id = "lapharian1">
+    {{-- <input type="text" class="tboxpemasukan"><br> --}}
+    <section id="allTable">
     <h4 id = "pemasukan">Pemasukan</h4>
-    <input type="text" class="tboxpemasukan"><br>
+        <div class = "pemasukanCard">
+            <h6>
+                Rp. 400.000
+            </h6>
+        </div>
+
     <h4 id = "totalpesanan">Total Pesanan</h4>
-<input type="text" class="tboxtpesanan"><br>
+        <div class = "pesananCard">
+            <h6>
+                2
+            </h6>
+        </div>
+    </section>
+{{-- <input type="text" class="tboxtpesanan"><br> --}}
 </section>
 <br>
 
@@ -32,7 +45,6 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
-
 }
 
 td, th {
@@ -41,6 +53,8 @@ td, th {
   padding: 15px;
   /* right-padding: 30px; */
 }
+
+
 
 </style>
 </head>

@@ -138,7 +138,90 @@
 
 /* EDIT KARYAWAN------------------------------------------------------------------------------------------- */
 
+#editkaryawan .title h1{
+    font-weight:bolder;
+    margin-left: 2vw;
+    font-size:10vw;
+}
 
+#editkaryawan .content .button .buttoneditkaryawan{
+    width: 95%;
+    background-color: #FF7C04;
+    border: 2px solid #FF7C04;
+    font-weight: bold;
+    border-color: #FF7C04;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    height: 4.5vh;
+    margin-left: 2vw;
+}
+
+#editkaryawan .content .kotak{
+    height: 16vh;
+    width: 91vw;
+    background-color: #ffe4cc;
+    border-radius: 3vw;
+    margin-left: 2vw;
+    margin-top: 2vh;
+}
+
+#editkaryawan .content .kotak .text
+{
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 4vw;
+    margin-left: 4vw;
+    font-size:30px;
+}
+
+#editkaryawan .content .kotak .text h3
+{
+    background-color: transparent;
+    font-size:60%;
+    padding-top:8%;
+    font-weight:bold;
+}
+
+/* #editkaryawan .content .kotak .tombol{
+
+} */
+
+#editkaryawan .content .kotak .form-control-editkaryawan{
+    margin-top: 20%;
+    margin-left:11px;
+    width:331px;
+}
+
+#editkaryawan .content .kotak .tombol .buttonhapusakun{
+    background-color: transparent;
+    text-align: center;
+    /* margin-right: 4vw; */
+    margin-top: 2vh;
+    /* width:40%; */
+}
+
+#editkaryawan .content .kotak .tombol .buttonhapusakun{
+    width: 40%;
+    background-color: #FF7C04;
+    border: 2px solid #FF7C04;
+    font-weight: bold;
+    border-color: #FF7C04;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    height: 4.5vh;
+    margin-left: -14vw;
+    margin-right:-65vw;
+
+}
 
 /* TAMBAH KARYAWAN----------------------------------------------------------------------------------------- */
 #editkaryawantitle{
@@ -158,13 +241,13 @@
     text-align: center;
     text-decoration: none;
     font-size: 14px;
-    margin-left: 12,5%;
+    /* margin-left: 12,5%; */
     transition-duration: 0.4s;
     cursor: pointer;
-    width: 90%;
+    width: 92%;
     /* left: 10%; */
-    margin-left: 5%;
-    margin-top:50%;
+    margin-left: 4vw;
+    /* margin-top:50%; */
 }
 
 .buttonlong:hover{
@@ -335,7 +418,85 @@
     font-size: 14px;
 } */
 
+.pemasukanCard h6{
+    width: 90vw;
+    height: 20vw;
+    background: #ffe4cc;
+    border-radius: 10px;
+    padding: 10px;
+    z-index: -1;
+    color: black;
+    font-weight: bold;
+    padding: 5.5vmin;
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
+.pesananCard h6{
+    width: 40vw;
+    height: 18vw;
+    background: #ffe4cc;
+    border-radius: 10px;
+    padding: 10px;
+    z-index: -1;
+    color: black;
+    font-weight: bold;
+    padding: 5.5vmin;
+    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+/* LAPORAN BULANAN ---------------------------------------------------------------------------------------------------------------*/
+
+#laphariantitle{
+    font-weight: 750;
+    padding-left: 4vw;
+    font-size: 28px;
+}
+#lapbulanan1 h4{
+    font-weight: 750;
+    padding-left: 0.5%;
+    font-size: 15px;
+}
+#lapbulanan1{
+    padding-left: 4vw;
+}
+#tabelmejabln{
+    padding-left: 4px;
+}
+.tboxpemasukan{
+    width: 90%;
+    border: 0px;
+    background-color: #f8c89c;
+    border-radius: 10px;
+    padding: 1.5vw 3vw;
+    height: 11vw;
+    margin-left: 0.5%;
+    margin-top:0.5%;
+    margin-bottom:1.5%;
+    font-weight: 750;
+}
+.tboxtpesanan{
+    width: 90%;
+    border: 0px;
+    background-color: #f8c89c;
+    border-radius: 10px;
+    padding: 1.5vw 3vw;
+    height: 11vw;
+    margin-left: 0.5%;
+    margin-top:0.5%;
+    margin-bottom:0.5%;
+    font-weight: 750;
+}
+#lapbulanantable{
+    margin-left: 0.7%;
+}
 
 /* BAYAR ------------------------------------------------------------------------------------------------------------------------ */
 #bayar .title h1{
@@ -633,6 +794,15 @@
     color: #ff7c04;
 }
 
+#buttonlongbottom{
+    z-index: 1;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 7vh;
+    box-shadow: 0px -30px 30px white;
+}
+
 /* Edit Pesanan ==================================================== */
 #editpesanan .title h1{
     margin-left: 2vw;
@@ -701,4 +871,412 @@
 
 #pesanan .title h1{
     font-weight:bolder;
+    margin-left: 2vw;
+    font-size:10vw;
 }
+
+#pesanan .content .button .buttontambahpesanan{
+    width: 95%;
+    background-color: #FF7C04;
+    border: 2px solid #FF7C04;
+    font-weight: bold;
+    border-color: #FF7C04;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    height: 4.5vh;
+    margin-left: 2vw;
+}
+
+#pesanan .content .kotak{
+    height: 16vh;
+    width: 91vw;
+    background-color: #ffe4cc;
+    border-radius: 3vw;
+    margin-left: 2vw;
+    margin-top: 2vh;
+}
+
+#pesanan .content .kotak .text
+{
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 4vw;
+    margin-left: 4vw;
+}
+
+#pesanan .content .kotak .text h3
+{
+    background-color: transparent;
+}
+
+#pesanan .content .kotak .button2{
+    background-color: transparent;
+    text-align: right;
+    margin-right: 4vw;
+    margin-top: 2vh;
+}
+
+#pesanan .content .kotak .button2 .buttonedit{
+    width: 27%;
+    background-color: #FF7C04;
+    border: 2px solid #FF7C04;
+    font-weight: bold;
+    border-color: #FF7C04;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    height: 4.5vh;
+    margin-left: 2vw;
+}
+
+#pesanan .content .kotak .button2 .buttonbayar{
+    width: 27%;
+    background-color: #FF7C04;
+    border: 2px solid #FF7C04;
+    font-weight: bold;
+    border-color: #FF7C04;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    height: 4.5vh;
+    margin-left: 2vw;
+}
+/* Konfirmasi Pesanan ----------------------------------------------------------------------------------- */
+
+#konfirmpesanan .title h1{
+    margin-left: 2vw;
+    font-weight: 800;
+    font-size: 9vw;
+}
+
+#konfirmpesanan .title h2{
+    margin-left: 2vw;
+    font-size: 4.5vw;
+}
+
+#konfirmpesanan table {
+    font-family: Nunito;
+    border-collapse: collapse;
+    width: 114%;
+}
+
+#konfirmpesanan  td, th {
+    text-align: left;
+    padding: 8px;
+}
+
+#konfirmpesanan .title .garis{
+    height: 0.4vh;
+    width: 92vw;
+    background-color: #FF7C04;
+    margin-left: 2vw;
+    margin-bottom: 2vh;
+}
+
+#konfirmpesanan .garisabu{
+    height: 0.4vh;
+    width: 92vw;
+    background-color: gray;
+    margin-left: 2vw;
+    margin-top: 2vh;
+}
+
+#konfirmpesanan #tboxbayar{
+    width: 65%;
+    border: 2px solid #ff7c04;
+    border-radius: 10px;
+    height: 3.5vh;
+}
+
+#konfirmpesanan .pembayaran .flex2{
+    margin-left: 2vw;
+}
+
+#konfirmpesanan .pembayaran .flex2 .buttonok{
+    width: 27%;
+    background-color: #FF7C04;
+    border: 2px solid #FF7C04;
+    font-weight: bold;
+    border-color: #FF7C04;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    height: 4.5vh;
+    margin-left: 2vw;
+}
+
+#konfirmpesanan .pembayaran .flex1 h4{
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+#konfirmpesanan input{
+    padding-left: 1.5vw;
+}
+
+#konfirmpesanan .pembayaran .flex1{
+    display: flex;
+    justify-content:space-between;
+}
+
+#konfirmpesanan .button .buttonkonfirm{
+    width: 98%;
+    background-color: #FF7C04;
+    border: 2px solid #FF7C04;
+    font-weight: bold;
+    border-color: #FF7C04;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    height: 4.5vh;
+    margin-left: 1vw;
+    margin-top:110%;
+}
+
+#konfirmpesanan .bawahflex{
+    margin-top: 38vh;
+}
+
+#konfirmpesanan .bawahflex .text{
+    display: flex;
+    justify-content:space-between;
+}
+
+#konfirmpesanan .bawahflex .text h4{
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+/* Pesanan Diterima----------------------------------------------------------------------------- */
+#pesananditerima h1 {
+    font-weight: bold;
+    margin-left: 2vw;
+    font-weight: 5vw;
+    font-size: 9vw;
+    margin-top: 60%;
+    padding-bottom:10%;
+    padding-left:3%;
+}
+
+/* Pembayaran Selesai --------------------------------------------------------------------------- */
+#pembayaranselesai h1 {
+    font-weight: bold;
+    margin-left: 2vw;
+    font-weight: 5vw;
+    font-size: 9vw;
+    margin-top: 60%;
+    padding-bottom:10%;
+    padding-left:3%;
+}
+
+
+/* aturmenu ------------------------------------------------------------------ */
+#aturmenu .title h1{
+    font-weight:bolder;
+    margin-left: 2vw;
+    font-size:10vw;
+}
+
+#aturmenu .content .button .buttontambahmenu{
+    width: 95%;
+    background-color: #FF7C04;
+    border: 2px solid #FF7C04;
+    font-weight: bold;
+    border-color: #FF7C04;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    height: 4.5vh;
+    margin-left: 2vw;
+}
+
+#aturmenu .content .kotak{
+    height: 7.5vh;
+    width: 91vw;
+    background-color: #ffe4cc;
+    border-radius: 3vw;
+    margin-left: 2vw;
+    margin-top: 2vh;
+}
+
+#aturmenu .content .kotak .text
+{
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 4vw;
+    margin-left: 4vw;
+}
+
+#aturmenu .content .kotak .text h3
+{
+    background-color: transparent;
+}
+
+#aturmenu .content .garis{
+    height: 0.4vh;
+    width: 92vw;
+    background-color: #FF7C04;
+    margin-left: 2vw;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+}
+
+/* tambahmenu ----------------------------------------------------------- */
+
+#tambahmenu{
+    margin-left: 2vw;
+}
+
+#tambahmenu .title h1{
+    font-size: 8vw;
+}
+
+#tambahmenu .content .input .nama h5{
+    margin-bottom: 1vh;
+}
+
+#tambahmenu .content .input .harga h5{
+    margin-bottom: 1vh;
+}
+
+#tambahmenu #tboxnamamenubaru{
+    width: 90%;
+    border: 2px solid #ff7c04;
+    border-radius: 10px;
+    height: 3.5vh;
+}
+
+#tambahmenu input#tboxnamamenubaru{
+    padding-left: 2vw;
+}
+
+#tambahmenu input#tboxhargamenubaru{
+    padding-left: 2vw;
+}
+
+#tambahmenu #tboxhargamenubaru{
+    width: 90%;
+    border: 2px solid #ff7c04;
+    border-radius: 10px;
+    height: 3.5vh;
+}
+
+#tambahmenu #menukategori{
+    margin-left: -6vw;
+}
+
+#tambahmenu .content .input .button .buttontambahmenu{
+    width: 95%;
+    background-color: #FF7C04;
+    border: 2px solid #FF7C04;
+    font-weight: bold;
+    border-color: #FF7C04;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    height: 4.5vh;
+    margin-left: 1.5vw;
+    margin-top: 47vh;
+}
+
+/* editmenu--------------------------------------------------------------- */
+#editmenu{
+    margin-left: 2vw;
+}
+
+#editmenu .title h1{
+    font-size: 8vw;
+}
+
+#editmenu .content .input .nama h5{
+    margin-bottom: 1vh;
+}
+
+#editmenu .content .input .harga h5{
+    margin-bottom: 1vh;
+}
+
+#editmenu #tboxnamamenubaru{
+    width: 90%;
+    border: 2px solid #ff7c04;
+    border-radius: 10px;
+    height: 3.5vh;
+}
+
+#editmenu input#tboxnamamenubaru{
+    padding-left: 2vw;
+}
+
+#editmenu input#tboxhargamenubaru{
+    padding-left: 2vw;
+}
+
+#editmenu #tboxhargamenubaru{
+    width: 90%;
+    border: 2px solid #ff7c04;
+    border-radius: 10px;
+    height: 3.5vh;
+}
+
+#editmenu #menukategori{
+    margin-left: -6vw;
+}
+
+#editmenu .content .input .button .buttonsimpanmenu{
+    width: 95%;
+    background-color: #FF7C04;
+    border: 2px solid #FF7C04;
+    font-weight: bold;
+    border-color: #FF7C04;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    height: 4.5vh;
+    margin-left: 1.5vw;
+    margin-top: 40vh;
+}
+
+#editmenu .content .input .button .buttonhapusmenu{
+    width: 95%;
+    background-color: #FF7C04;
+    border: 2px solid #FF7C04;
+    font-weight: bold;
+    border-color: #FF7C04;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    height: 4.5vh;
+    margin-left: 1.5vw;
+    margin-top: 2vh;
+}
+

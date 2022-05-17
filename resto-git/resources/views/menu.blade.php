@@ -136,7 +136,10 @@
         </div>
     </section>
 
-    <br>
+    <section id="buttonlongbottom">
+        <button type="submit" class="buttonlong">Lanjut</button>
+    </section>
+
     <br>
     <br>
 </body>
