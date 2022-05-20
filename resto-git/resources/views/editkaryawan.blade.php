@@ -18,6 +18,31 @@
     <div class = "title">
         <h1>Edit Karyawan</h1>
     </div>
+    <div class = "button">
+            <button type="submit" class="buttoneditkaryawan">Edit Karyawan</button>
+        </div>
+        <div class = "kotak">
+        <div class = "text">
+                        <h3>budi23@gmail.com</h3>
+        <div class="tombol">
+            <button type="submit" class="buttonhapusakun">Hapus Akun</button>
+        </div>
+        <!-- <div class="pass">
+               <input type="password" class="form-control-editkaryawan" name = 'PasswordEditKaryawan' id="password"  aria-describedby="emailHelp" placeholder="" required>
+                    <i class="bi bi-eye-slash" id="togglePassword"></i>
+           </div> -->
+        <div class="passeditkaryawan">
+            <input type="text" id="tboxbayar" name="bayar" placeholder="Masukkan jumlah uang yang diterima">
+            <!-- <button type="submit" class="buttonok">OK</button> -->
+        </div>
+        </div>
+</section>
+
+<!--
+<section id = "editkaryawan">
+    <div class = "title">
+        <h1>Edit Karyawan</h1>
+    </div>
     <div class = "content">
         <div class = "button">
             <button type="submit" class="buttoneditkaryawan">Edit Karyawan</button>
@@ -35,6 +60,6 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 </body>
 </html>

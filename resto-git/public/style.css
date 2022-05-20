@@ -144,7 +144,7 @@
     font-size:10vw;
 }
 
-#editkaryawan .content .button .buttoneditkaryawan{
+#editkaryawan .button .buttoneditkaryawan{
     width: 95%;
     background-color: #FF7C04;
     border: 2px solid #FF7C04;
@@ -160,7 +160,7 @@
     margin-left: 2vw;
 }
 
-#editkaryawan .content .kotak{
+#editkaryawan .kotak{
     height: 16vh;
     width: 91vw;
     background-color: #ffe4cc;
@@ -169,7 +169,7 @@
     margin-top: 2vh;
 }
 
-#editkaryawan .content .kotak .text
+#editkaryawan .kotak .text
 {
     background-color: transparent;
     display: flex;
@@ -179,7 +179,7 @@
     font-size:30px;
 }
 
-#editkaryawan .content .kotak .text h3
+#editkaryawan .kotak .text h3
 {
     background-color: transparent;
     font-size:60%;
@@ -191,13 +191,13 @@
 
 } */
 
-#editkaryawan .content .kotak .form-control-editkaryawan{
+#editkaryawan .kotak .form-control-editkaryawan{
     margin-top: 20%;
     margin-left:11px;
     width:331px;
 }
 
-#editkaryawan .content .kotak .tombol .buttonhapusakun{
+#editkaryawan .kotak .tombol .buttonhapusakun{
     background-color: transparent;
     text-align: center;
     /* margin-right: 4vw; */
@@ -205,8 +205,8 @@
     /* width:40%; */
 }
 
-#editkaryawan .content .kotak .tombol .buttonhapusakun{
-    width: 40%;
+#editkaryawan .kotak .tombol .buttonhapusakun{
+    width: 35vw;
     background-color: #FF7C04;
     border: 2px solid #FF7C04;
     font-weight: bold;
