@@ -48,7 +48,7 @@ class ownerModel extends Model
     // ini tambah admin
     function post_insert($tboxinsertadmin) {
 
-        $queryupdate = "INSERT INTO admin_karyawan( `NAMA`, `PASSWORD`, `OWNER`, `EMAIL`, `STAFF`, `DEL_STATUS`) VALUES (':insertEmail', '','0', 'TBOXEMAIL', '1', '0')";
+        $queryupdate = "INSERT INTO admin_karyawan( `NAMA`, `PASSWORD`, `OWNER`, `EMAIL`, `STAFF`, `DEL_STATUS`) VALUES (':insertEmail', 'i','0', 'TBOXEMAIL', '1', '0')";
         // $dataIdUpdate = [
         //     'insertEmail' => $tboxinsertadmin['insertEmail'],
         //     'insertPassword' => $tboxinsertadmin['insertPassword']

@@ -50,22 +50,22 @@ class restocontroller extends Controller
         ];
 
         $sambungKeModel = new restoModel;
-        $sambungowner = new ownerModel();
+        $sambungowner = new ownerModel;
         $loginCountCheck = $sambungKeModel -> cekLogin($tboxLogin);
 
         if($loginCountCheck)
         {
-            $Id = $sambungKeModel -> get_id($loginMail); //nyambung ke model get id membawa var $loginMail
+            // $Id = $sambungKeModel -> get_id($loginMail); //nyambung ke model get id membawa var $loginMail
 
             //buat session yang isinya id customer yg login
-            Session::put('login', $loginMail);
+            Session::put('staff', $loginMail);
 
             Session::flash('success', 'Anda berhasil login');
             // $cookieID = $request->input('loginEmail');
             // $cookiePass = $request->input('loginPassword');
             // setcookie($cookieID,$cookiePass);
 
-            return redirect('/');
+            return redirect('/pesanan');
         }
         else
         {
@@ -73,9 +73,9 @@ class restocontroller extends Controller
             $loginCountCheckKaryawan = $sambungowner -> cekLoginowner($tboxLogin);
             if($loginCountCheckKaryawan)
             {
-                Session::put('login', $loginMail);
+                Session::put('owner', $loginMail);
 
-                return redirect('/');
+                return redirect('/owner');
             }
 
             Session::flash('loginError', 'Email atau password salah.');
@@ -85,10 +85,9 @@ class restocontroller extends Controller
 
     public function loginIndex()
     {
-        return view('pages/login', [
+        return view('/login', [
             'title' => 'login',
             'active' => 'login'
-
         ]);
     }
 
@@ -97,7 +96,69 @@ class restocontroller extends Controller
     {
         $owner = new ownerModel;
         $editMeja = $owner -> get_editMeja();
+        // dd($editMeja);
         return view('editmeja', ['editMeja' => $editMeja]);
     }
+
+    //INI UNTUK INSERT MEJA DI PAGE EDITMEJA
+    public function send_insertmeja(request $request)
+    {
+        $mejaBaru = $request->input('NewTable');
+        $owner = new ownerModel;
+
+        $tboxMejaBaru = [
+            'mejaBaru'=>$mejaBaru
+        ];
+
+        $modelInsertMeja = $owner->post_insertMeja($tboxMejaBaru);
+
+        if($modelInsertMeja==1){
+
+            Session::flash('success', 'Meja baru berhasil ditambahkan');
+            return redirect('/editmeja');
+
+            Session::flash('error', 'Mohon maaf terjadi kesalahan. Mohon coba lagi.');
+
+        }
+    }
+
+
+    // ini untuk insert admin baru
+    public function sendqueryupdate(request $request)
+    {
+        $insertemail = $request->input('Email');
+        $insertpassword = $request->input('Password');
+
+        $sambungpostinsert = new restoModel();
+
+        $tboxinsertadmin = [
+            'insertEmail'=>$insertemail,
+            'insertPassword' =>$insertpassword
+        ];
+        // $loggedInIdUpdate = Session::get('id');
+
+        $checkUpdate = $sambungpostinsert->post_insert($tboxinsertadmin);
+
+        if($checkUpdate==1){
+            // echo 'berhail perbarui data diri';
+
+            // // $hasloginupdate = $request->session()->has('login');
+
+            // $Id = $sambungpostinsert -> get_querykartuprofil($loggedInIdUpdate);
+
+            // Session::put('nama', $Id[0] -> NAMA_CUSTOMER); //buat session yang isinya nama customer
+            // Session::put('alamat', $Id[0] -> ALAMAT);
+            // Session::put('hp', $Id[0] -> PHONE);
+
+            Session::flash('success', 'Anda berhasil memperbarui data diri');
+            return redirect('/updateprofile');
+
+            Session::flash('loginError', 'Mohon lengkapi data alamat dan kontak.');
+
+        }
+        // echo 'gagal';
+        // return redirect('/updateprofile');
+    }
+
 
 }

@@ -11,12 +11,32 @@
     <title>Login</title>
 </head>
 <body>
+@if (Session::has('success'))
+            <div class="alertalert-successalert-block">
+                <span class="button" onclick="this.parentElement.style.display='none';">&times;</span>
+                <strong>{{ Session::get('success') }}</strong>
+            </div>
+        @endif
+
+
+@if(session()->has('loginError'))
+
+<div class="alertalert-dangeralert-dismissiblefadeshow" role="alert">
+    {{ session('loginError') }}
+    <span class="button" onclick="this.parentElement.style.display='none';">&times;</span>
+    </button>
+</div>
+
+@endif
+
+
 <section id = 'login'>
     <center>
         <img src="..\resource\logo.png" alt="">
     </center>
 
-    <form>
+    <form action="{{url('/login')}}" method="POST">
+        @csrf
         <div class = "box-login">
                 <div class="mb-3 row">
                     <label for="email"  class="col-sm-2 col-form-label" >Email</label>
@@ -40,7 +60,9 @@
    <form>
 
     <center>
-        <button type="submit" class="buttonlong">Masuk</button>
+        <a href="#">
+            <button type="submit" class="buttonlong">Masuk</button>
+        </a>
     </center>
 
 </section>

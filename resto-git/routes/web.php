@@ -97,7 +97,13 @@ Route::get('/aturmenu', function () {
     return view('aturmenu');
 });
 
+Route::get('/pilihmeja', function () {
+    return view('pilihmeja');
+});
+
 Route::get('/editmeja', 'App\Http\Controllers\restoController@send_editMeja');
+Route::post('/edit', 'App\Http\Controllers\restoController@send_insertmeja');
+
 
 Route::get('/login', 'App\Http\Controllers\restocontroller@loginIndex');
 Route::post('/login', 'App\Http\Controllers\restocontroller@send_login');

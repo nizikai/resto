@@ -3,6 +3,37 @@
     background-color: white;
 }
 
+.alertalert-successalert-block {
+    padding: 20px;
+    background-color: #a3f478;    ;
+    color: #22b04c;
+}
+.alertalert-successalert-block .button {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .alertalert-dangeralert-dismissiblefadeshow{
+    padding: 20px;
+    background-color: #fe8787;
+    color: #870015;
+  }
+  .alertalert-dangeralert-dismissiblefadeshow .button {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
 /* LOGIN =======================================================================================*/
 
 #login .buttonlong{
@@ -160,8 +191,8 @@
     margin-left: 2vw;
 }
 
-#editkaryawan .kotak{
-    height: 16vh;
+/* #editkaryawan .kotak{
+    height: 250px;
     width: 91vw;
     background-color: #ffe4cc;
     border-radius: 3vw;
@@ -185,27 +216,40 @@
     font-size:60%;
     padding-top:8%;
     font-weight:bold;
-}
+} */
 
-/* #editkaryawan .content .kotak .tombol{
+/* #tboxbayar2{
+    width: 100%;
+    border: 2px solid #ff7c04;
+    border-radius: 10px;
+    height: 3.5vh;
+    margin-bottom: 30vw;
+    padding-top:20vw;
 
 } */
+
+/* #editkaryawan .kotak .tboxbayar2{
+    width: 90%;
+    margin-bottom: 10vw;
+    padding-bottom: 30px;
+    background-color: transparent;
+}
 
 #editkaryawan .kotak .form-control-editkaryawan{
     margin-top: 20%;
     margin-left:11px;
     width:331px;
-}
+} */
 
-#editkaryawan .kotak .tombol .buttonhapusakun{
+/* #editkaryawan .kotak .tombol .buttonhapusakun{
     background-color: transparent;
     text-align: center;
-    /* margin-right: 4vw; */
+     margin-right: 4vw;
     margin-top: 2vh;
-    /* width:40%; */
-}
+     width:40%;
+} */
 
-#editkaryawan .kotak .tombol .buttonhapusakun{
+/* #editkaryawan .kotak .tombol .buttonhapusakun{
     width: 35vw;
     background-color: #FF7C04;
     border: 2px solid #FF7C04;
@@ -218,10 +262,11 @@
     transition-duration: 0.4s;
     cursor: pointer;
     height: 4.5vh;
-    margin-left: -14vw;
+    margin-left: -35vw;
     margin-right:-65vw;
+} */
 
-}
+
 
 /* TAMBAH KARYAWAN----------------------------------------------------------------------------------------- */
 #editkaryawantitle{
@@ -867,6 +912,65 @@
     margin-top: 57vh;
 }
 
+#editpesanan #popup{
+    background-color: #ffe4cc;
+    height: 17.5vh;
+    width: 68vw;
+    margin-left: 13.5vw;
+    border-radius:2vw;
+    position: absolute;
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+
+#editpesanan .open-popup{
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#editpesanan .popup h5{
+    background-color: transparent;
+    text-align: justify;
+    margin-top: 2vh;
+    margin-left: 4vw;
+    margin-right: 3vw;
+}
+
+#editpesanan .popup .buttonflex{
+    background-color: transparent;
+    margin-left: 2vw;
+}
+
+#editpesanan .popup .buttonflex .buttonkembali{
+    background-color: #FF7C04;
+    border: 2vw solid #FF7C04;
+    font-weight: bold;
+    border-color: #FF7C04;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    height: 4.5vh;
+    margin-left: 1vw;
+}
+
+#editpesanan .popup .buttonflex .buttonbatalkanpesanan{
+    background-color: #FF7C04;
+    border: 2vw solid #FF7C04;
+    font-weight: bold;
+    border-color: #FF7C04;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    height: 4.5vh;
+    margin-left: 1vw;
+}
 /* pesanan =========================================================*/
 
 #pesanan .title h1{
@@ -1280,3 +1384,41 @@
     margin-top: 2vh;
 }
 
+/* PILIH MEJA --------------------------------------------------------------------- */
+
+#pilihmeja .title h1{
+    font-size: 9vw;
+    margin-left: 2vw;
+    margin-bottom: 2vh;
+}
+
+#pilihmeja .title .garis{
+    height: 0.4vh;
+    width: 90.5vw;
+    background-color: #FF7C04;
+    margin-left: 2.5vw;
+    margin-bottom: 4vh;
+}
+
+#pilihmeja .content .kotak{
+    height: 7.5vh;
+    width: 91vw;
+    background-color: #ffe4cc;
+    border-radius: 3vw;
+    margin-left: 2vw;
+    margin-top: 2vh;
+}
+
+#pilihmeja .content .kotak .text
+{
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 4vw;
+    margin-left: 4vw;
+}
+
+#pilihmeja .content .kotak .text h3
+{
+    background-color: transparent;
+}

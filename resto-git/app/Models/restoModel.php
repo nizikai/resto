@@ -12,8 +12,8 @@ class restoModel extends Model
     //login staff
     public function cekLogin($tboxLogin){
         $queryCekLogin = "SELECT count(*) is_exist ".
-                         "FROM SAD_NICO.admin_karyawan ".
-                         "WHERE EMAIL = :loginEmail AND PASSWORD = :loginPassword ;";
+                        "FROM SAD_NICO.admin_karyawan ".
+                        "WHERE EMAIL = :loginEmail AND PASSWORD = :loginPassword AND STAFF = '1' ;";
         $executeQueryCekLogin = DB::select($queryCekLogin, $tboxLogin);
         // dd($executeQueryCekLogin);
 

@@ -28,7 +28,15 @@
             <td>Ayam Goreng</td>
             <td>2 pcs</td>
             <td>Rp 44.000</td>
-            <td class = "gambar"><img src="..\resource\Trash.png"></td>
+            <td class = "gambar" onclick="openPopup()"><img src="..\resource\Trash.png"></td>
+            <!-- <td class = "gambar"><a href="#"><img src="..\resource\Trash.png"></td></a> -->
+            <div id = "popup">
+                <h5>Lakukan konfirmasi pesanan belum diproses dengan staff dapur sebelum lakukan pembatalan pesanan!</h5>
+                <div class = "buttonflex">
+                    <button type="submit" class="buttonkembali" onclick="closePopup()">Kembali</button>
+                    <button type="submit" class="buttonbatalkanpesanan">Batalkan Pesanan</button>
+                </div>
+            </div>
         </tr>
         <tr>
             <td>Ayam Bakar</td>
@@ -47,5 +55,16 @@
         </div>
     </div>
 </section>
+
+<script>
+    let popup = document.getElementById("popup")
+    function openPopup(){
+        popup.classList.add("open-popup");
+    }
+    function closePopup(){
+        popup.classList.remove("open-popup");
+    }
+</script>
+
 </body>
 </html>

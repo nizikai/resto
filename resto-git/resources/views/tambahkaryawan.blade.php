@@ -18,8 +18,8 @@
     <h1 id = "editkaryawantitle">Tambah Karyawan</h1>
     <section id = "tambahkaryawan">
         <h4 id = "masukkan">Masukan email dan password karyawan</h4>
-        <input type="text" class="tboxKaryawan" placeholder="Email"><br>
-        <input type="text" class="tboxKaryawan" placeholder="Password"><br><br><br><br><br><br>
+        <input type="text" class="tboxKaryawan" name ="Email" placeholder="Email"><br>
+        <input type="text" class="tboxKaryawan" name ="Password" placeholder="Password"><br><br><br><br><br><br>
         <button type="submit" id="ok" class="buttonlong">OK</button>
 
     </section>

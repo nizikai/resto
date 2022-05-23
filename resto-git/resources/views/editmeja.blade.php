@@ -13,39 +13,47 @@
     <title>Edit Meja</title>
 </head>
 <body>
+
+    @if (Session::has('success'))
+        <div class="alertalert-successalert-block">
+            <span class="button" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong>{{ Session::get('success') }}</strong>
+        </div>
+    @endif
+
+    @if (Session::has('loginError'))
+        <div class="alertalert-dangeralert-dismissiblefadeshow">
+            <span class="button" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong>{{ Session::get('error') }}</strong>
+        </div>
+    @endif
+
     <br>
     <h1 id = "editmejatitle">Edit Meja</h1>
     <center>
         <section id = "inputMeja">
-            <input type="text" id="tboxNewTable" name="NewTable" placeholder="Masukkan meja baru">
-            <button type="submit" class="buttonsmall">OK</button>
+            <form action="/editmeja" method="post">
+                @csrf
+                <input type="text" id="tboxNewTable" name="NewTable" placeholder="Masukkan meja baru">
+                <button type="submit" class="buttonsmall">OK</button>
+            </form>
         </section>
     </center>
     <hr class = "line">
 
     {{-- disini nanti buat auto generate semua meja yang ada --}}
     <section id="allTable">
+
         @foreach ($editMeja as $hasilEditMeja)
             <?php
                 echo "<div class = 'tableCard'>";
-                echo "<h6> $hasilEditMeja->NO_MEJA <img src='..\resource\Trash.png' alt=''> </h6>";
+                echo "<h6> $hasilEditMeja->NO_MEJA";
+                echo '<img src="..\resource\Trash.png" alt="">';
+                echo "</h6>";
                 echo "</div>";
-                ?>
-            @endforeach
+            ?>
+        @endforeach
 
-
-        <div class = "tableCard">
-            <h6>
-                Meja 5
-                <img src="..\resource\Trash.png" alt="">
-            </h6>
-        </div>
-        <div class = "tableCard">
-            <h6>
-                Meja 5
-                <img src="..\resource\Trash.png" alt="">
-            </h6>
-        </div>
     </section>
 </body>
 </html>
