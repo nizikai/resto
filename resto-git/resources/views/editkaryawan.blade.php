@@ -12,60 +12,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <title>Edit Karyawan</title>
 </head>
 <body>
 
 <section id = "editkaryawan">
     <div class = "title">
-        <h1>Edit Karyawan</h1>
+
+    <br><h1>Edit Karyawan</h1>
     </div>
 
     <div class = "button">
             <button type="submit" class="buttoneditkaryawan">Edit Karyawan</button>
     </div>
 
-    <div class="container mt-3" style="background-color:yellow ; height:200px;">
-        <div class="mb-3 row">
-            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-10">
-            <div class="col-sm-3 p-3"><button type="button" class="btn btn-warning">Hapus Akun</button></div>
-        </div>
-        <div class="mb-3 row">
+    <div class="kotak" style="margin-top:20px;">
 
-            <div class="col-sm-10 col-bg-dark">
-            <input type="text text-success" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+    <div class="container-md" style="background-color: #fff4e4; width: 90%; border-radius: 15px;"><br>
+      <div class="row" style="padding-bottom:15px; margin-top: 15px;background-color: transparent;">
+        <div class="col" style="margin-left: 5%; font-weight: bold;">12345@gmail.com</div>
+        <div class="col"><button type="button" class="btn btn-warning" style="margin-bottom:5%; background-color:#ff7c04; color:white;font-weight: bold;border-radius: 10px;">Hapus Akun</button></div>
+      </div>
+
+      <div>
+        <div class='container' style="padding-bottom: 20px;background-color: transparent;">
+          <div class='center'>
+            <div class='image'>
+              <div class="input-group">
+                <input class="form-control border-end-0 border rounded-pill" type="search" value="search"
+                  id="example-search-input" style="background-color: white;border-radius: 15px;">
+                <span class="input-group-append">
+                  <button class="btn btn-outline-secondary bg-white border-bottom-0 border rounded-pill ms-n5"
+                    type="button">
+                    <i class="fa fa-eye"></i>
+                  </button>
+                </span>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-    </div>
+  </div>
 
-</section>
-
-
-
-<!--
-<section id = "editkaryawan">
-    <div class = "title">
-        <h1>Edit Karyawan</h1>
-    </div>
-    <div class = "content">
-        <div class = "button">
-            <button type="submit" class="buttoneditkaryawan">Edit Karyawan</button>
-        </div>
-        <div class = "kotak">
-        <div class = "text">
-                        <h3>budi23@gmail.com</h3>
-        <div class="tombol">
-            <button type="submit" class="buttonhapusakun">Hapus Akun</button>
-        </div>
-                    <div class="pass"
-                        <input type="password" class="form-control-editkaryawan" name = 'PasswordEditKaryawan' id="password"  aria-describedby="emailHelp" placeholder="" required>
-                        <i class="bi bi-eye-slash" id="togglePassword"></i>
-                    </div>
-            </div>
-        </div>
-    </div>
-</section> -->
 </body>
 </html>

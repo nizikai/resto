@@ -17,11 +17,15 @@
     <br>
     <h1 id = "editkaryawantitle">Tambah Karyawan</h1>
     <section id = "tambahkaryawan">
-        <h4 id = "masukkan">Masukan email dan password karyawan</h4>
-        <input type="text" class="tboxKaryawan" name ="Email" placeholder="Email"><br>
-        <input type="text" class="tboxKaryawan" name ="Password" placeholder="Password"><br><br><br><br><br><br>
-        <button type="submit" id="ok" class="buttonlong">OK</button>
+        <form action="/tambahkaryawan" method="POST">
+            @csrf
 
+            <h4 id = "masukkan">Masukan email dan password karyawan</h4>
+            <input type="text" class="tboxKaryawan" name ="Nama" placeholder="Nama">
+            <input type="text" class="tboxKaryawan" name ="Email" placeholder="Email"><br>
+            <input type="text" class="tboxKaryawan" name ="Password" placeholder="Password"><br><br><br><br><br><br>
+            <button type="submit" id="ok" class="buttonlong">OK</button>
+        <form>
     </section>
 </body>
 </html>

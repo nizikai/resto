@@ -28,13 +28,14 @@
             <td>Ayam Goreng</td>
             <td>2 pcs</td>
             <td>Rp 44.000</td>
-            <td class = "gambar" onclick="openPopup()"><img src="..\resource\Trash.png"></td>
-            <!-- <td class = "gambar"><a href="#"><img src="..\resource\Trash.png"></td></a> -->
-            <div id = "popup">
-                <h5>Lakukan konfirmasi pesanan belum diproses dengan staff dapur sebelum lakukan pembatalan pesanan!</h5>
-                <div class = "buttonflex">
-                    <button type="submit" class="buttonkembali" onclick="closePopup()">Kembali</button>
-                    <button type="submit" class="buttonbatalkanpesanan">Batalkan Pesanan</button>
+            <td class = "gambar" onclick="tooglePopup()"><img src="..\resource\Trash.png"></td>
+            <div class = "popup" id = "popup-editpesanan">
+                <div class="overlay">
+                    <div class = "content">
+                        <h5>Lakukan konfirmasi pesanan belum diproses dengan staff dapur sebelum lakukan pembatalan pesanan!</h5>
+                        <button type ="submit" class="buttonkembali" onclick="tooglePopup()"> kembali </button>
+                        <button type ="submit" class="buttonbatalkanpesanan">batalkan pesanan </button>
+                    </div>
                 </div>
             </div>
         </tr>
@@ -42,7 +43,16 @@
             <td>Ayam Bakar</td>
             <td>1 pcs</td>
             <td>Rp 23.000</td>
-            <td class = "gambar"><img src="..\resource\Trash.png"></td>
+            <td class = "gambar" onclick="tooglePopup()"><img src="..\resource\Trash.png"></td>
+            <div class = "popup" id = "popup-editpesanan">
+                <div class="overlay">
+                    <div class = "content">
+                        <h5>Lakukan konfirmasi pesanan belum diproses dengan staff dapur sebelum lakukan pembatalan pesanan!</h5>
+                        <button type ="submit" class="buttonkembali" onclick="tooglePopup()"> kembali </button>
+                        <button type ="submit" class="buttonbatalkanpesanan">batalkan pesanan </button>
+                    </div>
+                </div>
+            </div>
         </tr>
     </table>
     <div class = "garisabu">
@@ -51,18 +61,16 @@
 
     <div class = "bawahflex">
         <div class = "button">
-            <button type="submit" class="buttonsimpan">Simpan</button>
+            <a href="#">
+                <button type="submit" class="buttonsimpan">Simpan</button>
+            </a>
         </div>
     </div>
 </section>
 
 <script>
-    let popup = document.getElementById("popup")
-    function openPopup(){
-        popup.classList.add("open-popup");
-    }
-    function closePopup(){
-        popup.classList.remove("open-popup");
+    function tooglePopup(){
+        document.getElementById("popup-editpesanan").classList.toggle("active");
     }
 </script>
 

@@ -15,7 +15,7 @@
     </div>
     <div class = "content">
         <div class = "button">
-            <button type="submit" class="buttontambahpesanan">Terima Pesanan</button>
+            <button type="submit" class="buttontambahpesanan">Tambah Pesanan</button>
         </div>
         <div class = "kotak">
             <div class = "text">

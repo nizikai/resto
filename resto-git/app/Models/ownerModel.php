@@ -11,19 +11,26 @@ class ownerModel extends Model
 {
     //buat query select buat edit meja
     function get_editMeja() {
-        $querysemuameja = "SELECT NO_MEJA FROM SAD_NICO.meja;";
+        $querysemuameja = "SELECT NO_MEJA FROM SAD_NICO.meja WHERE DEL_STATUS = '0';";
         $executequerysemuameja= DB::select($querysemuameja);
         return $executequerysemuameja;
     }
 
     //buat insert meja baru di page edit meja
     function post_insertMeja($tboxMejaBaru) {
-        //TINGGAL GANTI QUERY INSERT MEJA BARU. NICO.
-        $cmd = "INSERT INTO customer( `ID_MEMBERSHIP`, `NAMA_CUSTOMER`, `ALAMAT`, `PHONE`, `EMAIL`, `PASSWORD`, `DELETE_CUSTOMER`) VALUES ('REGU', :nama,'-', '-', :email, :password_customer,'0')";
+        $cmd = "INSERT INTO meja(`NO_MEJA`, `DEL_STATUS`) VALUES (:mejaBaru,'0');";
 
         $result =DB::insert($cmd, $tboxMejaBaru);
         return $result;
     }
+
+    //buat hapus meja di page edit meja
+    function get_hapusMeja($arrayNoMeja) {
+        $cmd = "UPDATE meja SET DEL_STATUS = '1' WHERE NO_MEJA = :noMeja;";
+        $result =DB::update($cmd, $arrayNoMeja);
+        return $result;
+    }
+
 
     // ini login owner
     public function cekLoginowner($tboxLogin)
@@ -48,14 +55,14 @@ class ownerModel extends Model
     // ini tambah admin
     function post_insert($tboxinsertadmin) {
 
-        $queryupdate = "INSERT INTO admin_karyawan( `NAMA`, `PASSWORD`, `OWNER`, `EMAIL`, `STAFF`, `DEL_STATUS`) VALUES (':insertEmail', 'insertPassword','0', 'TBOXEMAIL', '1', '0')";
+        $queryinsert = "INSERT INTO admin_karyawan( `NAMA`, `PASSWORD`, `OWNER`, `EMAIL`, `STAFF`, `DEL_STATUS`) VALUES (:insertNama, :insertPassword,'0', :insertEmail, '1', '0')";
         // $dataIdUpdate = [
         //     'insertEmail' => $tboxinsertadmin['insertEmail'],
         //     'insertPassword' => $tboxinsertadmin['insertPassword']
         // ]; //declare biar bisa dipake di query
-        $executequeryupdate = DB::insert($queryupdate, $tboxinsertadmin);
+        $executequeryinsert = DB::insert($queryinsert, $tboxinsertadmin);
         // dd($executequeryupdate);
-        return $executequeryupdate;
+        return $executequeryinsert;
     }
 }
 

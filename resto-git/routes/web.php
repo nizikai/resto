@@ -97,13 +97,20 @@ Route::get('/aturmenu', function () {
     return view('aturmenu');
 });
 
-Route::get('/pilihmeja', function () {
-    return view('pilihmeja');
-});
 
+//PAGE PILIH MEJA
+Route::get('/pilihmeja', 'App\Http\Controllers\restoController@send_pilihMeja');
+
+//PAGE EDIT MEJA
 Route::get('/editmeja', 'App\Http\Controllers\restoController@send_editMeja');
-Route::post('/edit', 'App\Http\Controllers\restoController@send_insertmeja');
+Route::post('/editmeja', 'App\Http\Controllers\restoController@send_insertmeja');
 
+//HAPUS MEJA BERDASARKAN TOMBOL YANG DI KLIK
+Route::get('/hapusmeja/{NO_MEJA}', 'App\Http\Controllers\restoController@send_hapusMeja');
 
+// ini untuk tambah karyawan
+Route::post('/tambahkaryawan', 'App\Http\Controllers\restoController@send_insertadmin');
+
+//BUAT LOGIN
 Route::get('/login', 'App\Http\Controllers\restocontroller@loginIndex');
 Route::post('/login', 'App\Http\Controllers\restocontroller@send_login');

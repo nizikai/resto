@@ -118,47 +118,62 @@ class restocontroller extends Controller
             return redirect('/editmeja');
 
             Session::flash('error', 'Mohon maaf terjadi kesalahan. Mohon coba lagi.');
-
         }
+    }
+
+    //INI UNTUK DELETE MEJA DI PAGE EDITMEJA
+    public function send_hapusMeja($NO_MEJA){
+        $owner = new ownerModel;
+
+        $arrayNoMeja = [
+            'noMeja'=>$NO_MEJA
+        ];
+        $executeHapusMeja = $owner->get_hapusMeja($arrayNoMeja);
+
+        // return view('/editmeja', ['executeHapusMeja' => $executeHapusMeja]);
+        return redirect('/editmeja');
+    }
+
+    //INI UNTUK DISPLAY SEMUA MEJA DI PAGE PILIH MEJA
+    public function send_pilihMeja(){
+
+        $owner = new ownerModel;
+        $pilihMeja = $owner -> get_editMeja();
+        return view('pilihmeja', ['pilihMeja' => $pilihMeja]);
     }
 
 
     // ini untuk insert admin baru
-    public function sendqueryupdate(request $request)
+    public function send_insertadmin(request $request)
     {
+        $insertnama = $request->input('Nama');
         $insertemail = $request->input('Email');
         $insertpassword = $request->input('Password');
 
-        $sambungpostinsert = new restoModel();
+        $sambungpostinsert = new ownerModel();
 
         $tboxinsertadmin = [
+            'insertNama'=>$insertnama,
             'insertEmail'=>$insertemail,
             'insertPassword' =>$insertpassword
         ];
         // $loggedInIdUpdate = Session::get('id');
 
-        $checkUpdate = $sambungpostinsert->post_insert($tboxinsertadmin);
+        $checkinsert = $sambungpostinsert->post_insert($tboxinsertadmin);
 
-        if($checkUpdate==1){
-            // echo 'berhail perbarui data diri';
+        if($checkinsert==1){
 
-            // // $hasloginupdate = $request->session()->has('login');
 
-            // $Id = $sambungpostinsert -> get_querykartuprofil($loggedInIdUpdate);
+            Session::flash('success', 'Anda berhasil menambahkan admin baru');
+            return redirect('/tambahkaryawan');
 
-            // Session::put('nama', $Id[0] -> NAMA_CUSTOMER); //buat session yang isinya nama customer
-            // Session::put('alamat', $Id[0] -> ALAMAT);
-            // Session::put('hp', $Id[0] -> PHONE);
-
-            Session::flash('success', 'Anda berhasil memperbarui data diri');
-            return redirect('/updateprofile');
-
-            Session::flash('loginError', 'Mohon lengkapi data alamat dan kontak.');
+            Session::flash('loginError', 'Mohon lengkapi Textbox yang kosong.');
 
         }
         // echo 'gagal';
         // return redirect('/updateprofile');
     }
 
+    //update admin_karyawan
 
 }

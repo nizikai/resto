@@ -1,16 +1,22 @@
 *{
     font-family: Nunito;
-    background-color: white;
+    /* background-color: white; */
 }
 
 .alertalert-successalert-block {
     padding: 20px;
-    background-color: #a3f478;    ;
+    background-color: #a3f478;
     color: #22b04c;
+}
+
+.alertalert-successalert-block strong{
+    background-color: #a3f478;
+
 }
 .alertalert-successalert-block .button {
     margin-left: 15px;
-    color: white;
+    /* color: white; */
+    background-color: #a3f478;
     font-weight: bold;
     float: right;
     font-size: 22px;
@@ -25,7 +31,8 @@
   }
   .alertalert-dangeralert-dismissiblefadeshow .button {
     margin-left: 15px;
-    color: white;
+    /* color: white; */
+    background-color: #fe8787;
     font-weight: bold;
     float: right;
     font-size: 22px;
@@ -912,22 +919,36 @@
     margin-top: 57vh;
 }
 
-#editpesanan #popup{
+#editpesanan .popup .content{
     background-color: #ffe4cc;
-    height: 17.5vh;
-    width: 68vw;
-    margin-left: 13.5vw;
-    border-radius:2vw;
     position: absolute;
-    transform: translate(-50%, -50%) scale(0.1);
-    visibility: hidden;
-    transition: transform 0.4s, top 0.4s;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 85vw;
+    height: 20vh;
+    z-index: 2;
+    text-align: center;
+    padding: 4vw;
+    box-sizing: border-box;
+    border-radius: 4vw;
 }
 
-#editpesanan .open-popup{
-    visibility: visible;
+#editpesanan .popup.active .overlay{
+    position: fixed;
+    top: 0vh;
+    left: 0vw;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    z-index: 1;
+}
+
+#editpesanan .popup.active .content{
+    transition: all300ms ease-in-out;
     transform: translate(-50%, -50%) scale(1);
 }
+
 
 #editpesanan .popup h5{
     background-color: transparent;
@@ -942,7 +963,7 @@
     margin-left: 2vw;
 }
 
-#editpesanan .popup .buttonflex .buttonkembali{
+#editpesanan .popup .buttonkembali{
     background-color: #FF7C04;
     border: 2vw solid #FF7C04;
     font-weight: bold;
@@ -957,7 +978,7 @@
     margin-left: 1vw;
 }
 
-#editpesanan .popup .buttonflex .buttonbatalkanpesanan{
+#editpesanan .popup .buttonbatalkanpesanan{
     background-color: #FF7C04;
     border: 2vw solid #FF7C04;
     font-weight: bold;
@@ -1421,4 +1442,9 @@
 #pilihmeja .content .kotak .text h3
 {
     background-color: transparent;
+}
+
+#pilihmeja a{
+    text-decoration: none;
+    color:black;
 }

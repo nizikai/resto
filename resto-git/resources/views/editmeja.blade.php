@@ -44,14 +44,32 @@
     {{-- disini nanti buat auto generate semua meja yang ada --}}
     <section id="allTable">
 
+        {{-- @foreach ($editMeja as $hasilEditMeja)
+
+            //echo "<div class = 'tableCard'>";
+                //echo "<h6> $hasilEditMeja->NO_MEJA";
+                // echo "<a href='/hapusmeja/$hasilEditMeja->NO_MEJA'>";
+                // echo "<a href='{{ route('routeHapusMeja', ['noMeja' => $hasilEditMeja->NO_MEJA]) }}'>";
+                //echo "<a href='{{ url(\'hapusmeja/\''.$hasilEditMeja->NO_MEJA') }}'>";
+
+                    //   <a href="{{ url('user/'.$user->id . '/'.$user->name) }}">  Get user detail </a>
+
+                //echo '<img src="..\resource\Trash.png" alt=""> </a>';
+                //echo "</h6>";
+                //echo "</div>";
+
+        @endforeach --}}
+
         @foreach ($editMeja as $hasilEditMeja)
-            <?php
-                echo "<div class = 'tableCard'>";
-                echo "<h6> $hasilEditMeja->NO_MEJA";
-                echo '<img src="..\resource\Trash.png" alt="">';
-                echo "</h6>";
-                echo "</div>";
-            ?>
+
+            <div class = 'tableCard'>
+                <h6> <?php echo "$hasilEditMeja->NO_MEJA"; ?>
+                    <a href="{{ url('hapusmeja/'.$hasilEditMeja->NO_MEJA)}}">
+                        <img src="..\resource\Trash.png" alt="">
+                    </a>
+                </h6>
+            </div>
+
         @endforeach
 
     </section>
