@@ -14,7 +14,7 @@
         <h1>Tambah Menu</h1>
     </div>
     <div class = "content">
-        <h5>Pilih Kategori Menu</h5>
+        <h4>Pilih Kategori Menu</h4>
         <section id="menukategori">
             <label>
                 <input type="radio" name="radio" value="food" checked>
@@ -33,11 +33,11 @@
         </section>
         <div class = "input">
             <div class = "nama">
-                <h5>Masukkan Nama Menu Baru</h5>
+                <h4>Masukkan nama menu baru</h4>
                 <input type="text" id="tboxnamamenubaru" name="menubaru" placeholder="Nama Menu">
             </div>
             <div class = "harga">
-                <h5>Masukkan Harga Menu Baru</h5>
+                <h4>Masukkan harga menu baru</h4>
                 <input type="text" id="tboxhargamenubaru" name="hargabaru" placeholder="Harga Menu">
             </div>
             <div class = "button">

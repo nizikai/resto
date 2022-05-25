@@ -15,6 +15,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <title>Edit Karyawan</title>
 </head>
 <body>
@@ -32,16 +33,16 @@
     <div class="kotak" style="margin-top:20px;">
 
     <div class="container-md" style="background-color: #fff4e4; width: 90%; border-radius: 15px;"><br>
-      <div class="row" style="padding-bottom:15px; margin-top: 15px;background-color: transparent;">
-        <div class="col" style="margin-left: 5%; font-weight: bold;">12345@gmail.com</div>
-        <div class="col"><button type="button" class="btn btn-warning" style="margin-bottom:5%; background-color:#ff7c04; color:white;font-weight: bold;border-radius: 10px;">Hapus Akun</button></div>
+      <div class="row" style="padding-bottom:15px; margin-top: 7px;background-color: transparent;">
+        <div class="col" style="margin-left: 2%; font-weight: bold; margin-right:9vw;">12345@gmail.com</div>
+        <div class="col"><button type="button" class="btn btn-warning" style="margin-bottom:0%;margin-top:-5%; background-color:#ff7c04; color:white;font-weight: bold;border-radius: 10px;">Hapus Akun</button></div>
       </div>
 
       <div>
         <div class='container' style="padding-bottom: 20px;background-color: transparent;">
-          <div class='center'>
+          <!-- <div class='center'>
             <div class='image'>
-              <div class="input-group">
+              <!-- <div class="input-group">
                 <input class="form-control border-end-0 border rounded-pill" type="search" value="search"
                   id="example-search-input" style="background-color: white;border-radius: 15px;">
                 <span class="input-group-append">
@@ -50,13 +51,32 @@
                     <i class="fa fa-eye"></i>
                   </button>
                 </span>
-              </div>
-            </div>
+              </div> -->
+            <!-- </div>
+          </div> -->
+          <div class="passwordflex">
+            <input type="password" class="tboxeditkaryawan" name ="Password" id = "password" placeholder="Password"><br><br><br><br><br><br>
+              <span>
+                <i class="bi bi-eye-slash" id="togglePassword"></i>
+              </span>
           </div>
         </div>
       </div>
     </div>
   </div>
 
+<script>
+  const togglePassword = document.querySelector("#togglePassword");
+  const password = document.querySelector("#password");
+
+  togglePassword.addEventListener("click", function () {
+      // toggle the type attribute
+      const type = password.getAttribute("type") === "password" ? "text" : "password";
+      password.setAttribute("type", type);
+
+      // toggle the icon
+      this.classList.toggle("bi-eye");
+  });
+</script>
 </body>
 </html>

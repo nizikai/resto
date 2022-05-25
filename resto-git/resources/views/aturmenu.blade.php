@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-    <title>Edit Menu</title>
+    <title>Atur Menu</title>
 </head>
 <body>
 <section id = "aturmenu">
     <div class = "title">
-        <h1>Edit Menu</h1>
+        <h1>Atur Menu</h1>
     </div>
     <div class = "content">
         <div class = "button">
@@ -20,12 +20,18 @@
         <div class = "garis">
 
         </div>
-        <div class = "kotak">
-            <div class = "text">
-                <h3>Nasi Goreng</h3>
-                <h3>Rp 15.000</h3>
+
+        @foreach ($aturMenu as $hasilAturMenu)
+        <a href="{{ url('editmenu/'.$hasilAturMenu->ID_MENU)}}">
+            <div class = "kotak">
+                <div class = "text">
+                    <h3>{{$hasilAturMenu->NAMA_MENU}}</h3>
+                    <h3>Rp. {{$hasilAturMenu->HARGA}}</h3>
+                </div>
             </div>
-        </div>
+        </a>
+        @endforeach
+
     </div>
 </section>
 </body>

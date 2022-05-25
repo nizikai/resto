@@ -25,6 +25,7 @@
     <div class = "buttonowner">
       <button type="button" id = "editkaryawan"><h6>Edit Karyawan</h6></button>
       <button type="button" id = "editmeja"><h6>Edit Meja</h6></button>
+      <button type="button" id = "editmenu"><h6>Edit Menu</h6></button>
     </div>
 </section>
 </body>

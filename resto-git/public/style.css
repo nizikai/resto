@@ -3,6 +3,10 @@
     /* background-color: white; */
 }
 
+* a{
+    text-decoration: none;
+}
+
 .alertalert-successalert-block {
     padding: 20px;
     background-color: #a3f478;
@@ -79,15 +83,16 @@
     /* width: 100%; */
     padding-right: 7vw;
     padding-left: 3vw;
+    display: flex;
 }
 #login .form-control{
     padding: 0.5vh;
     border: 2px solid #ff7c04;
     border-radius: 0.6rem;
     box-shadow: none;
-    padding-left: 0.5vw;
-    padding-right: 1.5vw;
-    margin-right: 6vw;
+    padding-left: 2.5vw;
+    padding-right: 6.5vw;
+    margin-right: -6vw;
 }
 #login .col-form-label{
     font-family: Nunito;
@@ -95,6 +100,9 @@
     margin-left: -1vw;
 }
 
+#login span{
+    margin-top: 0.5vh;
+}
 /* EDIT MEJA =================================================================================================================== */
 
 #editmejatitle{
@@ -178,12 +186,13 @@
 
 #editkaryawan .title h1{
     font-weight:bolder;
-    margin-left: 2vw;
+    margin-left: 5vw;
     font-size:10vw;
+    margin-bottom: 2vh;
 }
 
 #editkaryawan .button .buttoneditkaryawan{
-    width: 95%;
+    width: 90%;
     background-color: #FF7C04;
     border: 2px solid #FF7C04;
     font-weight: bold;
@@ -195,7 +204,8 @@
     transition-duration: 0.4s;
     cursor: pointer;
     height: 4.5vh;
-    margin-left: 2vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
 }
 
 /* #editkaryawan .kotak{
@@ -273,7 +283,26 @@
     margin-right:-65vw;
 } */
 
+#editkaryawan .passwordflex{
+    display: flex;
+    margin-bottom: -11vh;
+    margin-left: -6vw;
+}
 
+#editkaryawan .tboxeditkaryawan{
+    width: 100%;
+    border: 2px solid #ff7c04;
+    border-radius: 10px;
+    padding: 1.5vw 3vw;
+    height: 11vw;
+    margin-left: 5%;
+    margin-right: -6vw;
+    padding-right: 6.5vw
+}
+
+#editkaryawan span{
+    margin-top: 0.8vh;
+}
 
 /* TAMBAH KARYAWAN----------------------------------------------------------------------------------------- */
 #editkaryawantitle{
@@ -282,7 +311,7 @@
     font-size: 28px;
 }
 
-.buttonlong{
+#tambahkaryawan .buttonlong{
     background-color: #FF7C04;
     font-weight: bold;
     border-color: #FF7C04;
@@ -293,13 +322,11 @@
     text-align: center;
     text-decoration: none;
     font-size: 14px;
-    /* margin-left: 12,5%; */
     transition-duration: 0.4s;
     cursor: pointer;
     width: 92%;
-    /* left: 10%; */
     margin-left: 4vw;
-    /* margin-top:50%; */
+    margin-top:100%;
 }
 
 .buttonlong:hover{
@@ -307,7 +334,7 @@
     color: #ff7c04;
 }
 
-.tboxKaryawan{
+#tambahkaryawan .tboxKaryawan{
     width: 90%;
     border: 2px solid #ff7c04;
     border-radius: 10px;
@@ -315,8 +342,13 @@
     height: 11vw;
     margin-left: 5%;
     margin-top:5%;
+    margin-right: -6vw;
+    padding-right: 6.5vw;
 }
 
+#tambahkaryawan span{
+    margin-top: 3vh;
+}
 .tboxKaryawan:focus{
     outline: 1px solid #ff7c04;
 }
@@ -325,6 +357,10 @@
     font-weight: 500;
     padding-left: 4vw;
     font-size: 14px;
+}
+
+#tambahkaryawan .passwordflex{
+    display: flex;
 }
 
 /* OWNER -------------------------------------------------------------------------------------- */
@@ -362,7 +398,7 @@
     border-radius: 2vw;
     border-style: none;
     margin-bottom: 2vh;
-    margin-top: 35vh;
+    margin-top: 28vh;
     margin-left: 3vw;
 }
 
@@ -373,6 +409,16 @@
     border-radius: 2vw;
     border-style: none;
     margin-left: 3vw;
+}
+
+#owner .buttonowner #editmenu{
+    background-color: #FF7C04;
+    width: 90vw;
+    height: 5vh;
+    border-radius: 2vw;
+    border-style: none;
+    margin-left: 3vw;
+    margin-top: 2vh;
 }
 
 #owner input{
@@ -682,6 +728,81 @@
     justify-content: space-between;
 }
 
+#sectionmenumeja .popup .content{
+    background-color: #ffe4cc;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 85vw;
+    height: 20vh;
+    z-index: 3;
+    text-align: center;
+    padding: 4vw;
+    box-sizing: border-box;
+    border-radius: 4vw;
+}
+
+#sectionmenumeja .popup.active .overlay{
+    position: fixed;
+    top: 0vh;
+    left: 0vw;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    z-index: 2;
+}
+
+#sectionmenumeja .popup.active .content{
+    transition: all300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+#sectionmenumeja .popup h6{
+    background-color: transparent;
+    text-align: justify;
+    margin-top: 2vh;
+    margin-left: 4vw;
+    margin-right: 3vw;
+    font-weight: bold;
+}
+
+#sectionmenumeja .popup .buttonflex{
+    background-color: transparent;
+    margin-left: 2vw;
+}
+
+#sectionmenumeja .popup .buttonkembali{
+    background-color: #FF7C04;
+    border: 2vw solid #FF7C04;
+    font-weight: bold;
+    border-color: #FF7C04;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    height: 4.5vh;
+    margin-left: -22vw;
+    margin-top: 1vh;
+}
+
+#sectionmenumeja .popup .buttongantimeja{
+    background-color: #FF7C04;
+    border: 2vw solid #FF7C04;
+    font-weight: bold;
+    border-color: #FF7C04;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    height: 4.5vh;
+    margin-left: 1vw;
+}
 #buttonpilihmeja{
     width: 40%;
     background-color: #FF7C04;
@@ -1251,6 +1372,7 @@
     justify-content: space-between;
     margin-right: 4vw;
     margin-left: 4vw;
+    color: black;
 }
 
 #aturmenu .content .kotak .text h3
@@ -1289,22 +1411,26 @@
     width: 90%;
     border: 2px solid #ff7c04;
     border-radius: 10px;
-    height: 3.5vh;
+    height: 5vh;
 }
 
 #tambahmenu input#tboxnamamenubaru{
     padding-left: 2vw;
+    font-size: 18px;
 }
 
 #tambahmenu input#tboxhargamenubaru{
     padding-left: 2vw;
+    font-size: 18px;
+
 }
 
 #tambahmenu #tboxhargamenubaru{
     width: 90%;
     border: 2px solid #ff7c04;
     border-radius: 10px;
-    height: 3.5vh;
+    height: 5vh;
+
 }
 
 #tambahmenu #menukategori{
@@ -1325,7 +1451,7 @@
     cursor: pointer;
     height: 4.5vh;
     margin-left: 1.5vw;
-    margin-top: 47vh;
+    margin-top: 40vh;
 }
 
 /* editmenu--------------------------------------------------------------- */
@@ -1349,14 +1475,16 @@
     width: 90%;
     border: 2px solid #ff7c04;
     border-radius: 10px;
-    height: 3.5vh;
+    height: 5vh;
 }
 
 #editmenu input#tboxnamamenubaru{
+    font-size: 18px;
     padding-left: 2vw;
 }
 
 #editmenu input#tboxhargamenubaru{
+    font-size: 18px;
     padding-left: 2vw;
 }
 
@@ -1364,7 +1492,7 @@
     width: 90%;
     border: 2px solid #ff7c04;
     border-radius: 10px;
-    height: 3.5vh;
+    height: 5vh;
 }
 
 #editmenu #menukategori{
@@ -1385,17 +1513,17 @@
     cursor: pointer;
     height: 4.5vh;
     margin-left: 1.5vw;
-    margin-top: 40vh;
+    margin-top: 34vh;
 }
 
 #editmenu .content .input .button .buttonhapusmenu{
     width: 95%;
-    background-color: #FF7C04;
+    background-color: #ffe4cc;
     border: 2px solid #FF7C04;
     font-weight: bold;
     border-color: #FF7C04;
     border-radius: 10px;
-    color: white;
+    color: #FF7C04;
     text-decoration: none;
     font-size: 14px;
     transition-duration: 0.4s;

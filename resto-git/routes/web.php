@@ -85,21 +85,21 @@ Route::get('/pesanan', function () {
     return view('pesanan');
 });
 
-Route::get('/editmenu', function () {
-    return view('editmenu');
-});
-
 Route::get('/tambahmenu', function () {
     return view('tambahmenu');
 });
 
-Route::get('/aturmenu', function () {
-    return view('aturmenu');
-});
-
+//INPUT MENU BERDASARKAN MEJA
+Route::get('/menu/{NO_MEJA}', 'App\Http\Controllers\restoController@send_menu');
 
 //PAGE PILIH MEJA
 Route::get('/pilihmeja', 'App\Http\Controllers\restoController@send_pilihMeja');
+
+//PAGE ATUR MENU
+Route::get('/aturmenu', 'App\Http\Controllers\restoController@send_aturMenu');
+
+//PAGE EDIT MENU BERDASARKAN APA YANG DI KLIK DI ATUR MENU
+Route::get('/editmenu/{ID_MENU}', 'App\Http\Controllers\restoController@send_displayEditMenu');
 
 //PAGE EDIT MEJA
 Route::get('/editmeja', 'App\Http\Controllers\restoController@send_editMeja');

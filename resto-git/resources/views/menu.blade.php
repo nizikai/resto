@@ -17,7 +17,16 @@
     <h1 id = "menutitle">Menu</h1>
     <section id = "sectionmenumeja">
         <h6 id = "labelmenumeja">Meja 1.12</h6>
-        <button type="submit" id="buttonpilihmeja">Pilih Meja</button>
+        <button type="submit" id="buttonpilihmeja" onclick="tooglePopupmenu()">Ganti Meja</button>
+        <div class = "popup" id = "popup-menu">
+            <div class="overlay">
+                <div class = "content">
+                    <h6>Semua menu yang dipilih akan dihapus. Lakukan order ulang setelah memilih meja yang baru </h6>
+                    <button type ="submit" class="buttonkembali" onclick="tooglePopupmenu()"> kembali </button>
+                    <button type ="submit" class="buttongantimeja">Ganti meja</button>
+                </div>
+            </div>
+        </div>
     </section>
 
     <hr class = "line">
@@ -142,5 +151,10 @@
 
     <br>
     <br>
+<script>
+    function tooglePopupmenu(){
+        document.getElementById("popup-menu").classList.toggle("active");
+    }
+</script>
 </body>
 </html>

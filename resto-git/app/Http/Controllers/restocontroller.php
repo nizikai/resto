@@ -100,6 +100,28 @@ class restocontroller extends Controller
         return view('editmeja', ['editMeja' => $editMeja]);
     }
 
+    //ngedisplay semua menu di aturmenu
+    public function send_aturMenu()
+    {
+        $owner = new ownerModel;
+        $aturMenu = $owner -> get_semuaMenu();
+        // dd($editMeja);
+        return view('aturmenu', ['aturMenu' => $aturMenu]);
+    }
+
+    //display detail menu berdasarkan apa yang di klik di atur menu
+    public function send_displayEditMenu($ID_MENU){
+        $owner = new ownerModel;
+
+        $arrayIdMenu = [
+            'idmenu'=>$ID_MENU
+        ];
+        $executeDisplayEditMenu = $owner->get_displayEditMenu($arrayIdMenu);
+
+        return view('editmenu', ['executeDisplayEditMenu' => $executeDisplayEditMenu]);
+
+    }
+
     //INI UNTUK INSERT MEJA DI PAGE EDITMEJA
     public function send_insertmeja(request $request)
     {
