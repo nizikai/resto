@@ -100,6 +100,30 @@ class restocontroller extends Controller
         return view('editmeja', ['editMeja' => $editMeja]);
     }
 
+    //INI UNTUK DISPLAY SEMUA KARYAWAN
+    public function send_semuaKaryawan()
+    {
+        $owner = new ownerModel;
+        $semuaKaryawan = $owner -> get_semuaKaryawan();
+        // dd($editMeja);
+        return view('editkaryawan', ['semuaKaryawan' => $semuaKaryawan]);
+    }
+
+    //INI UNTUK HAPUS SEMUA KARYAWAN
+    public function send_hapusKaryawan($ID_ADMIN)
+    {
+        $arrayHapusKaryawan = [
+            'idAdmin'=>$ID_ADMIN
+        ];
+
+        $owner = new ownerModel;
+        $hapusKaryawan = $owner -> get_hapusKaryawan($arrayHapusKaryawan);
+        // dd($editMeja);
+        return redirect('editkaryawan');
+    }
+
+
+
     //ngedisplay semua menu di aturmenu
     public function send_aturMenu()
     {
@@ -119,6 +143,40 @@ class restocontroller extends Controller
         $executeDisplayEditMenu = $owner->get_displayEditMenu($arrayIdMenu);
 
         return view('editmenu', ['executeDisplayEditMenu' => $executeDisplayEditMenu]);
+
+    }
+
+    // untuk update menu di page edit menu
+    public function send_updatemenu(request $request, $ID_MENU)
+    {
+        $insertnama = $request->input('menubaru');
+        $insertharga = $request->input('hargabaru');
+        $insertid = $request->input('idmenu');
+
+        $sambungpostupdate = new ownerModel();
+
+        $tboxupdatemenu = [
+            'insertmenu'=>$insertnama,
+            'insertharga'=>$insertharga,
+            'insertidmenu'=>$insertid
+
+        ];
+        // $arrayIdMenu = [
+        //     'idmenu'=>$ID_MENU
+        // ];
+        // $loggedInIdUpdate = Session::get('id');
+
+        $checkupdate = $sambungpostupdate->post_update($tboxupdatemenu);
+        return redirect('/aturmenu');
+        // if($checkupdate==1){
+
+
+        //     Session::flash('success', 'Anda berhasil mengedit menu');
+        //     return redirect('/aturmenu');
+
+        //     Session::flash('loginError', 'Mohon lengkapi Textbox yang kosong.');
+
+        // }
 
     }
 
@@ -187,7 +245,7 @@ class restocontroller extends Controller
 
 
             Session::flash('success', 'Anda berhasil menambahkan admin baru');
-            return redirect('/tambahkaryawan');
+            return redirect('/editkaryawan');
 
             Session::flash('loginError', 'Mohon lengkapi Textbox yang kosong.');
 
@@ -195,7 +253,23 @@ class restocontroller extends Controller
         // echo 'gagal';
         // return redirect('/updateprofile');
     }
+    //menu cart
+    public function send_insertcart(request $request)
+    {
+        $insertnamamenu = $request->input('NamaMenu');
+        $insertjumlah = $request->input('Jumlah');
+        $insertcatatan = $request->input('Catatan');
 
-    //update admin_karyawan
+        $sambungpostinsert = new ownerModel();
+
+        $tboxinsertcart = [
+            'NamaMenu'=>$insertnamamenu,
+            'Jumlah'=>$insertjumlah,
+            'Catatan' =>$insertcatatan
+        ];
+
+
+
+    }
 
 }

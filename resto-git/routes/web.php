@@ -41,20 +41,8 @@ Route::get('/owner', function () {
     return view('owner');
 });
 
-Route::get('/editkaryawan', function () {
-    return view('editkaryawan');
-});
-
 Route::get('/editmeja', function () {
     return view('editmeja');
-});
-
-Route::get('/editkaryawan', function () {
-    return view('editkaryawan');
-});
-
-Route::get('/editkaryawan', function () {
-    return view('editkaryawan');
 });
 
 Route::get('/laporanbulanan', function () {
@@ -68,10 +56,6 @@ Route::get('/laporanharian', function () {
 Route::get('/tambahkaryawan', function () {
     return view('tambahkaryawan');
 });
-
-// Route::get('/editmeja', function () {
-//     return view('editmeja');
-// });
 
 Route::get('/bayar', function () {
     return view('bayar');
@@ -100,6 +84,7 @@ Route::get('/aturmenu', 'App\Http\Controllers\restoController@send_aturMenu');
 
 //PAGE EDIT MENU BERDASARKAN APA YANG DI KLIK DI ATUR MENU
 Route::get('/editmenu/{ID_MENU}', 'App\Http\Controllers\restoController@send_displayEditMenu');
+Route::post('/updatemenu/{ID_MENU}', 'App\Http\Controllers\restoController@send_updatemenu');
 
 //PAGE EDIT MEJA
 Route::get('/editmeja', 'App\Http\Controllers\restoController@send_editMeja');
@@ -107,6 +92,11 @@ Route::post('/editmeja', 'App\Http\Controllers\restoController@send_insertmeja')
 
 //HAPUS MEJA BERDASARKAN TOMBOL YANG DI KLIK
 Route::get('/hapusmeja/{NO_MEJA}', 'App\Http\Controllers\restoController@send_hapusMeja');
+
+//ini untuk edit karyawan
+Route::get('/editkaryawan', 'App\Http\Controllers\restoController@send_semuaKaryawan');
+//ini untuk hapus karyawan di page editkaryawan
+Route::get('/hapuskaryawan/{ID_ADMIN}', 'App\Http\Controllers\restoController@send_hapusKaryawan');
 
 // ini untuk tambah karyawan
 Route::post('/tambahkaryawan', 'App\Http\Controllers\restoController@send_insertadmin');

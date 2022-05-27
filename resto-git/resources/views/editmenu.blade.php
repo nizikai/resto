@@ -13,12 +13,14 @@
     <div class = "title">
         <h1>Edit Menu</h1>
     </div>
+
     <div class = "content">
         <h4>Pilih Kategori Menu</h4>
         <section id="menukategori">
 
     @foreach ($executeDisplayEditMenu as $displayEditMenu)
-
+    <form action="{{ url('updatemenu/'.$displayEditMenu->ID_MENU)}}" method="POST">
+     @csrf
             @if (substr($displayEditMenu->ID_MENU,0,1) == "F")
                 <label>
                     <input type="radio" name="radio" value="Fbawaan" checked>
@@ -34,6 +36,8 @@
                     <input type="radio" name="radio" value="snack">
                     <img src="../resource/snack.png">
                 </label>
+
+
             @endif
 
             @if (substr($displayEditMenu->ID_MENU,0,1) == "D")
@@ -51,6 +55,8 @@
                     <input type="radio" name="radio" value="snack">
                     <img src="../resource/snack.png">
                 </label>
+
+
             @endif
 
             @if (substr($displayEditMenu->ID_MENU,0,1) == "S")
@@ -68,27 +74,37 @@
                     <input type="radio" name="radio" value="snack" checked>
                     <img src="../resource/snack.png">
                 </label>
+
+
             @endif
+
+            <div class = "input">
+                <div class = "nama">
+                    <input type="text" id="tboxnamamenubaru" name="idmenu" value="{{$displayEditMenu->ID_MENU}}" disabled>
+                </div>
+            </div>
 
             </section>
             <div class = "input">
                 <div class = "nama">
                     <h4>Nama Menu</h4>
-                    <input type="text" id="tboxnamamenubaru" name="menubaru" value="{{$displayEditMenu->NAMA_MENU}}">
+                    <input type="text" id="tboxnamamenubaru" name="menubaru" value="{{$displayEditMenu->NAMA_MENU}}" required>
                 </div>
                 <div class = "harga">
                     <h4>Harga Menu</h4>
-                    <input type="text" id="tboxhargamenubaru" name="hargabaru" value="{{$displayEditMenu->HARGA}}">
+                    <input type="text" id="tboxhargamenubaru" name="hargabaru" value="{{$displayEditMenu->HARGA}}" required>
                 </div>
                 <div class = "button">
+                    <a href="{{ url('updatemenu/'.$displayEditMenu->ID_MENU)}}">
                     <button type="submit" class="buttonsimpanmenu">Simpan Menu</button>
+                    </a>
                     <button type="submit" class="buttonhapusmenu">Hapus Menu</button>
                 </div>
             </div>
         </div>
 
     @endforeach
-
+    </form>
 </section>
 
 </body>

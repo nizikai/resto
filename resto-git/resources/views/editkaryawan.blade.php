@@ -27,22 +27,35 @@
     </div>
 
     <div class = "button">
-            <button type="submit" class="buttoneditkaryawan">Edit Karyawan</button>
+        <a href="/tambahkaryawan">
+            <button type="submit" class="buttoneditkaryawan">Tambah Karyawan</button>
+        </a>
     </div>
 
-    <div class="kotak" style="margin-top:20px;">
+<div class="kotak" style="margin-top:20px;">
+    @foreach ($semuaKaryawan as $hasilSemuaKaryawan)
 
-    <div class="container-md" style="background-color: #fff4e4; width: 90%; border-radius: 15px;"><br>
-      <div class="row" style="padding-bottom:15px; margin-top: 7px;background-color: transparent;">
-        <div class="col" style="margin-left: 2%; font-weight: bold; margin-right:9vw;">12345@gmail.com</div>
-        <div class="col"><button type="button" class="btn btn-warning" style="margin-bottom:0%;margin-top:-5%; background-color:#ff7c04; color:white;font-weight: bold;border-radius: 10px;">Hapus Akun</button></div>
+    <div class="container-md" style="background-color: #fff4e4; width: 90%; border-radius: 15px; height: 22vh;"><br>
+      <div class="row" style="padding-bottom:15px; margin-top: 7px;background-color: transparent;display:flex;">
+        <div class = "flexnama">
+          <div class = "flexbutton">
+            <div class="nama" style="font-weight: bold; margin-right:9vw; margin-bottom:2vh;margin-left: 2vw;">{{$hasilSemuaKaryawan->NAMA}}</div>
+            <a href="{{ url('hapuskaryawan/'.$hasilSemuaKaryawan->ID_ADMIN)}}">
+              <div class="col"><button type="button" class="btn btn-warning" style="height: 5vh; width: 35vw;margin-bottom:0%;margin-top:-5%; background-color:#ff7c04; color:white;font-weight: bold;border-radius: 10px;margin-left: 3vw;">Hapus Akun</button></div>
+            </a>
+          </div>
+        </div>
+          <div class="col" style="font-weight: bold; margin-right:9vw; margin-left: 2vw;">{{$hasilSemuaKaryawan->EMAIL}}</div>
+        </div>
+        <div class="passwordflex">
+          <input type="password" class="tboxeditkaryawan" name ="Password" id = "password" placeholder="{{$hasilSemuaKaryawan->PASSWORD}}"><br><br><br><br><br><br>
+        </div>
       </div>
 
-      <div>
-        <div class='container' style="padding-bottom: 20px;background-color: transparent;">
+      <div class='container' style="padding-bottom: 20px;background-color: transparent;">
           <!-- <div class='center'>
             <div class='image'>
-              <!-- <div class="input-group">
+                <div class="input-group">
                 <input class="form-control border-end-0 border rounded-pill" type="search" value="search"
                   id="example-search-input" style="background-color: white;border-radius: 15px;">
                 <span class="input-group-append">
@@ -54,20 +67,15 @@
               </div> -->
             <!-- </div>
           </div> -->
-          <div class="passwordflex">
-            <input type="password" class="tboxeditkaryawan" name ="Password" id = "password" placeholder="Password"><br><br><br><br><br><br>
-              <span>
-                <i class="bi bi-eye-slash" id="togglePassword"></i>
-              </span>
-          </div>
-        </div>
       </div>
     </div>
-  </div>
+    <br>
+    @endforeach
+</div>
 
-<script>
+<!-- <script>
   const togglePassword = document.querySelector("#togglePassword");
-  const password = document.querySelector("#password");
+  const password = document.querySelector(".tboxeditkaryawan");
 
   togglePassword.addEventListener("click", function () {
       // toggle the type attribute
@@ -77,6 +85,6 @@
       // toggle the icon
       this.classList.toggle("bi-eye");
   });
-</script>
+</script> -->
 </body>
 </html>

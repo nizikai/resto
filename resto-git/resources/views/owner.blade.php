@@ -14,10 +14,12 @@
     <div class = "title">
       <h1>Owner</h1>
     </div>
+    <!-- <button class="accordion">Laporan Harian</button> -->
     <div class = "harian">
       <h5>Laporan harian</h5>
       <input type = "date" id = "kalender">
     </div>
+    <!-- <button class="accordion">Laporan Bulanan</button> -->
     <div class = "bulanan">
       <h5>Laporan Bulanan</h5>
       <input type = "month">
@@ -28,6 +30,23 @@
       <button type="button" id = "editmenu"><h6>Edit Menu</h6></button>
     </div>
 </section>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+// for (i = 0; i < acc.length; i++) {
+//   acc[i].addEventListener("click", function() {
+//     this.classList.toggle("active");
+//     var panel = this.nextElementSibling;
+//     if (panel.style.display === "block") {
+//       panel.style.display = "none";
+//     } else {
+//       panel.style.display = "block";
+//     }
+//   });
+// }
+</script>
 </body>
 </html>
 @else

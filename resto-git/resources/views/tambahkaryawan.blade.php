@@ -22,10 +22,10 @@
             @csrf
 
             <h4 id = "masukkan">Masukan email dan password karyawan</h4>
-            <input type="text" class="tboxKaryawan" name ="Nama" placeholder="Nama">
-            <input type="text" class="tboxKaryawan" name ="Email" placeholder="Email"><br>
+            <input type="text" class="tboxKaryawan" name ="Nama" placeholder="Nama" required>
+            <input type="text" class="tboxKaryawan" name ="Email" placeholder="Email" required><br>
             <div class="passwordflex">
-                <input type="password" class="tboxKaryawan" name ="Password" id = "password" placeholder="Password"><br><br><br><br><br><br>
+                <input type="password" class="tboxKaryawan" name ="Password" id = "password" placeholder="Password" required><br><br><br><br><br><br>
                     <span>
                         <i class="bi bi-eye-slash" id="togglePassword"></i>
                     </span>

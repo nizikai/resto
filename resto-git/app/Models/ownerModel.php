@@ -31,6 +31,20 @@ class ownerModel extends Model
         return $result;
     }
 
+    //buat select semua karyawan di page edit karyawan
+    function get_semuaKaryawan() {
+        $querySemuaKaryawan = "SELECT ID_ADMIN, NAMA, `PASSWORD`, EMAIL FROM admin_karyawan WHERE STAFF = 1 AND DEL_STATUS = 0 ORDER BY NAMA ASC;";
+        $executequerySemuaKaryawan= DB::select($querySemuaKaryawan);
+        return $executequerySemuaKaryawan;
+    }
+
+    //buat hapus karyawan
+    function get_hapusKaryawan($arrayHapusKaryawan) {
+        $cmd = "UPDATE admin_karyawan SET DEL_STATUS = '1' WHERE ID_ADMIN = :idAdmin;";
+        $result =DB::update($cmd, $arrayHapusKaryawan);
+        return $result;
+    }
+
     //buat query select buat atur menu
     function get_semuaMenu() {
         $querySemuaMenu = "SELECT ID_MENU, NAMA_MENU, HARGA FROM data_menu WHERE DEL_STATUS = 0 ORDER BY NAMA_MENU ASC;";
@@ -40,10 +54,24 @@ class ownerModel extends Model
 
     //buat query display detail menu di page edit menu
     function get_displayEditMenu($arrayIdMenu) {
-        $queryDisplayEditMenu = "SELECT ID_MENU, NAMA_MENU, HARGA, Run 3 idgen FROM data_menu WHERE ID_MENU = :idmenu;";
+        $queryDisplayEditMenu = "SELECT ID_MENU, NAMA_MENU, HARGA, f_drinkidgen() as `Drink`, f_foodidgen() as `Food`, f_snackidgen() as `Snack` FROM data_menu WHERE ID_MENU = :idmenu;";
         $executequeryDisplayEditMenu= DB::select($queryDisplayEditMenu, $arrayIdMenu);
         return $executequeryDisplayEditMenu;
     }
+
+    // buat Query Update di page Edit menu
+    function post_update($tboxupdatemenu) {
+
+        $cmd = "UPDATE data_menu SET NAMA_MENU = :insertmenu, HARGA = :insertharga WHERE ID_MENU = :insertidmenu";
+        // $dataIdUpdate = [
+        //     'insertEmail' => $tboxinsertadmin['insertEmail'],
+        //     'insertPassword' => $tboxinsertadmin['insertPassword']
+        // ]; //declare biar bisa dipake di query
+        $result = DB::update($cmd, $tboxupdatemenu);
+        dd($result);
+        return $result;
+    }
+
 
 
     // ini login owner
