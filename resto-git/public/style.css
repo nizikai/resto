@@ -271,7 +271,7 @@
     background-color: #FF7C04;
     border: 2px solid #FF7C04;
     font-weight: bold;
-    border-color: #FF7C04;
+    border-color: #F7C04;
     border-radius: 10px;
     color: white;
     text-decoration: none;
@@ -295,8 +295,8 @@
     border-radius: 10px;
     padding: 1.5vw 3vw;
     height: 11vw;
-    margin-left: 5%;
-    margin-right: -6vw;
+    margin-left: 6vw;
+    margin-right: 1vw;
     padding-right: 6.5vw
 }
 
@@ -304,6 +304,16 @@
     margin-top: 0.8vh;
 }
 
+#editkaryawan .flexbutton{
+    display:flex;
+    justify-content:space-between;
+}
+
+#editkaryawan .flexnama{
+    margin-right: -5vw;
+    display: flex;
+    flex-direction: column;
+}
 /* TAMBAH KARYAWAN----------------------------------------------------------------------------------------- */
 #editkaryawantitle{
     font-weight: 750;
