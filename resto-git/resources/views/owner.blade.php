@@ -16,13 +16,19 @@
     </div>
     <!-- <button class="accordion">Laporan Harian</button> -->
     <div class = "harian">
-      <h5>Laporan harian</h5>
-      <input type = "date" id = "kalender">
+    <h5>Laporan Harian</h5>
+    <form action="{{ url('hitunghari')}}" method="GET">
+      <input type = "date" id = "kalender" name = "datepicker">
+      <button>Submit</button>
+    </form>
     </div>
     <!-- <button class="accordion">Laporan Bulanan</button> -->
     <div class = "bulanan">
       <h5>Laporan Bulanan</h5>
-      <input type = "month">
+    <form action="{{ url('hitungbulan')}}" method="GET">
+      <input type = "month" name = "monthpicker" >
+      <button>Submit</button>
+    </form>
     </div>
     <div class = "buttonowner">
       <button type="button" id = "editkaryawan"><h6>Edit Karyawan</h6></button>
@@ -46,6 +52,26 @@ var i;
 //     }
 //   });
 // }
+
+function setFocused() {
+  var results = document.querySelectorAll('.harian');
+  for (result of results) {
+    result.classList.add('focused');
+  }
+}
+
+function unsetFocused() {
+  var results = document.querySelectorAll('.harian');
+  for (result of results) {
+    result.classList.remove('focused');
+  }
+}
+
+var results = document.querySelectorAll('input[type="date"]');
+for (result of results) {
+  result.addEventListener("focusin", setFocused);
+  result.addEventListener("focusout", unsetFocused);
+}
 </script>
 </body>
 </html>

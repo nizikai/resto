@@ -61,14 +61,14 @@ class ownerModel extends Model
 
     // buat Query Update di page Edit menu
     function post_update($tboxupdatemenu) {
-
         $cmd = "UPDATE data_menu SET NAMA_MENU = :insertmenu, HARGA = :insertharga WHERE ID_MENU = :insertidmenu";
         // $dataIdUpdate = [
-        //     'insertEmail' => $tboxinsertadmin['insertEmail'],
-        //     'insertPassword' => $tboxinsertadmin['insertPassword']
+        //     'insertmenu' => $tboxupdatemenu['insertmenu'],
+        //     'insertharga' => $tboxupdatemenu['insertharga'],
+        //     'insertidmenu' => $tboxupdatemenu['insertidmenu']
         // ]; //declare biar bisa dipake di query
         $result = DB::update($cmd, $tboxupdatemenu);
-        dd($result);
+        // dd($result);
         return $result;
     }
 

@@ -80,7 +80,7 @@
 
             <div class = "input">
                 <div class = "nama">
-                    <input type="text" id="tboxnamamenubaru" name="idmenu" value="{{$displayEditMenu->ID_MENU}}" disabled>
+                    <input type="text" id="tboxnamamenubaru" name="idmenu" value="{{$displayEditMenu->ID_MENU}}" hidden>
                 </div>
             </div>
 

@@ -397,8 +397,9 @@
 }
 
 #owner .bulanan{
-    margin-top: 20vh;
+    margin-top: 2vh;
     margin-left: 4vw;
+    height: 28vh;
 }
 
 #owner .buttonowner #editkaryawan{
@@ -447,10 +448,10 @@
 
 #owner h5{
     font-family: 'Nunito', sans-serif;
-    font-size: 25px;
+    font-size: 6vw;
     margin: 0;
     margin-bottom: 1vh;
-    font-weight: 100;
+    font-weight: 300;
 }
 
 #owner h6{
@@ -472,6 +473,21 @@
 ::-webkit-calendar-picker-indicator {
     margin-right: 2vw;
 }
+
+#owner .buttonowner{
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 2vh;
+}
+/* input[type="date"]:focus .harian{
+    background: orange;
+    height: 100vh;
+} */
+
+.harian.focused{
+    height: 55vh;
+}
+
 
 /* LAPORAN HARIAN --------------------------------------------------------------------------------------------------------------- */
 #laphariantitle{

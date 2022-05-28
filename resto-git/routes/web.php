@@ -69,10 +69,17 @@ Route::get('/pesanan', function () {
     return view('pesanan');
 });
 
+Route::get('/hitunghari', function () {
+    return view('hitunghari');
+});
+
+Route::get('/hitungbulan', function () {
+    return view('hitungbulan');
+});
+
 Route::get('/tambahmenu', function () {
     return view('tambahmenu');
 });
-
 //INPUT MENU BERDASARKAN MEJA
 Route::get('/menu/{NO_MEJA}', 'App\Http\Controllers\restoController@send_menu');
 

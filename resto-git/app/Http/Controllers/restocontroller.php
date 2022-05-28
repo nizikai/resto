@@ -159,14 +159,14 @@ class restocontroller extends Controller
             'insertmenu'=>$insertnama,
             'insertharga'=>$insertharga,
             'insertidmenu'=>$insertid
-
         ];
+
         // $arrayIdMenu = [
         //     'idmenu'=>$ID_MENU
         // ];
         // $loggedInIdUpdate = Session::get('id');
 
-        $checkupdate = $sambungpostupdate->post_update($tboxupdatemenu);
+        $checkupdate = $sambungpostupdate->post_update($tboxupdatemenu, $ID_MENU);
         return redirect('/aturmenu');
         // if($checkupdate==1){
 
@@ -260,7 +260,7 @@ class restocontroller extends Controller
         $insertjumlah = $request->input('Jumlah');
         $insertcatatan = $request->input('Catatan');
 
-        $sambungpostinsert = new ownerModel();
+        // $sambungpostinsert = new ownerModel();
 
         $tboxinsertcart = [
             'NamaMenu'=>$insertnamamenu,
@@ -268,7 +268,45 @@ class restocontroller extends Controller
             'Catatan' =>$insertcatatan
         ];
 
+        // public function checkout($sku){
+        //     $email=Session::get('login');
 
+        //     $bid ="select fGENBeliID() as `bid`";
+        //     $beli_id = DB::select($bid);
+
+        //     $rid ="select R_ID from reseller where R_EMAIL='".$email."';";
+        //     $reseller_id = DB::select($rid);
+
+        //     $tanggal = date("Y-m-d");
+
+
+    }
+
+    // tambah menu
+    public function send_insertmenu(request $request)
+    {
+        $insertnamamenu = $request->input('menubaru');
+        $insertharga = $request->input('hargabaru');
+
+        $sambunginsertmenu = new ownerModel();
+
+        $tboxinsertmenu = [
+            'insertNamamenu'=>$insertnamamenu,
+            'insertharga'=>$insertharga,
+
+        ];
+
+        $checkinsertmenu = $sambunginsertmenu->post_insertmenu($tboxinsertmenu);
+
+        if($checkinsertmenu==1){
+
+
+            Session::flash('success', 'Anda berhasil menambahkan admin baru');
+            return redirect('/editkaryawan');
+
+            Session::flash('loginError', 'Mohon lengkapi Textbox yang kosong.');
+
+        }
 
     }
 
