@@ -122,8 +122,6 @@ class restocontroller extends Controller
         return redirect('editkaryawan');
     }
 
-
-
     //ngedisplay semua menu di aturmenu
     public function send_aturMenu()
     {
@@ -151,14 +149,16 @@ class restocontroller extends Controller
     {
         $insertnama = $request->input('menubaru');
         $insertharga = $request->input('hargabaru');
-        $insertid = $request->input('idmenu');
+        $insertid = $request->input('idmenu'); // id bawaan
+        $insertvalue = $request->input('radio');
 
         $sambungpostupdate = new ownerModel();
 
         $tboxupdatemenu = [
             'insertmenu'=>$insertnama,
             'insertharga'=>$insertharga,
-            'insertidmenu'=>$insertid
+            'insertidmenu'=>$insertid,
+            'insertvalue'=>$insertvalue
         ];
 
         // $arrayIdMenu = [
@@ -269,13 +269,13 @@ class restocontroller extends Controller
         ];
 
         // public function checkout($sku){
-        //     $email=Session::get('login');
+        //     $email=Session::get('login');s
 
-        //     $bid ="select fGENBeliID() as `bid`";
-        //     $beli_id = DB::select($bid);
+            // $bid ="select fGENBeliID() as `bid`";
+            // $beli_id = DB::select($bid);
 
-        //     $rid ="select R_ID from reseller where R_EMAIL='".$email."';";
-        //     $reseller_id = DB::select($rid);
+            // $rid ="select ID_TRANSAKSI from reseller where ID_MEJA='".$meja."';";
+            // $reseller_id = DB::select($rid);
 
         //     $tanggal = date("Y-m-d");
 
