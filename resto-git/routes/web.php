@@ -80,6 +80,10 @@ Route::get('/hitungbulan', function () {
 Route::get('/tambahmenu', function () {
     return view('tambahmenu');
 });
+
+//QUERY LAPORAN HARIAN
+Route::get('/laporanharian/{hari}', 'App\Http\Controllers\restoController@senasdasd d_menu');
+
 //INPUT MENU BERDASARKAN MEJA
 Route::get('/menu/{NO_MEJA}', 'App\Http\Controllers\restoController@send_menu');
 

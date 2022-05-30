@@ -8,10 +8,10 @@
 </head>
 <body>
     <?php
-    $result = $_GET['datepicker'];
+    $hari = $_GET['datepicker'];
     // echo $result;
     ?>
-    <meta http-equiv="Refresh" content='0; url="{{ url('laporanharian/'.$result)}}"' />
+    <meta http-equiv="Refresh" content='0; url="{{ url('laporanharian/'.$hari)}}"' />
 
 </body>
 </html>

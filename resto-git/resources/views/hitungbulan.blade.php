@@ -8,10 +8,10 @@
 </head>
 <body>
     <?php
-    $result = $_GET['monthpicker'];
+    $bulan = $_GET['monthpicker'];
     // echo $result;
     ?>
-    <meta http-equiv="Refresh" content='0; url="{{ url('laporanbulan/'.$result)}}"' />
+    <meta http-equiv="Refresh" content='0; url="{{ url('laporanbulan/'.$bulan)}}"' />
 
 </body>
 </html>

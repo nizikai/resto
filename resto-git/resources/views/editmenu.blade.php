@@ -23,36 +23,35 @@
      @csrf
             @if (substr($displayEditMenu->ID_MENU,0,1) == "F")
                 <label>
-                    <input type="radio" name="radio" value="Fbawaan" checked>
+                    <input type="radio" name="radio" value="{{$displayEditMenu->ID_MENU}}" checked disabled>
                     <img src="../resource/food.png">
                 </label>
 
                 <label>
-                    <input type="radio" name="radio" value="drink">
+                    <input type="radio" name="radio" value="{{$displayEditMenu->f_drink}}" disabled>
                     <img src="../resource/drink.png">
                 </label>
 
                 <label>
-                    <input type="radio" name="radio" value="snack">
+                    <input type="radio" name="radio" value="{{$displayEditMenu->f_snack}}" disabled>
                     <img src="../resource/snack.png">
                 </label>
-
 
             @endif
 
             @if (substr($displayEditMenu->ID_MENU,0,1) == "D")
                 <label>
-                    <input type="radio" name="radio" value="food" >
+                    <input type="radio" name="radio" value="{{$displayEditMenu->f_food}}" disabled>
                     <img src="../resource/food.png">
                 </label>
 
                 <label>
-                    <input type="radio" name="radio" value="drink" checked>
+                    <input type="radio" name="radio" value="{{$displayEditMenu->ID_MENU}}" checked disabled>
                     <img src="../resource/drink.png">
                 </label>
 
                 <label>
-                    <input type="radio" name="radio" value="snack">
+                    <input type="radio" name="radio" value="{{$displayEditMenu->f_snack}}" disabled>
                     <img src="../resource/snack.png">
                 </label>
 
@@ -61,28 +60,35 @@
 
             @if (substr($displayEditMenu->ID_MENU,0,1) == "S")
                 <label>
-                    <input type="radio" name="radio" value="food">
+                    <input type="radio" name="radio" value="{{$displayEditMenu->f_food}}" disabled>
                     <img src="../resource/food.png">
                 </label>
 
                 <label>
-                    <input type="radio" name="radio" value="drink">
+                    <input type="radio" name="radio" value="{{$displayEditMenu->f_drink}}" disabled>
                     <img src="../resource/drink.png">
                 </label>
 
                 <label>
-                    <input type="radio" name="radio" value="snack" checked>
+                    <input type="radio" name="radio" value="{{$displayEditMenu->ID_MENU}}" checked disabled>
                     <img src="../resource/snack.png">
                 </label>
 
 
             @endif
 
-            <div class = "input">
+            {{-- misalnya food, tapi mau ganti id
+            @if (substr($displayEditMenu->ID_MENU,0,1) == "F")
+                if radio tetap f(ambil id bawaan)
+                if ganti radio ke drink{ambil value fdrink}
+                if ganti radio ke snack{ambil value fsnack}
+            @endif --}}
+
+            {{-- <div class = "input">
                 <div class = "nama">
-                    <input type="text" id="tboxnamamenubaru" name="idmenu" value="{{$displayEditMenu->ID_MENU}}" hidden>
+                    <input type="text" id="tboxnamamenubaru" name="idmenu" value="{{$displayEditMenu->ID_MENU}}" >
                 </div>
-            </div>
+            </div> --}}
 
             </section>
             <div class = "input">

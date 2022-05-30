@@ -19,7 +19,7 @@
     <h5>Laporan Harian</h5>
     <form action="{{ url('hitunghari')}}" method="GET">
       <input type = "date" id = "kalender" name = "datepicker">
-      <button>Submit</button>
+      <button class = "submitharian">OK</button>
     </form>
     </div>
     <!-- <button class="accordion">Laporan Bulanan</button> -->
@@ -27,7 +27,7 @@
       <h5>Laporan Bulanan</h5>
     <form action="{{ url('hitungbulan')}}" method="GET">
       <input type = "month" name = "monthpicker" >
-      <button>Submit</button>
+      <button class = "submitbulanan">OK</button>
     </form>
     </div>
     <div class = "buttonowner">

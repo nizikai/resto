@@ -404,18 +404,18 @@
 
 #owner .buttonowner #editkaryawan{
     background-color: #FF7C04;
-    width: 90vw;
+    width: 88vw;
     height: 5vh;
     border-radius: 2vw;
     border-style: none;
     margin-bottom: 2vh;
-    margin-top: 28vh;
+    margin-top: -24vh;
     margin-left: 3vw;
 }
 
 #owner .buttonowner #editmeja{
     background-color: #FF7C04;
-    width: 90vw;
+    width: 88vw;
     height: 5vh;
     border-radius: 2vw;
     border-style: none;
@@ -424,7 +424,7 @@
 
 #owner .buttonowner #editmenu{
     background-color: #FF7C04;
-    width: 90vw;
+    width: 88vw;
     height: 5vh;
     border-radius: 2vw;
     border-style: none;
@@ -477,7 +477,34 @@
 #owner .buttonowner{
     position: fixed;
     bottom: 0;
-    margin-bottom: 2vh;
+}
+
+#owner form{
+    display: flex;
+}
+
+#owner .harian .submitharian{
+    background-color: #FF7C04;
+    width: 35vw;
+    height: 4.25vh;
+    border-radius: 2vw;
+    border-style: none;
+    margin-left: 3vw;
+    margin-right: 4vw;
+    font-weight: bolder;
+    color: white;
+}
+
+#owner .bulanan .submitbulanan{
+    background-color: #FF7C04;
+    width: 35vw;
+    height: 4.25vh;
+    border-radius: 2vw;
+    border-style: none;
+    margin-left: 3vw;
+    margin-right: 4vw;
+    font-weight: bolder;
+    color: white;
 }
 /* input[type="date"]:focus .harian{
     background: orange;
@@ -485,8 +512,10 @@
 } */
 
 .harian.focused{
-    height: 55vh;
+    height: 48vh;
 }
+
+
 
 
 /* LAPORAN HARIAN --------------------------------------------------------------------------------------------------------------- */

@@ -54,14 +54,14 @@ class ownerModel extends Model
 
     //buat query display detail menu di page edit menu
     function get_displayEditMenu($arrayIdMenu) {
-        $queryDisplayEditMenu = "SELECT ID_MENU, NAMA_MENU, HARGA, f_drinkidgen() as `Drink`, f_foodidgen() as `Food`, f_snackidgen() as `Snack` FROM data_menu WHERE ID_MENU = :idmenu;";
+        $queryDisplayEditMenu = "SELECT ID_MENU, NAMA_MENU, HARGA, f_drinkidgen() as `f_drink`, f_foodidgen() as `f_food`, f_snackidgen() as `f_snack` FROM data_menu WHERE ID_MENU = :idmenu;";
         $executequeryDisplayEditMenu= DB::select($queryDisplayEditMenu, $arrayIdMenu);
         return $executequeryDisplayEditMenu;
     }
 
     // buat Query Update di page Edit menu
     function post_update($tboxupdatemenu) {
-        $cmd = "UPDATE data_menu SET NAMA_MENU = :insertmenu, HARGA = :insertharga WHERE ID_MENU = :insertidmenu";
+        $cmd = "UPDATE data_menu SET NAMA_MENU = :insertmenu, HARGA = :insertharga, ID_MENU = :insertvalue WHERE ID_MENU = :insertidmenu";
         // $dataIdUpdate = [
         //     'insertmenu' => $tboxupdatemenu['insertmenu'],
         //     'insertharga' => $tboxupdatemenu['insertharga'],
