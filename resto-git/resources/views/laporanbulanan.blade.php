@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,14 +21,18 @@
         <h4 id = "pemasukan">Pemasukan</h4>
             <div class = "pemasukanCard">
                 <h6>
-                    Rp. 400.000
+                    @foreach ($pemasukanBulanan as $hasilPemasukanBulanan)
+                        Rp. {{$hasilPemasukanBulanan->pemasukanbulan}}
+                    @endforeach
                 </h6>
             </div>
 
         <h4 id = "totalpesanan">Total Pesanan</h4>
             <div class = "pesananCard">
                 <h6>
-                    2
+                    @foreach ($pemasukanBulanan as $hasilPemasukanBulanan)
+                        {{$hasilPemasukanBulanan->countMejaBulanan}}
+                    @endforeach
                 </h6>
             </div>
         </section>
@@ -66,24 +70,21 @@ td, th {
 <section id = "lapbulanantable">
   <table id = "tabelmejabln">
   <tr>
-    <th>Tanggal</th>
-    <th>Total Pembayaran</th>
+    <th id = "judullh">Tanggal</th>
+    <th id = "judullh">Total Pembayaran</th>
     {{-- <th>Country</th> --}}
   </tr>
-  <tr>
-    <td>1 April 2022</td>
-    <td>Rp. 44.000</td>
-    {{-- <td>Germany</td> --}}
-  </tr>
-  <tr>
-    <td>2 April 2022</td>
-    <td>Rp. 64.000</td>
-    {{-- <td>Mexico</td> --}}
-  </tr>
-  <tr>
-    <td>4 April 2022</td>
-    <td>Rp. 90.000</td>
-    {{-- <td>Mexico</td> --}}
-  </tr>
+
+   @foreach ($lapBulanan as $hasilLapBulanan)
+
+<tr>
+
+  <td id="hasillh">{{$hasilLapBulanan->TANGGAL}}</td>
+  <td id="hasillh">{{$hasilLapBulanan->totalsumbulanan}}</td>
+
+</tr>
+
+    @endforeach
+
 </table>
 

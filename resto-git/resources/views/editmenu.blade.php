@@ -15,12 +15,12 @@
     </div>
 
     <div class = "content">
-        <h4>Pilih Kategori Menu</h4>
+        <h4>Kategori Menu</h4>
         <section id="menukategori">
 
     @foreach ($executeDisplayEditMenu as $displayEditMenu)
-    <form action="{{ url('updatemenu/'.$displayEditMenu->ID_MENU)}}" method="POST">
-     @csrf
+        <form action="{{ url('updatemenu/'.$displayEditMenu->ID_MENU)}}" method="POST">
+        @csrf
             @if (substr($displayEditMenu->ID_MENU,0,1) == "F")
                 <label>
                     <input type="radio" name="radio" value="{{$displayEditMenu->ID_MENU}}" checked disabled>
@@ -84,11 +84,11 @@
                 if ganti radio ke snack{ambil value fsnack}
             @endif --}}
 
-            {{-- <div class = "input">
+            <div class = "input">
                 <div class = "nama">
-                    <input type="text" id="tboxnamamenubaru" name="idmenu" value="{{$displayEditMenu->ID_MENU}}" >
+                    <input type="text" id="tboxnamamenubaru" name="idmenu" value="{{$displayEditMenu->ID_MENU}}">
                 </div>
-            </div> --}}
+            </div>
 
             </section>
             <div class = "input">
@@ -104,13 +104,23 @@
                     <a href="{{ url('updatemenu/'.$displayEditMenu->ID_MENU)}}">
                     <button type="submit" class="buttonsimpanmenu">Simpan Menu</button>
                     </a>
-                    <button type="submit" class="buttonhapusmenu">Hapus Menu</button>
                 </div>
             </div>
-        </div>
+        </form>
+
+            <form action="{{ url('hapusmenu/'.$displayEditMenu->ID_MENU)}}" method="get">
+                <div class = "input">
+                    <div class = "button">
+                        {{-- <a href="{{ url('hapusmenu/'.$displayEditMenu->ID_MENU)}}"> --}}
+                        <button type="submit" class="buttonhapusmenu">Hapus Menu</button>
+                        {{-- </a> --}}
+                    </div>
+                </div>
+            </form>
+
+    </div>
 
     @endforeach
-    </form>
 </section>
 
 </body>

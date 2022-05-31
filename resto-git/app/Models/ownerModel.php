@@ -30,6 +30,13 @@ class ownerModel extends Model
         $result =DB::update($cmd, $arrayNoMeja);
         return $result;
     }
+    // buat hapus menu
+    function get_hapusMenu( $ID_MENU) {
+        $cmd = "UPDATE data_menu SET DEL_STATUS = '1' WHERE ID_MENU = :ID_MENU;";
+        // dd($cmd);
+        $result =DB::update($cmd, $ID_MENU);
+        return $result;
+    }
 
     //buat select semua karyawan di page edit karyawan
     function get_semuaKaryawan() {
@@ -105,6 +112,45 @@ class ownerModel extends Model
         $executequeryinsert = DB::insert($queryinsert, $tboxinsertadmin);
         // dd($executequeryupdate);
         return $executequeryinsert;
+    }
+
+    //laporan harian
+    function get_laporanharian($hari){
+        $querylaporanharian = "SELECT t.TANGGAL, m.NO_MEJA, t.TOTAL_HARGA FROM  meja m, transaksi t WHERE t.ID_MEJA = m.ID_MEJA AND t.TANGGAL = :hari ORDER BY t.TOTAL_HARGA ASC;";
+        // dd($querylaporanharian);
+        $executequerylaporanharian= DB::select($querylaporanharian, $hari);
+        return $executequerylaporanharian;
+    }
+
+    //pemasukan harian
+    function get_pemasukanharian($hari){
+        $querypemasukanharian = "SELECT sum(t.TOTAL_HARGA) as `pemasukanHari`, count(t.TANGGAL) as `countMejaHarian` FROM  transaksi t WHERE t.TANGGAL = :hari;";
+        // dd($querylaporanharian);
+        $executequerypemasukanharian= DB::select($querypemasukanharian, $hari);
+        return $executequerypemasukanharian;
+    }
+
+    //laporan bulanan
+    function get_laporanbulanan($bulan){
+        $querylaporanbulanan = "SELECT t.TANGGAL, sum(t.TOTAL_HARGA) AS `totalsumbulanan` FROM transaksi t WHERE SUBSTRING(TANGGAL,1,7) = :bulan  GROUP BY t.TANGGAL ORDER BY t.TANGGAL ASC ;";
+        // dd($querylaporanharian);
+        $executequerylaporanbulanan= DB::select($querylaporanbulanan, $bulan);
+        return $executequerylaporanbulanan;
+    }
+
+    //pemasukan bulanan
+    function get_pemasukanbulanan($bulan){
+        $querypemasukanbulanan = "SELECT sum(t.TOTAL_HARGA) AS `pemasukanbulan`, count(TANGGAL) as `countMejaBulanan`FROM  transaksi t WHERE SUBSTRING(TANGGAL,1,7) = :bulan ORDER BY t.TOTAL_HARGA ASC;";
+        // dd($querylaporanharian);
+        $executequerypemasukanbulanan= DB::select($querypemasukanbulanan, $bulan);
+        return $executequerypemasukanbulanan;
+    }
+
+    //untuk mengambil id baru di page tambah menu sebelum melakukan insert menu
+    function get_autoId(){
+        $queryautoid = "SELECT f_drinkidgen() as `fdrink`, f_foodidgen() as `ffood`, f_snackidgen() as `fsnack` ";
+        $executequeryautoid= DB::select($queryautoid);
+        return $executequeryautoid;
     }
 }
 

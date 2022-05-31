@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,14 +22,19 @@
     <h4 id = "pemasukan">Pemasukan</h4>
         <div class = "pemasukanCard">
             <h6>
-                Rp. 400.000
+                @foreach ($pemasukanHarian as $hasilPemasukanHarian)
+                    Rp. {{$hasilPemasukanHarian->pemasukanHari}}
+                @endforeach
             </h6>
         </div>
 
     <h4 id = "totalpesanan">Total Pesanan</h4>
         <div class = "pesananCard">
             <h6>
-                2
+                @foreach ($pemasukanHarian as $hasilPemasukanHarian)
+                    {{$hasilPemasukanHarian->countMejaHarian}}
+                @endforeach
+
             </h6>
         </div>
     </section>
@@ -45,6 +50,7 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+
 }
 
 td, th {
@@ -53,9 +59,6 @@ td, th {
   padding: 15px;
   /* right-padding: 30px; */
 }
-
-
-
 </style>
 </head>
 <body>
@@ -65,25 +68,22 @@ td, th {
 <section id = "laphariantable">
   <table id = "tabelmeja">
   <tr>
-    <th>Meja</th>
-    <th>Total Pembayaran</th>
+    <th id = "judullh">Meja</th>
+    <th id = "judullh">Total Pembayaran</th>
     {{-- <th>Country</th> --}}
   </tr>
+  @foreach ($lapHarian as $hasilLapHarian)
+
   <tr>
-    <td>1.11</td>
-    <td>Rp. 44.000</td>
+
+    <td id="hasillh">{{$hasilLapHarian->NO_MEJA}}</td>
+    <td id="hasillh">{{$hasilLapHarian->TOTAL_HARGA}}</td>
     {{-- <td>Germany</td> --}}
   </tr>
-  <tr>
-    <td>1.12</td>
-    <td>Rp. 64.000</td>
-    {{-- <td>Mexico</td> --}}
-  </tr>
-  <tr>
-    <td>1.14</td>
-    <td>Rp. 90.000</td>
-    {{-- <td>Mexico</td> --}}
-  </tr>
+  @endforeach
+
   </table>
 </section>
+
+</body>
 

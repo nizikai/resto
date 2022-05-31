@@ -26,14 +26,20 @@
     <div class = "bulanan">
       <h5>Laporan Bulanan</h5>
     <form action="{{ url('hitungbulan')}}" method="GET">
-      <input type = "month" name = "monthpicker" >
+      <input type = "month" id = "bulan" name = "monthpicker" >
       <button class = "submitbulanan">OK</button>
     </form>
     </div>
     <div class = "buttonowner">
-      <button type="button" id = "editkaryawan"><h6>Edit Karyawan</h6></button>
-      <button type="button" id = "editmeja"><h6>Edit Meja</h6></button>
-      <button type="button" id = "editmenu"><h6>Edit Menu</h6></button>
+      <a href = "/editkaryawan">
+        <button type="button" id = "editkaryawan"><h6>Edit Karyawan</h6></button>
+      </a>
+      <a href = "/editmeja">
+        <button type="button" id = "editmeja"><h6>Edit Meja</h6></button>
+      </a>
+      <a href = "/editmenu">
+        <button type="button" id = "editmenu"><h6>Edit Menu</h6></button>
+      </a>
     </div>
 </section>
 
@@ -72,6 +78,15 @@ for (result of results) {
   result.addEventListener("focusin", setFocused);
   result.addEventListener("focusout", unsetFocused);
 }
+
+
+document.getElementById('kalender').valueAsDate = new Date();
+document.getElementById('bulan').valueAsDate = new Date();
+var mm = String(today.getMonth() + 1).padStart(2, '0');
+var yyyy = today.getFullYear();
+today = mm + '/' + yyyy;
+document.write(document.getElementById('bulan').valueAsDate);
+
 </script>
 </body>
 </html>

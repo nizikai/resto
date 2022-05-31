@@ -131,6 +131,15 @@ class restocontroller extends Controller
         return view('aturmenu', ['aturMenu' => $aturMenu]);
     }
 
+    //mengambil id menu buat menu baru
+    public function send_autoId()
+    {
+        $owner = new ownerModel;
+        $idbaru = $owner -> get_autoId();
+        // dd($editMeja);
+        return view('tambahmenu', ['idbaru' => $idbaru]);
+    }
+
     //display detail menu berdasarkan apa yang di klik di atur menu
     public function send_displayEditMenu($ID_MENU){
         $owner = new ownerModel;
@@ -168,16 +177,21 @@ class restocontroller extends Controller
 
         $checkupdate = $sambungpostupdate->post_update($tboxupdatemenu, $ID_MENU);
         return redirect('/aturmenu');
-        // if($checkupdate==1){
 
+    }
 
-        //     Session::flash('success', 'Anda berhasil mengedit menu');
-        //     return redirect('/aturmenu');
+    //ini untuk hapus menu
+    public function send_hapusMenu(request $request, $ID_MENU){
+        // $insertid = $request->input('idmenu');
+        $owner = new ownerModel;
 
-        //     Session::flash('loginError', 'Mohon lengkapi Textbox yang kosong.');
+        // $tboxhapusmenu = [
+        //     'insertidmenu'=>$insertid
+        // ];
+        $executeHapusMenu = $owner->get_hapusMenu((array)$ID_MENU);
 
-        // }
-
+        // return view('/editmeja', ['executeHapusMeja' => $executeHapusMeja]);
+        return redirect('/aturmenu');
     }
 
     //INI UNTUK INSERT MEJA DI PAGE EDITMEJA
@@ -309,5 +323,31 @@ class restocontroller extends Controller
         }
 
     }
+
+    //buka page laporan harian dari hitung hari
+    public function send_laporanharian($hari)
+    {
+        $owner = new ownerModel;
+        $lapHarian = $owner -> get_laporanharian((array)$hari);
+        $pemasukanHarian = $owner -> get_pemasukanharian((array)$hari);
+
+        // return view('laporanharian', ['lapHarian' => $lapHarian]);
+        return view('laporanharian', compact(['lapHarian', 'pemasukanHarian']));
+
+    }
+
+    //Buka page laporan bulanan
+    public function send_laporanbulanan($bulan)
+    {
+        $owner = new ownerModel;
+        $lapBulanan = $owner -> get_laporanbulanan((array)$bulan);
+        $pemasukanBulanan = $owner -> get_pemasukanbulanan((array)$bulan);
+
+        return view('laporanbulanan', compact(['lapBulanan', 'pemasukanBulanan']));
+    }
+
+
+
+
 
 }

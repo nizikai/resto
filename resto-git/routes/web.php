@@ -49,10 +49,6 @@ Route::get('/laporanbulanan', function () {
     return view('laporanbulanan');
 });
 
-Route::get('/laporanharian', function () {
-    return view('laporanharian');
-});
-
 Route::get('/tambahkaryawan', function () {
     return view('tambahkaryawan');
 });
@@ -77,12 +73,16 @@ Route::get('/hitungbulan', function () {
     return view('hitungbulan');
 });
 
-Route::get('/tambahmenu', function () {
-    return view('tambahmenu');
-});
+// Route::get('/tambahmenu', function () {
+//     return view('tambahmenu');
+// });
 
 //QUERY LAPORAN HARIAN
-Route::get('/laporanharian/{hari}', 'App\Http\Controllers\restoController@senasdasd d_menu');
+Route::get('/laporanharian/{hari}', 'App\Http\Controllers\restoController@send_laporanharian');
+
+//QUERY LAPORAN BULANAN
+Route::get('/laporanbulan/{bulan}', 'App\Http\Controllers\restoController@send_laporanbulanan');
+
 
 //INPUT MENU BERDASARKAN MEJA
 Route::get('/menu/{NO_MEJA}', 'App\Http\Controllers\restoController@send_menu');
@@ -90,12 +90,17 @@ Route::get('/menu/{NO_MEJA}', 'App\Http\Controllers\restoController@send_menu');
 //PAGE PILIH MEJA
 Route::get('/pilihmeja', 'App\Http\Controllers\restoController@send_pilihMeja');
 
+//PAGE TAMBAH MENU
+Route::get('/tambahmenu', 'App\Http\Controllers\restoController@send_autoid');
+
 //PAGE ATUR MENU
 Route::get('/aturmenu', 'App\Http\Controllers\restoController@send_aturMenu');
 
 //PAGE EDIT MENU BERDASARKAN APA YANG DI KLIK DI ATUR MENU
 Route::get('/editmenu/{ID_MENU}', 'App\Http\Controllers\restoController@send_displayEditMenu');
 Route::post('/updatemenu/{ID_MENU}', 'App\Http\Controllers\restoController@send_updatemenu');
+Route::get('/hapusmenu/{ID_MENU}', 'App\Http\Controllers\restoController@send_hapusMenu');
+
 
 //PAGE EDIT MEJA
 Route::get('/editmeja', 'App\Http\Controllers\restoController@send_editMeja');

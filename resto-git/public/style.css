@@ -527,7 +527,7 @@
 #lapharian1 h4{
     font-weight: 750;
     padding-left: 0.5%;
-    font-size: 15px;
+    font-size: 23px;
 }
 #lapharian1{
     padding-left: 4vw;
@@ -546,6 +546,14 @@
     margin-top:0.5%;
     margin-bottom:1.5%;
     font-weight: 750;
+    /* font-size:20px; */
+}
+
+#judullh{
+    font-size:20px;
+}
+#hasillh{
+    font-size:17px;
 }
 .tboxtpesanan{
     width: 90%;
@@ -615,7 +623,7 @@
 #lapbulanan1 h4{
     font-weight: 750;
     padding-left: 0.5%;
-    font-size: 15px;
+    font-size: 23px;
 }
 #lapbulanan1{
     padding-left: 4vw;
@@ -1630,4 +1638,44 @@
 #pilihmeja a{
     text-decoration: none;
     color:black;
+}
+
+/* 404 NOT FOUND ------------------------------------------------------------------- */
+
+#notfound .text h1{
+    font-size: 10vw;
+    margin-top: -14vh;
+    margin-left: 12vw;
+}
+
+#notfound .text h3{
+    font-size: 3.9vw;
+    margin-top: -2vh;
+    margin-left: 12vw;
+    text-align: justify;
+    margin-right: 10vw;
+    margin-bottom:20vh;
+}
+
+#notfound .nfflex{
+    display: flex;
+    margin-left: 14vw;
+    margin-top: -15vh;
+}
+
+#notfound h2{
+    color: #FF7C04;
+    font-size: 30vw;
+}
+
+#notfound h2 span{
+    color: #FF7C04;
+    font-size: 30vw;
+}
+
+#notfound img{
+    margin-left: 20vw;
+    margin-top: 13vh;
+    height: 27vh;
+    width: 60vw;
 }

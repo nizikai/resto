@@ -16,20 +16,20 @@
     <div class = "content">
         <h4>Pilih Kategori Menu</h4>
         <section id="menukategori">
+        @foreach ($idbaru as $hasilidbaru)
             <label>
-                <input type="radio" name="radio" value="food" checked>
+                <input type="radio" name="radiomenubaru" value="{{$hasilidbaru->ffood}}" checked>
                 <img src="./resource/food.png">
             </label>
-
             <label>
-                <input type="radio" name="radio" value="drink">
+                <input type="radio" name="radiomenubaru" value="{{$hasilidbaru->fdrink}}">
                 <img src="./resource/drink.png">
             </label>
-
             <label>
-                <input type="radio" name="radio" value="snack">
+                <input type="radio" name="radiomenubaru" value="{{$hasilidbaru->fsnack}}">
                 <img src="./resource/snack.png">
             </label>
+        @endforeach
         </section>
         <div class = "input">
             <div class = "nama">
