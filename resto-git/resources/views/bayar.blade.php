@@ -43,7 +43,7 @@
             <h4>Rp 67.000</h4>
         </div>
         <div class = "flex2">
-            <input type="text" id="tboxbayar" name="bayar" placeholder="Masukkan jumlah uang yang diterima">
+            <input type="number" id="tboxbayar" name="bayar" placeholder="Masukkan jumlah uang yang diterima" required>
             <button type="submit" class="buttonok">OK</button>
         </div>
     </div>

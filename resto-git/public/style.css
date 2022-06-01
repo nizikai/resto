@@ -410,7 +410,7 @@
     border-style: none;
     margin-bottom: 2vh;
     margin-top: -24vh;
-    margin-left: 3vw;
+    margin-left: 4vw;
 }
 
 #owner .buttonowner #editmeja{
@@ -419,7 +419,7 @@
     height: 5vh;
     border-radius: 2vw;
     border-style: none;
-    margin-left: 3vw;
+    margin-left: 4vw;
 }
 
 #owner .buttonowner #editmenu{
@@ -428,8 +428,9 @@
     height: 5vh;
     border-radius: 2vw;
     border-style: none;
-    margin-left: 3vw;
+    margin-left: 4vw;
     margin-top: 2vh;
+    margin-bottom: 2vh;
 }
 
 #owner input{
@@ -660,6 +661,10 @@
 }
 
 /* BAYAR ------------------------------------------------------------------------------------------------------------------------ */
+#bayar{
+    height:100%;
+    overflow: hidden;
+}
 #bayar .title h1{
     margin-left: 2vw;
     font-weight: 800;
@@ -733,6 +738,9 @@
 #bayar input{
     padding-left: 1.5vw;
 }
+#bayar input:focus{
+    outline: 0.5vw solid #FF7C04;
+}
 
 #bayar .pembayaran .flex1{
     display: flex;
@@ -756,7 +764,7 @@
 }
 
 #bayar .bawahflex{
-    margin-top: 38vh;
+    margin-top: 36vh;
 }
 
 #bayar .bawahflex .text{
@@ -1277,7 +1285,7 @@
 #konfirmpesanan table {
     font-family: Nunito;
     border-collapse: collapse;
-    width: 114%;
+    width: 100%;
 }
 
 #konfirmpesanan  td, th {
@@ -1651,9 +1659,9 @@
 #notfound .text h3{
     font-size: 3.9vw;
     margin-top: -2vh;
-    margin-left: 12vw;
+    margin-left: 18vw;
     text-align: justify;
-    margin-right: 10vw;
+    margin-right: 9vw;
     margin-bottom:20vh;
 }
 

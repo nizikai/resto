@@ -19,16 +19,23 @@
                 <button type="submit" class="buttontambahpesanan">Tambah Pesanan</button>
             </a>
         </div>
-        <div class = "kotak">
-            <div class = "text">
-                <h3>1.12</h3>
-                <h3>Rp 50.000</h3>
+        @foreach ($pesananOngoing as $pesanan)
+            <div class = "kotak">
+                <div class = "text">
+                    <h3>{{$pesanan->NO_MEJA}}</h3>
+                    <h3>Rp. {{$pesanan->TOTAL_HARGA}}</h3>
+                </div>
+                <div class = "button2">
+                    <a href="{{ url('edit/'.$pesanan->NO_MEJA)}}">
+                        <button type="submit" class="buttonedit">Edit</button>
+                    </a>
+                    <a href="{{ url('bayar/'.$pesanan->NO_MEJA)}}">
+                        <button type="submit" class="buttonbayar">Bayar</button>
+                    </a>
+                </div>
             </div>
-            <div class = "button2">
-                <button type="submit" class="buttonedit">Edit</button>
-                <button type="submit" class="buttonbayar">Bayar</button>
-            </div>
-        </div>
+        @endforeach
+
     </div>
 </section>
 </body>

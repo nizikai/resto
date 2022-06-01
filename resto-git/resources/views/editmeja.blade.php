@@ -34,7 +34,7 @@
         <section id = "inputMeja">
             <form action="/editmeja" method="post">
                 @csrf
-                <input type="text" id="tboxNewTable" name="NewTable" placeholder="Masukkan meja baru">
+                <input type="text" id="tboxNewTable" name="NewTable" placeholder="Masukkan meja baru" required>
                 <button type="submit" class="buttonsmall">OK</button>
             </form>
         </section>

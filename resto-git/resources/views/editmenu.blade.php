@@ -15,7 +15,7 @@
     </div>
 
     <div class = "content">
-        <h4>Kategori Menu</h4>
+        <h4>Kategori menu ini:</h4>
         <section id="menukategori">
 
     @foreach ($executeDisplayEditMenu as $displayEditMenu)
@@ -23,58 +23,23 @@
         @csrf
             @if (substr($displayEditMenu->ID_MENU,0,1) == "F")
                 <label>
-                    <input type="radio" name="radio" value="{{$displayEditMenu->ID_MENU}}" checked disabled>
+                    <input type="radio" name="radio" value="{{$displayEditMenu->ID_MENU}}" checked>
                     <img src="../resource/food.png">
                 </label>
-
-                <label>
-                    <input type="radio" name="radio" value="{{$displayEditMenu->f_drink}}" disabled>
-                    <img src="../resource/drink.png">
-                </label>
-
-                <label>
-                    <input type="radio" name="radio" value="{{$displayEditMenu->f_snack}}" disabled>
-                    <img src="../resource/snack.png">
-                </label>
-
             @endif
 
             @if (substr($displayEditMenu->ID_MENU,0,1) == "D")
                 <label>
-                    <input type="radio" name="radio" value="{{$displayEditMenu->f_food}}" disabled>
-                    <img src="../resource/food.png">
-                </label>
-
-                <label>
-                    <input type="radio" name="radio" value="{{$displayEditMenu->ID_MENU}}" checked disabled>
+                    <input type="radio" name="radio" value="{{$displayEditMenu->ID_MENU}}" checked>
                     <img src="../resource/drink.png">
                 </label>
-
-                <label>
-                    <input type="radio" name="radio" value="{{$displayEditMenu->f_snack}}" disabled>
-                    <img src="../resource/snack.png">
-                </label>
-
-
             @endif
 
             @if (substr($displayEditMenu->ID_MENU,0,1) == "S")
                 <label>
-                    <input type="radio" name="radio" value="{{$displayEditMenu->f_food}}" disabled>
-                    <img src="../resource/food.png">
-                </label>
-
-                <label>
-                    <input type="radio" name="radio" value="{{$displayEditMenu->f_drink}}" disabled>
-                    <img src="../resource/drink.png">
-                </label>
-
-                <label>
-                    <input type="radio" name="radio" value="{{$displayEditMenu->ID_MENU}}" checked disabled>
+                    <input type="radio" name="radio" value="{{$displayEditMenu->ID_MENU}}" checked>
                     <img src="../resource/snack.png">
                 </label>
-
-
             @endif
 
             {{-- misalnya food, tapi mau ganti id
@@ -84,11 +49,11 @@
                 if ganti radio ke snack{ambil value fsnack}
             @endif --}}
 
-            <div class = "input">
-                <div class = "nama">
+            {{-- <div class = "input">
+                <div class = "UpdateIdMenu">
                     <input type="text" id="tboxnamamenubaru" name="idmenu" value="{{$displayEditMenu->ID_MENU}}">
                 </div>
-            </div>
+            </div> --}}
 
             </section>
             <div class = "input">
@@ -98,7 +63,7 @@
                 </div>
                 <div class = "harga">
                     <h4>Harga Menu</h4>
-                    <input type="text" id="tboxhargamenubaru" name="hargabaru" value="{{$displayEditMenu->HARGA}}" required>
+                    <input type="number" id="tboxhargamenubaru" name="hargabaru" value="{{$displayEditMenu->HARGA}}" required>
                 </div>
                 <div class = "button">
                     <a href="{{ url('updatemenu/'.$displayEditMenu->ID_MENU)}}">

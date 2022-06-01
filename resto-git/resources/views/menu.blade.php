@@ -66,7 +66,7 @@
                     </section>
 
                     <section id = "inputJumlah">
-                        <input type="text" id="tboxJumlahMenu" name="jumlahMenu" placeholder="Jumlah">
+                        <input type="number" id="tboxJumlahMenu" name="jumlahMenu" placeholder="Jumlah" required>
                         <button type="submit" class="buttonok">OK</button>
                     </section>
 
@@ -83,7 +83,7 @@
                     </section>
 
                     <section id = "inputJumlah">
-                        <input type="text" id="tboxJumlahMenu" name="jumlahMenu" placeholder="Jumlah">
+                        <input type="number" id="tboxJumlahMenu" name="jumlahMenu" placeholder="Jumlah" required>
                         <button type="submit" class="buttonok">OK</button>
                     </section>
 
@@ -101,7 +101,7 @@
                     </section>
 
                     <section id = "inputJumlah">
-                        <input type="text" id="tboxJumlahMenu" name="jumlahMenu" placeholder="Jumlah">
+                        <input type="number" id="tboxJumlahMenu" name="jumlahMenu" placeholder="Jumlah" required>
                         <button type="submit" class="buttonok">OK</button>
                     </section>
 
@@ -118,7 +118,7 @@
                     </section>
 
                     <section id = "inputJumlah">
-                        <input type="text" id="tboxJumlahMenu" name="jumlahMenu" placeholder="Jumlah">
+                        <input type="number" id="tboxJumlahMenu" name="jumlahMenu" placeholder="Jumlah" required>
                         <button type="submit" class="buttonok">OK</button>
                     </section>
 
@@ -135,7 +135,7 @@
                     </section>
 
                     <section id = "inputJumlah">
-                        <input type="text" id="tboxJumlahMenu" name="jumlahMenu" placeholder="Jumlah">
+                        <input type="number" id="tboxJumlahMenu" name="jumlahMenu" placeholder="Jumlah" required>
                         <button type="submit" class="buttonok">OK</button>
                     </section>
 

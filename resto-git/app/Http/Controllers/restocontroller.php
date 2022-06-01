@@ -154,11 +154,11 @@ class restocontroller extends Controller
     }
 
     // untuk update menu di page edit menu
-    public function send_updatemenu(request $request, $ID_MENU)
+    public function send_updatemenu(request $request)
     {
         $insertnama = $request->input('menubaru');
         $insertharga = $request->input('hargabaru');
-        $insertid = $request->input('idmenu'); // id bawaan
+        // $insertid = $request->input('idmenu'); // id bawaan
         $insertvalue = $request->input('radio');
 
         $sambungpostupdate = new ownerModel();
@@ -166,16 +166,18 @@ class restocontroller extends Controller
         $tboxupdatemenu = [
             'insertmenu'=>$insertnama,
             'insertharga'=>$insertharga,
-            'insertidmenu'=>$insertid,
+            // 'insertidmenu'=>$insertid,
             'insertvalue'=>$insertvalue
         ];
+
+        // dd($tboxupdatemenu);
 
         // $arrayIdMenu = [
         //     'idmenu'=>$ID_MENU
         // ];
         // $loggedInIdUpdate = Session::get('id');
 
-        $checkupdate = $sambungpostupdate->post_update($tboxupdatemenu, $ID_MENU);
+        $checkupdate = $sambungpostupdate->post_update($tboxupdatemenu);
         return redirect('/aturmenu');
 
     }
@@ -299,14 +301,16 @@ class restocontroller extends Controller
     // tambah menu
     public function send_insertmenu(request $request)
     {
-        $insertnamamenu = $request->input('menubaru');
-        $insertharga = $request->input('hargabaru');
+        $insertmenubaru = $request->input('menubaru');
+        $inserthargabaru = $request->input('hargabaru');
+        $insertvaluemenu = $request->input('radiomenubaru');
 
         $sambunginsertmenu = new ownerModel();
 
         $tboxinsertmenu = [
-            'insertNamamenu'=>$insertnamamenu,
-            'insertharga'=>$insertharga,
+            'insertNamamenu'=>$insertmenubaru,
+            'insertharga'=>$inserthargabaru,
+            'insertvaluemenu'=>$insertvaluemenu
 
         ];
 
@@ -315,8 +319,8 @@ class restocontroller extends Controller
         if($checkinsertmenu==1){
 
 
-            Session::flash('success', 'Anda berhasil menambahkan admin baru');
-            return redirect('/editkaryawan');
+            Session::flash('success', 'Anda berhasil menambahkan menu baru');
+            return redirect('/aturmenu');
 
             Session::flash('loginError', 'Mohon lengkapi Textbox yang kosong.');
 
@@ -345,6 +349,32 @@ class restocontroller extends Controller
 
         return view('laporanbulanan', compact(['lapBulanan', 'pemasukanBulanan']));
     }
+
+    public function send_semuaPesanan()
+    {
+        $resto = new restoModel;
+        $pesananOngoing = $resto -> get_semuaPesanan();
+
+        return view('pesanan', ['pesananOngoing' => $pesananOngoing]);
+
+        // $pemasukanBulanan = $owner -> get_pemasukanbulanan((array)$bulan);
+        // return view('laporanbulanan', compact(['lapBulanan', 'pemasukanBulanan']));
+    }
+
+    public function send_displayEdit($NO_MEJA)
+    {
+        $resto = new restoModel;
+        $displayEdit = $resto -> get_displayEdit((array)$NO_MEJA);
+        return view('edit', ['displayEdit' => $displayEdit]);
+
+        // $pemasukanBulanan = $owner -> get_pemasukanbulanan((array)$bulan);
+        // return view('laporanbulanan', compact(['lapBulanan', 'pemasukanBulanan']));
+    }
+
+
+
+
+
 
 
 

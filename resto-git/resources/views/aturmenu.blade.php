@@ -9,13 +9,33 @@
     <title>Atur Menu</title>
 </head>
 <body>
+
+@if (Session::has('success'))
+            <div class="alertalert-successalert-block">
+                <span class="button" onclick="this.parentElement.style.display='none';">&times;</span>
+                <strong>{{ Session::get('success') }}</strong>
+            </div>
+@endif
+
+@if(session()->has('loginError'))
+
+<div class="alertalert-dangeralert-dismissiblefadeshow" role="alert">
+    {{ session('loginError') }}
+    <span class="button" onclick="this.parentElement.style.display='none';">&times;</span>
+    </button>
+</div>
+
+@endif
 <section id = "aturmenu">
     <div class = "title">
         <h1>Atur Menu</h1>
     </div>
     <div class = "content">
         <div class = "button">
-            <button type="submit" class="buttontambahmenu">Tambah Menu</button>
+            <a href="{{ url('tambahmenu')}}">
+                <button type="submit" class="buttontambahmenu">Tambah Menu</button>
+            </a>
+
         </div>
         <div class = "garis">
 

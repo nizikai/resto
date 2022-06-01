@@ -57,13 +57,11 @@ Route::get('/bayar', function () {
     return view('bayar');
 });
 
-Route::get('/editpesanan', function () {
+Route::get('/edit', function () {
     return view('editpesanan');
 });
 
-Route::get('/pesanan', function () {
-    return view('pesanan');
-});
+
 
 Route::get('/hitunghari', function () {
     return view('hitunghari');
@@ -100,6 +98,7 @@ Route::get('/aturmenu', 'App\Http\Controllers\restoController@send_aturMenu');
 Route::get('/editmenu/{ID_MENU}', 'App\Http\Controllers\restoController@send_displayEditMenu');
 Route::post('/updatemenu/{ID_MENU}', 'App\Http\Controllers\restoController@send_updatemenu');
 Route::get('/hapusmenu/{ID_MENU}', 'App\Http\Controllers\restoController@send_hapusMenu');
+Route::post('/insertmenu', 'App\Http\Controllers\restoController@send_insertmenu');
 
 
 //PAGE EDIT MEJA
@@ -120,3 +119,14 @@ Route::post('/tambahkaryawan', 'App\Http\Controllers\restoController@send_insert
 //BUAT LOGIN
 Route::get('/login', 'App\Http\Controllers\restocontroller@loginIndex');
 Route::post('/login', 'App\Http\Controllers\restocontroller@send_login');
+
+//BUAT PAGE PESANAN
+Route::get('/pesanan', 'App\Http\Controllers\restocontroller@send_semuaPesanan');
+
+//BUAT EDIT PESANAN
+Route::get('/edit/{ID_MEJA}', 'App\Http\Controllers\restocontroller@send_displayEdit');
+
+//BUAT BAYAR
+Route::get('/bayar/{ID_MEJA}', 'App\Http\Controllers\restocontroller@send_semusdfaPesanan');
+
+
