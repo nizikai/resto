@@ -777,6 +777,10 @@
     margin-right: 2vw;
 }
 
+#tboxtotalhargagaib{
+    position: absolute;
+    transform: translate(-50000%, -500000%);
+}
 /* MENU --------------------------------------------------------------------------------------------------------------------------- */
 
 #menutitle{
@@ -1364,7 +1368,7 @@
     cursor: pointer;
     height: 4.5vh;
     margin-left: 1vw;
-    margin-top:110%;
+    margin-top:100%;
 }
 
 #konfirmpesanan .bawahflex{
@@ -1380,6 +1384,23 @@
     margin-left: 2vw;
     margin-right: 2vw;
 }
+
+#konfirmpesanan .angka{
+    width: 80%;
+    border: 2px solid #ff7c04;
+    border-radius: 10px;
+    height: 4vh;
+
+}
+
+#konfirmpesanan .angka:focus{
+    outline: 0.5vw solid #FF7C04;
+}
+
+#konfirmpesanan img{
+    margin-left: 4vw;
+}
+
 
 /* Pesanan Diterima----------------------------------------------------------------------------- */
 #pesananditerima h1 {

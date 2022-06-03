@@ -361,15 +361,34 @@ class restocontroller extends Controller
         // return view('laporanbulanan', compact(['lapBulanan', 'pemasukanBulanan']));
     }
 
+    //display semua menu di page edit pesanan
     public function send_displayEdit($NO_MEJA)
     {
         $resto = new restoModel;
-        $displayEdit = $resto -> get_displayEdit((array)$NO_MEJA);
+        $displayEdit = $resto -> get_display((array)$NO_MEJA);
         return view('edit', ['displayEdit' => $displayEdit]);
 
         // $pemasukanBulanan = $owner -> get_pemasukanbulanan((array)$bulan);
         // return view('laporanbulanan', compact(['lapBulanan', 'pemasukanBulanan']));
     }
+
+    //display semua menu di page bayar
+    public function send_displayBayar($NO_MEJA)
+    {
+        $resto = new restoModel;
+        $displayBayar = $resto -> get_display((array)$NO_MEJA);
+        return view('bayar', ['displayBayar' => $displayBayar]);
+    }
+
+    //display semua menu di page konfirmasi pesanan
+    public function send_displayKonfirmasi($NO_MEJA)
+    {
+        $resto = new restoModel;
+        $displayKonfirmasi = $resto -> get_display((array)$NO_MEJA);
+        return view('pesananditerima', ['displayKonfirmasi' => $displayKonfirmasi]);
+    }
+
+
 
 
 

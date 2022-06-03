@@ -56,6 +56,9 @@ Route::get('/tambahkaryawan', function () {
 Route::get('/bayar', function () {
     return view('bayar');
 });
+Route::post('/bayar', function () {
+    return view('bayar');
+});
 
 Route::get('/edit', function () {
     return view('editpesanan');
@@ -127,6 +130,9 @@ Route::get('/pesanan', 'App\Http\Controllers\restocontroller@send_semuaPesanan')
 Route::get('/edit/{ID_MEJA}', 'App\Http\Controllers\restocontroller@send_displayEdit');
 
 //BUAT BAYAR
-Route::get('/bayar/{ID_MEJA}', 'App\Http\Controllers\restocontroller@send_semusdfaPesanan');
+Route::get('/bayar/{ID_MEJA}', 'App\Http\Controllers\restocontroller@send_displayBayar');
+
+Route::get('/konfirmasi/{ID_MEJA}', 'App\Http\Controllers\restocontroller@send_displayBayar');
+
 
 

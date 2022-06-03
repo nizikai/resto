@@ -22,19 +22,20 @@
             <th>Menu</th>
             <th>Jumlah</th>
             <th>Harga</th>
-            <th>Hapus</th>
+            <!-- <th>Hapus</th> -->
         </tr>
         <tr>
             <td>Ayam Goreng</td>
             <td>2 pcs</td>
-            <td>Rp 44.000</td>
-            <th><img src="..\resource\Trash.png" alt=""></th>
+            <td>Rp. 44.000</td>
+            <!-- <th><img src="..\resource\Trash.png" alt=""></th> -->
+
         </tr>
         <tr>
             <td>Ayam Bakar</td>
             <td>1 pcs</td>
-            <td>Rp 23.000</td>
-            <th><img src="..\resource\Trash.png" alt=""></th>
+            <td>Rp. 23.000</td>
+            <!-- <th><img src="..\resource\Trash.png" alt=""></th> -->
         </tr>
     </table>
     <div class = "garisabu">

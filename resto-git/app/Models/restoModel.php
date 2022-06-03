@@ -35,14 +35,13 @@ class restoModel extends Model
     }
 
     //NICO: ganti query ini
-    //display semua menu ongoing di page edit pesanan
-    function get_displayEdit($NO_MEJA) {
-        $queryDisplayEdit = "sldkfjlsdkjf;";
-        $executequeryDisplayEdit= DB::select($queryDisplayEdit, $NO_MEJA);
-        return $executequeryDisplayEdit;
+    //display semua menu dengan detailnya
+    function get_display($NO_MEJA) {
+        $queryDisplay = "SELECT m.NO_MEJA, dm.NAMA_MENU, SUM(dt.JUMLAH), (sum(dt.jumlah) * dm.HARGA), t.TOTAL_HARGA FROM meja m, data_menu dm, detail_transaksi dt, transaksi t WHERE m.ID_MEJA = t.ID_MEJA AND dm.ID_MENU = dt.ID_MENU AND t.ID_TRANSAKSI = dt.ID_TRANSAKSI AND dt.ID_TRANSAKSI = "110420220003" GROUP BY dt.ID_MENU;";
+        $executequeryDisplay = DB::select($queryDisplay, $NO_MEJA);
+        return $executequeryDisplay;
     }
 
-    //NICO: lanjut bayar
 
 
 

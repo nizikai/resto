@@ -38,20 +38,35 @@
 
     </div>
     <div class = "pembayaran">
+        <form action="" method ="post">
+            @csrf
         <div class = "flex1">
             <h4>Total Pembayaran</h4>
-            <h4>Rp 67.000</h4>
+            <h4>67000</h4>
         </div>
-        <div class = "flex2">
-            <input type="number" id="tboxbayar" name="bayar" placeholder="Masukkan jumlah uang yang diterima" required>
-            <button type="submit" class="buttonok">OK</button>
-        </div>
+
+            <div class = "flex2">
+                <input type="number" id="tboxbayar" name="bayar" placeholder="Masukkan jumlah uang yang diterima" required>
+                <input type="number" id="tboxtotalhargagaib" name="total" value= 67000 required>
+
+                <button type="submit" class="buttonok" name = "sub">OK</button>
+            </div>
+            <?php
+                $c = 0;
+                if (isset($_POST['sub'])) {
+                    $a=$_POST['total'];
+                    $b=$_POST['bayar'];
+                    $c=$b-$a;
+                }
+            ?>
+
+        </form>
     </div>
 
     <div class = "bawahflex">
         <div class = "text">
             <h4>Kembalian</h4>
-            <h4>Rp 23.000</h4>
+            <h4>Rp. {{$c}}</h4>
         </div>
         <div class = "button">
             <button type="submit" class="buttonbayar">Bayar</button>
