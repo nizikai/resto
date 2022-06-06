@@ -53,12 +53,6 @@ Route::get('/tambahkaryawan', function () {
     return view('tambahkaryawan');
 });
 
-Route::get('/bayar', function () {
-    return view('bayar');
-});
-Route::post('/bayar', function () {
-    return view('bayar');
-});
 
 Route::get('/edit', function () {
     return view('editpesanan');
@@ -131,6 +125,12 @@ Route::get('/edit/{ID_MEJA}', 'App\Http\Controllers\restocontroller@send_display
 
 //BUAT BAYAR
 Route::get('/bayar/{ID_MEJA}', 'App\Http\Controllers\restocontroller@send_displayBayar');
+
+//UPDATE BAYAR > TRANSAKSI SELESAI
+Route::post('/paymentprocess/update/table/go/{ID_TRANSAKSI}', 'App\Http\Controllers\restocontroller@send_updatebayar');
+
+//UNTUK UPDATE PESANAN YANG DI DELETE DI PAGE EDIT PESANAN
+Route::post('/hapuspesanan/{ID_TRANSAKSI}/{ID_MENU}', 'App\Http\Controllers\restocontroller@send_updateHapusPesanan');
 
 Route::get('/konfirmasi/{ID_MEJA}', 'App\Http\Controllers\restocontroller@send_displayBayar');
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     <title>Edit Pesanan</title>
 </head>
@@ -24,36 +24,30 @@
             <th>Harga</th>
             <th>Hapus</th>
         </tr>
-        <tr>
-            <td>Ayam Goreng</td>
-            <td>2 pcs</td>
-            <td>Rp 44.000</td>
-            <td class = "gambar" onclick="tooglePopup()"><img src="..\resource\Trash.png"></td>
-            <div class = "popup" id = "popup-editpesanan">
-                <div class="overlay">
-                    <div class = "content">
-                        <h5>Lakukan konfirmasi pesanan belum diproses dengan staff dapur sebelum lakukan pembatalan pesanan!</h5>
-                        <button type ="submit" class="buttonkembali" onclick="tooglePopup()"> kembali </button>
-                        <button type ="submit" class="buttonbatalkanpesanan">batalkan pesanan </button>
+        @foreach ($displayEditTotalBayar as $hasilDisplayEditId)
+            @foreach ($displayEdit as $hasilDisplayEdit)
+
+            <tr>
+                <td>{{$hasilDisplayEdit->NAMA_MENU}}</td>
+                <td>{{$hasilDisplayEdit->TOTAL_JUMLAH}}</td>
+                <td>{{$hasilDisplayEdit->TOTAL_HARGA_MENU}}</td>
+                <td class = "gambar" onclick="tooglePopup()"><img src="..\resource\Trash.png"></td>
+                <div class = "popup" id = "popup-editpesanan">
+                    <div class="overlay">
+                        <div class = "content">
+                            <h5>Lakukan konfirmasi dengan staff dapur bahwa pesanan belum dimasak sebelum melakukan pembatalan pesanan!</h5>
+                            <button class="buttonkembali" onclick="tooglePopup()"> Kembali </button>
+                            <form action="{{url('hapuspesanan/'.$hasilDisplayEditId->ID_TRANSAKSI,''.$hasilDisplayEdit->ID_MENU)}}" method = "POST">
+                                @csrf
+                                <button type ="submit" class="buttonbatalkanpesanan">Batalkan pesanan </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </tr>
-        <tr>
-            <td>Ayam Bakar</td>
-            <td>1 pcs</td>
-            <td>Rp 23.000</td>
-            <td class = "gambar" onclick="tooglePopup()"><img src="..\resource\Trash.png"></td>
-            <div class = "popup" id = "popup-editpesanan">
-                <div class="overlay">
-                    <div class = "content">
-                        <h5>Lakukan konfirmasi pesanan belum diproses dengan staff dapur sebelum lakukan pembatalan pesanan!</h5>
-                        <button type ="submit" class="buttonkembali" onclick="tooglePopup()"> kembali </button>
-                        <button type ="submit" class="buttonbatalkanpesanan">batalkan pesanan </button>
-                    </div>
-                </div>
-            </div>
-        </tr>
+            </tr>
+            @endforeach
+
+        @endforeach
     </table>
     <div class = "garisabu">
 

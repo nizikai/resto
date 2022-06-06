@@ -356,9 +356,6 @@ class restocontroller extends Controller
         $pesananOngoing = $resto -> get_semuaPesanan();
 
         return view('pesanan', ['pesananOngoing' => $pesananOngoing]);
-
-        // $pemasukanBulanan = $owner -> get_pemasukanbulanan((array)$bulan);
-        // return view('laporanbulanan', compact(['lapBulanan', 'pemasukanBulanan']));
     }
 
     //display semua menu di page edit pesanan
@@ -366,10 +363,9 @@ class restocontroller extends Controller
     {
         $resto = new restoModel;
         $displayEdit = $resto -> get_display((array)$NO_MEJA);
-        return view('edit', ['displayEdit' => $displayEdit]);
+        $displayEditTotalBayar = $resto -> get_displayExt((array)$NO_MEJA);
+        return view('editpesanan', compact(['displayEdit', 'displayEditTotalBayar']));
 
-        // $pemasukanBulanan = $owner -> get_pemasukanbulanan((array)$bulan);
-        // return view('laporanbulanan', compact(['lapBulanan', 'pemasukanBulanan']));
     }
 
     //display semua menu di page bayar
@@ -377,7 +373,8 @@ class restocontroller extends Controller
     {
         $resto = new restoModel;
         $displayBayar = $resto -> get_display((array)$NO_MEJA);
-        return view('bayar', ['displayBayar' => $displayBayar]);
+        $displayTotalBayar = $resto -> get_displayExt((array)$NO_MEJA);
+        return view('bayar', compact(['displayBayar', 'displayTotalBayar']));
     }
 
     //display semua menu di page konfirmasi pesanan
@@ -387,6 +384,28 @@ class restocontroller extends Controller
         $displayKonfirmasi = $resto -> get_display((array)$NO_MEJA);
         return view('pesananditerima', ['displayKonfirmasi' => $displayKonfirmasi]);
     }
+
+    // update status pembayaran ketika tombol bayar di klik
+    public function send_updatebayar($ID_TRANSAKSI)
+    {
+        $resto = new restoModel;
+        $updatebayar = $resto -> get_updatebayar((array)$ID_TRANSAKSI);
+        return view('pembayaranselesai');
+    }
+
+    //update delete menu = 1 berdasarkan button hapus menu di page edit pesanan
+    public function send_updateHapusPesanan($ID_TRANSAKSI, $ID_MENU)
+    {
+        $resto = new restoModel;
+        // dd($ID_TRANSAKSI);
+        // dd($ID_MENU);
+
+        $updateHapusPesanan = $resto -> get_updateHapusPesanan((array)$ID_TRANSAKSI, (array)$ID_MENU);
+        return view('editpesanan');
+    }
+
+
+
 
 
 
