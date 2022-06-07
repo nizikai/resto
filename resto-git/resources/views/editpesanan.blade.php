@@ -1,3 +1,4 @@
+{{-- <meta http-equiv="Refresh" content='0;' /> --}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +13,9 @@
 <section id = "editpesanan">
     <div class="title">
         <h1>Edit Pesanan</h1>
-        <h2>Meja 1.12</h2>
+        @foreach ($displayEditTotalBayar as $hasilDisplayEditId)
+            <h2>Meja {{$hasilDisplayEditId->NO_MEJA}}</h2>
+        @endforeach
         <div class = "garis">
 
         </div>

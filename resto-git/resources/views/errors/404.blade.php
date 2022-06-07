@@ -62,6 +62,11 @@
         <h1>Page Not Found !</h1>
         <h3>Mohon kembali ke page sebelumnya</h3>
     </div>
+
+    <a href="/pesanan">
+    <button>kembali</button>
+
+    </a>
 </section>
 </body>
 </html>

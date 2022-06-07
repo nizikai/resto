@@ -394,14 +394,14 @@ class restocontroller extends Controller
     }
 
     //update delete menu = 1 berdasarkan button hapus menu di page edit pesanan
-    public function send_updateHapusPesanan($ID_TRANSAKSI, $ID_MENU)
+    public function send_updateHapusPesanan($ID_TRANSAKSI2, $ID_MENU2)
     {
         $resto = new restoModel;
-        // dd($ID_TRANSAKSI);
-        // dd($ID_MENU);
+        // dd($ID_TRANSAKSI2);
+        // dd($ID_MENU2);
 
-        $updateHapusPesanan = $resto -> get_updateHapusPesanan((array)$ID_TRANSAKSI, (array)$ID_MENU);
-        return view('editpesanan');
+        $updateHapusPesanan = $resto -> get_updateHapusPesanan($ID_TRANSAKSI2, $ID_MENU2);
+        return view('pesanandihapus');
     }
 
 

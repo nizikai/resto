@@ -14,7 +14,7 @@
 </head>
 <body>
 <section id = "pesananditerima">
-    <h1>Pesanan<br> Diterima</h1>
+    <h1>Pesanan<br> Diterima.</h1>
 
     <button type="submit" id="printnota" class="buttonlong">Print Nota</button>
 

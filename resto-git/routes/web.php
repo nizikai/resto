@@ -68,6 +68,11 @@ Route::get('/hitungbulan', function () {
     return view('hitungbulan');
 });
 
+Route::get('/pesanandihapus', function () {
+    return view('pesanandihapus');
+});
+
+
 // Route::get('/tambahmenu', function () {
 //     return view('tambahmenu');
 // });
@@ -130,7 +135,7 @@ Route::get('/bayar/{ID_MEJA}', 'App\Http\Controllers\restocontroller@send_displa
 Route::post('/paymentprocess/update/table/go/{ID_TRANSAKSI}', 'App\Http\Controllers\restocontroller@send_updatebayar');
 
 //UNTUK UPDATE PESANAN YANG DI DELETE DI PAGE EDIT PESANAN
-Route::post('/hapuspesanan/{ID_TRANSAKSI}/{ID_MENU}', 'App\Http\Controllers\restocontroller@send_updateHapusPesanan');
+Route::post('/hapuspesanan/{ID_TRANSAKSI2}/{ID_MENU2}', 'App\Http\Controllers\restocontroller@send_updateHapusPesanan');
 
 Route::get('/konfirmasi/{ID_MEJA}', 'App\Http\Controllers\restocontroller@send_displayBayar');
 

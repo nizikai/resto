@@ -57,14 +57,21 @@ class restoModel extends Model
     }
 
     //update menu yang di cancel jadi del = 1
-    function get_updateHapusPesanan($ID_TRANSAKSI, $ID_MENU) {
-        // dd($ID_TRANSAKSI);
-        // dd($ID_MENU);
+    function get_updateHapusPesanan($ID_TRANSAKSI2, $ID_MENU2) {
+        // dd($ID_TRANSAKSI2, $ID_MENU2);
+        $dataUpdateHapusMenu = [
+            'HAPUS_ID_TRANSAKSI'  => $ID_TRANSAKSI2,
+            'HAPUS_ID_MENU'  => $ID_MENU2
+        ];
+        // dd($dataUpdateHapusMenu);
+
         //ERROR DISINI =============== INVALID PARAMETER NUMBER
-        $queryupdateHapusPesanan = "UPDATE detail_transaksi SET DEL_STATUS = 1 WHERE ID_TRANSAKSI = :ID_TRANSAKSI AND ID_MENU = :ID_MENU";
+
+        $queryupdateHapusPesanan = "UPDATE detail_transaksi SET DEL_STATUS = 1 WHERE ID_TRANSAKSI = :HAPUS_ID_TRANSAKSI AND ID_MENU = :HAPUS_ID_MENU";
         // dd($queryupdateHapusPesanan);
-        $executequeryupdateHapusPesanan = DB::update($queryupdateHapusPesanan, $ID_TRANSAKSI, $ID_MENU);
-        dd($executequeryupdateHapusPesanan);
+        $executequeryupdateHapusPesanan = DB::update($queryupdateHapusPesanan, $dataUpdateHapusMenu);
+
+        // dd($executequeryupdateHapusPesanan);
         return $executequeryupdateHapusPesanan;
     }
 
