@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,9 @@
     <br>
     <h1 id = "menutitle">Menu</h1>
     <section id = "sectionmenumeja">
-        <h6 id = "labelmenumeja">Meja 1.12</h6>
+        @foreach ($displayMejaMenu as $hasilDisplayMejaMenu)
+            <h6 id = "labelmenumeja">Meja {{$hasilDisplayMejaMenu->NO_MEJA}}</h6>
+        @endforeach
         <button type="submit" id="buttonpilihmeja" onclick="tooglePopupmenu()">Ganti Meja</button>
         <div class = "popup" id = "popup-menu">
             <div class="overlay">
@@ -34,17 +36,17 @@
     <section id="menukategori">
         <label>
             <input type="radio" name="radio" value="food" checked>
-            <img src="./resource/food.png">
+            <img src="../resource/food.png">
           </label>
 
           <label>
             <input type="radio" name="radio" value="drink">
-            <img src="./resource/drink.png">
+            <img src="../resource/drink.png">
           </label>
 
           <label>
             <input type="radio" name="radio" value="snack">
-            <img src="./resource/snack.png">
+            <img src="../resource/snack.png">
           </label>
     </section>
     <br>
@@ -146,11 +148,19 @@
     </section>
 
     <section id="buttonlongbottom">
-        <button type="submit" class="buttonlong">Lanjut</button>
-    </section>
+        @foreach ($displayMejaMenu as $hasilDisplayMejaMenu)
+            {{-- <form action="{{ url('konfirmasipesanan/'.$hasilDisplayMejaMenu->NO_MEJA)}}" method="post">
+            @csrf --}}
+            <a href="{{ url('konfirmasipesanan/'.$hasilDisplayMejaMenu->NO_MEJA)}}">
+                <button type="submit" class="buttonlong">Lanjut</button>
 
+            </a>
+            {{-- </form> --}}
+        @endforeach
+    </section>
     <br>
     <br>
+
 <script>
     function tooglePopupmenu(){
         document.getElementById("popup-menu").classList.toggle("active");

@@ -109,7 +109,7 @@ class restocontroller extends Controller
         return view('editkaryawan', ['semuaKaryawan' => $semuaKaryawan]);
     }
 
-    //INI UNTUK HAPUS SEMUA KARYAWAN
+    //INI UNTUK HAPUS KARYAWAN
     public function send_hapusKaryawan($ID_ADMIN)
     {
         $arrayHapusKaryawan = [
@@ -403,6 +403,25 @@ class restocontroller extends Controller
         $updateHapusPesanan = $resto -> get_updateHapusPesanan($ID_TRANSAKSI2, $ID_MENU2);
         return view('pesanandihapus');
     }
+
+    //mengambil value meja dari page pilih meja untuk ditampilkan di page Menu
+    public function send_mejaMenu($NO_MEJA)
+    {
+        $resto = new restoModel;
+        $displayMejaMenu = $resto -> get_mejaMenu((array)$NO_MEJA);
+        return view('menu', ['displayMejaMenu' => $displayMejaMenu]);
+    }
+
+    public function send_tampilkanpesanan($NO_MEJA)
+    {
+        $resto = new restoModel;
+        $displayTampilkanPesanan = $resto -> get_display((array)$NO_MEJA);
+        $displayTampilkanTotalHarga = $resto -> get_displayExt((array)$NO_MEJA);
+        return view('konfirmasipesanan', compact(['displayTampilkanPesanan', 'displayTampilkanTotalHarga']));
+        // return view('login');
+    }
+
+
 
 
 

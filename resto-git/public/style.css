@@ -1051,6 +1051,23 @@
     box-shadow: 0px -30px 30px white;
 }
 
+#buttonlongbottom .buttonlong{
+    background-color: #FF7C04;
+    font-weight: bold;
+    border-color: #FF7C04;
+    border: 2px solid #FF7C04;
+    border-radius: 10px;
+    color: white;
+    padding: 12px 35vw;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    width: 92%;
+    margin-left: 4vw;
+}
+
 /* Edit Pesanan ==================================================== */
 #editpesanan .title h1{
     margin-left: 2vw;

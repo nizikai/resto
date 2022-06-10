@@ -65,7 +65,6 @@ class restoModel extends Model
         ];
         // dd($dataUpdateHapusMenu);
 
-        //ERROR DISINI =============== INVALID PARAMETER NUMBER
 
         $queryupdateHapusPesanan = "UPDATE detail_transaksi SET DEL_STATUS = 1 WHERE ID_TRANSAKSI = :HAPUS_ID_TRANSAKSI AND ID_MENU = :HAPUS_ID_MENU";
         // dd($queryupdateHapusPesanan);
@@ -73,6 +72,29 @@ class restoModel extends Model
 
         // dd($executequeryupdateHapusPesanan);
         return $executequeryupdateHapusPesanan;
+    }
+
+    //mengambil value meja dari page pilih meja untuk ditampilkan di page Menu
+    function get_mejaMenu($NO_MEJA) {
+        $queryMejaMenu = "SELECT NO_MEJA, ID_MEJA FROM meja WHERE NO_MEJA = :NO_MEJA AND DEL_STATUS = 0;";
+        $executequeryqueryMejaMenu = DB::select($queryMejaMenu, $NO_MEJA);
+        return $executequeryqueryMejaMenu;
+    }
+
+    // mendisplay pesanan
+
+    function get_tampilkanpesanan($NO_MEJA) {
+        $queryDisplay = "SELECT dm.NAMA_MENU, dt.ID_MENU, SUM(dt.JUMLAH) as `TOTAL_JUMLAH`, (sum(dt.jumlah) * dm.HARGA) as `TOTAL_HARGA_MENU` FROM meja m, data_menu dm, detail_transaksi dt, transaksi t WHERE m.ID_MEJA = t.ID_MEJA AND dm.ID_MENU = dt.ID_MENU AND t.ID_TRANSAKSI = dt.ID_TRANSAKSI AND t.STATUS_TRANSAKSI = 0 AND m.NO_MEJA = :NO_MEJA AND dt.DEL_STATUS = 0 GROUP BY dt.ID_MENU;";
+        $executequeryDisplay = DB::select($queryDisplay, $NO_MEJA);
+        return $executequeryDisplay;
+    }
+
+    // display total harga
+
+    function get_displaytotal($NO_MEJA) {
+        $queryDisplayExt = "SELECT t.ID_TRANSAKSI, t.TANGGAL, m.NO_MEJA, t.TOTAL_HARGA FROM  meja m, transaksi t WHERE t.ID_MEJA = m.ID_MEJA AND t.STATUS_TRANSAKSI = 0 AND m.NO_MEJA = :NO_MEJA;";
+        $executequeryDisplayExt = DB::select($queryDisplayExt, $NO_MEJA);
+        return $executequeryDisplayExt;
     }
 
 
