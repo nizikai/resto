@@ -11,7 +11,7 @@ class ownerModel extends Model
 {
     //buat query select buat edit meja
     function get_editMeja() {
-        $querysemuameja = "SELECT NO_MEJA FROM SAD_NICO.meja WHERE DEL_STATUS = '0';";
+        $querysemuameja = "SELECT NO_MEJA, ID_MEJA FROM SAD_NICO.meja WHERE DEL_STATUS = '0';";
         $executequerysemuameja= DB::select($querysemuameja);
         return $executequerysemuameja;
     }

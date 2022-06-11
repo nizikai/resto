@@ -27,8 +27,8 @@
         </tr>
         @foreach ($displayBayar as $hasilDisplayBayar)
         <tr>
-            <td>{{$hasilDisplayBayar->NAMA_MENU}}</td>
-            <td>{{$hasilDisplayBayar->TOTAL_JUMLAH}}</td>
+            <td style="max-width:18vw;">{{$hasilDisplayBayar->NAMA_MENU}}</td>
+            <td style="max-width:5vw;">{{$hasilDisplayBayar->TOTAL_JUMLAH}}</td>
             <td>{{$hasilDisplayBayar->TOTAL_HARGA_MENU}}</td>
         </tr>
         @endforeach
@@ -84,7 +84,7 @@
 
     @foreach ($displayTotalBayar as $hasilDisplayTotalBayar)
 
-    <form action="{{ url('paymentprocess/update/table/go/'.$hasilDisplayTotalBayar->ID_TRANSAKSI)}}" method="POST">
+    <form action="{{ url('paymentprocess/update/table/go/'.$hasilDisplayTotalBayar->NO_MEJA)}}" method="POST">
         @csrf
         <div class = "button">
 

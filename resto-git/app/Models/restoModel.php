@@ -30,7 +30,7 @@ class restoModel extends Model
 
     //semua pesanan yang sedang berlangsung
     function get_semuaPesanan() {
-        $querySemuaPesanan = "SELECT t.ID_TRANSAKSI as `ID_TRANSAKSI`, m.NO_MEJA as `NO_MEJA`, t.TOTAL_HARGA as `TOTAL_HARGA` FROM transaksi t, meja m WHERE m.ID_MEJA = t.ID_MEJA AND t.STATUS_TRANSAKSI=0 ORDER BY m.NO_MEJA ASC;";
+        $querySemuaPesanan = "SELECT m.NO_MEJA as `NO_MEJA`, sum(t.TOTAL_HARGA) as `TOTAL_HARGA` FROM transaksi t, meja m WHERE m.ID_MEJA = t.ID_MEJA AND t.STATUS_TRANSAKSI=0 GROUP BY m.NO_MEJA ORDER BY m.NO_MEJA ASC;";
         $executequerySemuaPesanan= DB::select($querySemuaPesanan);
         return $executequerySemuaPesanan;
     }
@@ -44,29 +44,28 @@ class restoModel extends Model
 
     //berhubungan dengan get_display, menampilkan total harga per meja
     function get_displayExt($NO_MEJA) {
-        $queryDisplayExt = "SELECT t.ID_TRANSAKSI, t.TANGGAL, m.NO_MEJA, t.TOTAL_HARGA FROM  meja m, transaksi t WHERE t.ID_MEJA = m.ID_MEJA AND t.STATUS_TRANSAKSI = 0 AND m.NO_MEJA = :NO_MEJA;";
+        $queryDisplayExt = "SELECT m.NO_MEJA, sum(t.TOTAL_HARGA) as `TOTAL_HARGA`FROM  meja m, transaksi t WHERE t.ID_MEJA = m.ID_MEJA AND t.STATUS_TRANSAKSI = 0 AND m.NO_MEJA = :NO_MEJA GROUP BY m.NO_MEJA;";
         $executequeryDisplayExt = DB::select($queryDisplayExt, $NO_MEJA);
         return $executequeryDisplayExt;
     }
 
     // query update status transaksi
-    function get_updatebayar($ID_TRANSAKSI) {
-        $queryupdatebayar = "UPDATE transaksi SET STATUS_TRANSAKSI = '1' WHERE ID_TRANSAKSI = :ID_TRANSAKSI AND STATUS_TRANSAKSI = '0'";
-        $executequeryupdatebayar = DB::select($queryupdatebayar, $ID_TRANSAKSI);
+    function get_updatebayar($NO_MEJA) {
+        $queryupdatebayar = "UPDATE transaksi t JOIN meja m ON m.ID_MEJA = t.ID_MEJA SET t.STATUS_TRANSAKSI = '1' WHERE m.NO_MEJA = :NO_MEJA AND t.STATUS_TRANSAKSI = '0'";
+        $executequeryupdatebayar = DB::select($queryupdatebayar, $NO_MEJA);
         return $executequeryupdatebayar;
     }
 
     //update menu yang di cancel jadi del = 1
-    function get_updateHapusPesanan($ID_TRANSAKSI2, $ID_MENU2) {
+    function get_updateHapusPesanan($NO_MEJA2, $ID_MENU2) {
         // dd($ID_TRANSAKSI2, $ID_MENU2);
         $dataUpdateHapusMenu = [
-            'HAPUS_ID_TRANSAKSI'  => $ID_TRANSAKSI2,
+            'HAPUS_NO_MEJA'  => $NO_MEJA2,
             'HAPUS_ID_MENU'  => $ID_MENU2
         ];
         // dd($dataUpdateHapusMenu);
 
-
-        $queryupdateHapusPesanan = "UPDATE detail_transaksi SET DEL_STATUS = 1 WHERE ID_TRANSAKSI = :HAPUS_ID_TRANSAKSI AND ID_MENU = :HAPUS_ID_MENU";
+        $queryupdateHapusPesanan = "UPDATE detail_transaksi dt JOIN transaksi t on dt.ID_TRANSAKSI = t.ID_TRANSAKSI JOIN meja m ON t.ID_MEJA = m.ID_MEJA JOIN data_menu dm on dm.ID_MENU = dt.ID_MENU SET dt.DEL_STATUS = 1 WHERE t.STATUS_TRANSAKSI = 0 AND t.DEL_STATUS = 0 AND m.NO_MEJA = :HAPUS_NO_MEJA AND dt.ID_MENU = :HAPUS_ID_MENU;";
         // dd($queryupdateHapusPesanan);
         $executequeryupdateHapusPesanan = DB::update($queryupdateHapusPesanan, $dataUpdateHapusMenu);
 
@@ -75,27 +74,20 @@ class restoModel extends Model
     }
 
     //mengambil value meja dari page pilih meja untuk ditampilkan di page Menu
-    function get_mejaMenu($NO_MEJA) {
-        $queryMejaMenu = "SELECT NO_MEJA, ID_MEJA FROM meja WHERE NO_MEJA = :NO_MEJA AND DEL_STATUS = 0;";
-        $executequeryqueryMejaMenu = DB::select($queryMejaMenu, $NO_MEJA);
+    function get_mejaMenu($ID_MEJA) {
+        $queryMejaMenu = "SELECT NO_MEJA, ID_MEJA FROM meja WHERE ID_MEJA = :ID_MEJA AND DEL_STATUS = 0;";
+        $executequeryqueryMejaMenu = DB::select($queryMejaMenu, $ID_MEJA);
         return $executequeryqueryMejaMenu;
     }
 
-    // mendisplay pesanan
-
-    function get_tampilkanpesanan($NO_MEJA) {
-        $queryDisplay = "SELECT dm.NAMA_MENU, dt.ID_MENU, SUM(dt.JUMLAH) as `TOTAL_JUMLAH`, (sum(dt.jumlah) * dm.HARGA) as `TOTAL_HARGA_MENU` FROM meja m, data_menu dm, detail_transaksi dt, transaksi t WHERE m.ID_MEJA = t.ID_MEJA AND dm.ID_MENU = dt.ID_MENU AND t.ID_TRANSAKSI = dt.ID_TRANSAKSI AND t.STATUS_TRANSAKSI = 0 AND m.NO_MEJA = :NO_MEJA AND dt.DEL_STATUS = 0 GROUP BY dt.ID_MENU;";
-        $executequeryDisplay = DB::select($queryDisplay, $NO_MEJA);
-        return $executequeryDisplay;
+    // melakukan insert transaksi baru saat pilih meja
+    function get_inserttransaksibaru($ID_MEJA) {
+        $queryinserttransaksi = "insert into transaksi (ID_MEJA, TANGGAL, STATUS_TRANSAKSI, DEL_STATUS) VALUES(:ID_MEJA, date_format(now(),'%Y%m%d'), 0, 0);";
+        $executequeryinserttransaksi = DB::insert($queryinserttransaksi, $ID_MEJA);
+        return $executequeryinserttransaksi;
     }
 
-    // display total harga
 
-    function get_displaytotal($NO_MEJA) {
-        $queryDisplayExt = "SELECT t.ID_TRANSAKSI, t.TANGGAL, m.NO_MEJA, t.TOTAL_HARGA FROM  meja m, transaksi t WHERE t.ID_MEJA = m.ID_MEJA AND t.STATUS_TRANSAKSI = 0 AND m.NO_MEJA = :NO_MEJA;";
-        $executequeryDisplayExt = DB::select($queryDisplayExt, $NO_MEJA);
-        return $executequeryDisplayExt;
-    }
 
 
 

@@ -72,6 +72,10 @@ Route::get('/pesanandihapus', function () {
     return view('pesanandihapus');
 });
 
+Route::get('/getmeja', function () {
+    return view('getmeja');
+});
+
 
 // Route::get('/tambahmenu', function () {
 //     return view('tambahmenu');
@@ -86,6 +90,9 @@ Route::get('/laporanbulan/{bulan}', 'App\Http\Controllers\restoController@send_l
 
 //INPUT MENU BERDASARKAN MEJA
 Route::get('/menu/{NO_MEJA}', 'App\Http\Controllers\restoController@send_mejaMenu');
+
+//INPUT MENU BERDASARKAN MEJA
+Route::get('/getmeja/{NO_MEJA}', 'App\Http\Controllers\restoController@send_getMejaMenu');
 
 //PAGE PILIH MEJA
 Route::get('/pilihmeja', 'App\Http\Controllers\restoController@send_pilihMeja');
@@ -135,7 +142,7 @@ Route::get('/bayar/{ID_MEJA}', 'App\Http\Controllers\restocontroller@send_displa
 Route::post('/paymentprocess/update/table/go/{ID_TRANSAKSI}', 'App\Http\Controllers\restocontroller@send_updatebayar');
 
 //UNTUK UPDATE PESANAN YANG DI DELETE DI PAGE EDIT PESANAN
-Route::post('/hapuspesanan/{ID_TRANSAKSI2}/{ID_MENU2}', 'App\Http\Controllers\restocontroller@send_updateHapusPesanan');
+Route::get('/hapuspesanan/{NO_MEJA2}/{ID_MENU2}', 'App\Http\Controllers\restocontroller@send_updateHapusPesanan');
 
 // Route::get('/konfirmasi/{ID_MEJA}', 'App\Http\Controllers\restocontroller@send_displayBayar');
 

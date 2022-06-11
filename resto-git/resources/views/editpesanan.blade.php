@@ -27,29 +27,30 @@
             <th>Harga</th>
             <th>Hapus</th>
         </tr>
-        @foreach ($displayEditTotalBayar as $hasilDisplayEditId)
-            @foreach ($displayEdit as $hasilDisplayEdit)
-
+        @foreach ($displayEdit as $hasilDisplayEdit)
             <tr>
                 <td>{{$hasilDisplayEdit->NAMA_MENU}}</td>
                 <td>{{$hasilDisplayEdit->TOTAL_JUMLAH}}</td>
                 <td>{{$hasilDisplayEdit->TOTAL_HARGA_MENU}}</td>
-                <td class = "gambar" onclick="tooglePopup()"><img src="..\resource\Trash.png"></td>
-                <div class = "popup" id = "popup-editpesanan">
+                <td class = "gambar">
+                    <a href="{{url('hapuspesanan/'.$displayEditTotalBayar[0]->NO_MEJA,''.$hasilDisplayEdit->ID_MENU)}}">
+                        <img src="..\resource\Trash.png">
+                    </a>
+                </td>
+                {{-- <td class = "gambar" onclick="tooglePopup()"><img src="..\resource\Trash.png"></td> --}}
+                {{-- <div class = "popup" id = "popup-editpesanan">
                     <div class="overlay">
                         <div class = "content">
                             <h5>Lakukan konfirmasi dengan staff dapur bahwa pesanan belum dimasak sebelum melakukan pembatalan pesanan!</h5>
                             <button class="buttonkembali" onclick="tooglePopup()"> Kembali </button>
-                            <form action="{{url('hapuspesanan/'.$hasilDisplayEditId->ID_TRANSAKSI,''.$hasilDisplayEdit->ID_MENU)}}" method = "POST">
+                            <form action="{{url('hapuspesanan/'.$displayEditTotalBayar[0]->NO_MEJA,''.$hasilDisplayEdit->ID_MENU)}}" method = "POST">
                                 @csrf
-                                <button type ="submit" class="buttonbatalkanpesanan">Batalkan pesanan </button>
+                                    <button type ="submit" class="buttonbatalkanpesanan">Batalkan pesanan </button>
                             </form>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </tr>
-            @endforeach
-
         @endforeach
     </table>
     <div class = "garisabu">

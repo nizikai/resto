@@ -386,10 +386,10 @@ class restocontroller extends Controller
     }
 
     // update status pembayaran ketika tombol bayar di klik
-    public function send_updatebayar($ID_TRANSAKSI)
+    public function send_updatebayar($NO_MEJA)
     {
         $resto = new restoModel;
-        $updatebayar = $resto -> get_updatebayar((array)$ID_TRANSAKSI);
+        $updatebayar = $resto -> get_updatebayar((array)$NO_MEJA);
         return view('pembayaranselesai');
     }
 
@@ -405,13 +405,22 @@ class restocontroller extends Controller
     }
 
     //mengambil value meja dari page pilih meja untuk ditampilkan di page Menu
-    public function send_mejaMenu($NO_MEJA)
+    public function send_mejaMenu($ID_MEJA)
     {
         $resto = new restoModel;
-        $displayMejaMenu = $resto -> get_mejaMenu((array)$NO_MEJA);
+        $displayMejaMenu = $resto -> get_mejaMenu((array)$ID_MEJA);
         return view('menu', ['displayMejaMenu' => $displayMejaMenu]);
     }
 
+    public function send_getMejaMenu($ID_MEJA)
+    {
+        $resto = new restoModel;
+        $inserttransaksibaru = $resto -> get_inserttransaksibaru((array)$ID_MEJA);
+        $getMeja = $resto -> get_mejaMenu((array)$ID_MEJA);
+        return view('getmeja', ['getMeja' => $getMeja]);
+    }
+
+    //tampilkan detail pesanan dan total harga di page konfirmasi pesanan.
     public function send_tampilkanpesanan($NO_MEJA)
     {
         $resto = new restoModel;

@@ -44,7 +44,7 @@
 
         @foreach ($pilihMeja as $hasilPilihMeja)
 
-            <a href="{{ url('menu/'.$hasilPilihMeja->NO_MEJA)}}">
+            <a href="{{ url('getmeja/'.$hasilPilihMeja->ID_MEJA)}}">
                 <div class = "kotak">
                     <div class = "text">
                         <h3><?php echo "$hasilPilihMeja->NO_MEJA"; ?></h3>
