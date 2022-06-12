@@ -15,8 +15,6 @@
 <body>
 <section id = "pembayaranselesai">
     <h1>Pembayaran<br>Selesai.</h1>
-
-    <button type="submit" id="printnota" class="buttonlong">Print Nota</button>
-
+    <button type="submit" id="printnota" class="buttonps">Print Nota</button>
 </body>
 </html>

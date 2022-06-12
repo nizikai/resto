@@ -30,7 +30,7 @@ class restoModel extends Model
 
     //semua pesanan yang sedang berlangsung
     function get_semuaPesanan() {
-        $querySemuaPesanan = "SELECT m.NO_MEJA as `NO_MEJA`, sum(t.TOTAL_HARGA) as `TOTAL_HARGA` FROM transaksi t, meja m WHERE m.ID_MEJA = t.ID_MEJA AND t.STATUS_TRANSAKSI=0 GROUP BY m.NO_MEJA ORDER BY m.NO_MEJA ASC;";
+        $querySemuaPesanan = "SELECT m.NO_MEJA as `NO_MEJA`, sum(t.TOTAL_HARGA) as `TOTAL_HARGA` FROM transaksi t, meja m WHERE m.ID_MEJA = t.ID_MEJA AND t.STATUS_TRANSAKSI=0 AND t.DEL_STATUS = 0 GROUP BY m.NO_MEJA ORDER BY m.NO_MEJA ASC;";
         $executequerySemuaPesanan= DB::select($querySemuaPesanan);
         return $executequerySemuaPesanan;
     }
@@ -47,6 +47,20 @@ class restoModel extends Model
         $queryDisplayExt = "SELECT m.NO_MEJA, sum(t.TOTAL_HARGA) as `TOTAL_HARGA`FROM  meja m, transaksi t WHERE t.ID_MEJA = m.ID_MEJA AND t.STATUS_TRANSAKSI = 0 AND m.NO_MEJA = :NO_MEJA GROUP BY m.NO_MEJA;";
         $executequeryDisplayExt = DB::select($queryDisplayExt, $NO_MEJA);
         return $executequeryDisplayExt;
+    }
+
+    //menampilkan semua menu yang baru saja di insert
+    function get_displayKonfirmasi($ID_MEJA) {
+        $queryDisplayKonfirmasi = "CALL konfirmasi(:ID_MEJA);";
+        $executequeryDisplayKonfirmasi = DB::select($queryDisplayKonfirmasi, $ID_MEJA);
+        return $executequeryDisplayKonfirmasi;
+    }
+
+    //menampilkan total harga semua menu yang baru saja di insert
+    function get_displayKonfirmasiExt($ID_MEJA) {
+        $queryDisplayKonfirmasiExt = "CALL konfirmasiTotal(:ID_MEJA);";
+        $executequeryDisplayKonfirmasiExt = DB::select($queryDisplayKonfirmasiExt, $ID_MEJA);
+        return $executequeryDisplayKonfirmasiExt;
     }
 
     // query update status transaksi
@@ -85,6 +99,19 @@ class restoModel extends Model
         $queryinserttransaksi = "insert into transaksi (ID_MEJA, TANGGAL, STATUS_TRANSAKSI, DEL_STATUS) VALUES(:ID_MEJA, date_format(now(),'%Y%m%d'), 0, 0);";
         $executequeryinserttransaksi = DB::insert($queryinserttransaksi, $ID_MEJA);
         return $executequeryinserttransaksi;
+    }
+
+    function get_searchMenu($searchBar){
+        $querySearchMenu = "SELECT ID_MENU, NAMA_MENU, HARGA FROM data_menu WHERE NAMA_MENU LIKE '%:searchBar%' AND DEL_STATUS = 0 ORDER BY NAMA_MENU;";
+        $executequerySearchMenu = DB::select($querySearchMenu, $searchBar);
+        return $executequerySearchMenu;
+    }
+
+    // query hapus transaksi
+    function get_hapustransaksi($ID_MEJA){
+        $queryhapustransaksi = "CALL hapus_transaksi(:ID_MEJA)";
+        $executequeryhapustransaksi = DB::select($queryhapustransaksi, $ID_MEJA);
+        return $executequeryhapustransaksi;
     }
 
 

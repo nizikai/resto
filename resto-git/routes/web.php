@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('login');
 });
 
+Route::get('/nota', function () {
+    return view('nota');
+});
+
 Route::get('/pesananditerima', function () {
     return view('pesananditerima');
 });
@@ -94,6 +98,12 @@ Route::get('/menu/{NO_MEJA}', 'App\Http\Controllers\restoController@send_mejaMen
 //INPUT MENU BERDASARKAN MEJA
 Route::get('/getmeja/{NO_MEJA}', 'App\Http\Controllers\restoController@send_getMejaMenu');
 
+//SEARCH MENU DI PAGE MENU
+Route::get('/menu/{ID_MEJA}/', 'App\Http\Controllers\restoController@send_searchMenu');
+
+//SEARCH
+Route::get('/menu/{ID_MEJA}/', 'App\Http\Controllers\restoController@send_searchMenu');
+
 //PAGE PILIH MEJA
 Route::get('/pilihmeja', 'App\Http\Controllers\restoController@send_pilihMeja');
 
@@ -146,5 +156,8 @@ Route::get('/hapuspesanan/{NO_MEJA2}/{ID_MENU2}', 'App\Http\Controllers\restocon
 
 // Route::get('/konfirmasi/{ID_MEJA}', 'App\Http\Controllers\restocontroller@send_displayBayar');
 
-Route::get('/konfirmasipesanan/{NO_MEJA}', 'App\Http\Controllers\restocontroller@send_tampilkanpesanan');
+Route::get('/konfirmasipesanan/{ID_MEJA}', 'App\Http\Controllers\restocontroller@send_tampilkanpesanan');
+
+// untuk hapus transaksi
+Route::post('/hapustransaksi/{ID_MEJA}', 'App\Http\Controllers\restoController@send_hapustransaksi');
 

@@ -408,8 +408,10 @@ class restocontroller extends Controller
     public function send_mejaMenu($ID_MEJA)
     {
         $resto = new restoModel;
+        $owner = new ownerModel;
         $displayMejaMenu = $resto -> get_mejaMenu((array)$ID_MEJA);
-        return view('menu', ['displayMejaMenu' => $displayMejaMenu]);
+        $displaySearchMenu = $owner ->get_semuaMenu();
+        return view('menu', compact(['displayMejaMenu', 'displaySearchMenu']));
     }
 
     public function send_getMejaMenu($ID_MEJA)
@@ -421,14 +423,48 @@ class restocontroller extends Controller
     }
 
     //tampilkan detail pesanan dan total harga di page konfirmasi pesanan.
-    public function send_tampilkanpesanan($NO_MEJA)
+    public function send_tampilkanpesanan($ID_MEJA)
     {
         $resto = new restoModel;
-        $displayTampilkanPesanan = $resto -> get_display((array)$NO_MEJA);
-        $displayTampilkanTotalHarga = $resto -> get_displayExt((array)$NO_MEJA);
+        $displayTampilkanPesanan = $resto -> get_displayKonfirmasi((array)$ID_MEJA);
+        $displayTampilkanTotalHarga = $resto -> get_displayKonfirmasiExt((array)$ID_MEJA);
         return view('konfirmasipesanan', compact(['displayTampilkanPesanan', 'displayTampilkanTotalHarga']));
         // return view('login');
     }
+
+    //======================================================================================
+    //search menu di page menu
+    public function send_searchMenu(Request $request,$ID_MEJA)
+    {
+        $resto = new restoModel;
+        $searchBar = $request->input('menuSearch');
+        $displayMejaMenu = $resto -> get_mejaMenu((array)$ID_MEJA);
+        $displaySearchMenu = $resto -> get_searchMenu((array)$searchBar);
+        return view('menu', compact(['displayMejaMenu', 'displaySearchMenu']));
+    }
+
+    // hapus transaksi ganti meja
+    public function send_hapustransaksi(Request $request, $ID_MEJA)
+    {
+        $resto = new restoModel;
+        $displayMejaMenu = $resto -> get_hapustransaksi((array)$ID_MEJA);
+        return redirect('/pesanan');
+    }
+
+    //insert pesanan di pagee menu berdasarkan meja
+    public function send_insertPesanan(Request $request, $ID_MEJA)
+    {
+        //NICO
+        //masukin value dari tbox dan jadiin array. masukin ke model untuk run prosedur insert
+
+        $resto = new restoModel;
+        //$insertPesanan = $resto -> get_insertPesanan($);
+        return view('menu');
+    }
+
+
+
+
 
 
 

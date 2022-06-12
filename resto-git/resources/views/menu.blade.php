@@ -14,136 +14,91 @@
 </head>
 <body>
     <br>
-    <h1 id = "menutitle">Menu</h1>
-    <section id = "sectionmenumeja">
-        @foreach ($displayMejaMenu as $hasilDisplayMejaMenu)
-            <h6 id = "labelmenumeja">Meja {{$hasilDisplayMejaMenu->NO_MEJA}}</h6>
-        @endforeach
-        <button type="submit" id="buttonpilihmeja" onclick="tooglePopupmenu()">Ganti Meja</button>
-        <div class = "popup" id = "popup-menu">
-            <div class="overlay">
-                <div class = "content">
-                    <h6>Semua menu yang dipilih akan dihapus. Lakukan order ulang setelah memilih meja yang baru </h6>
-                    <button type ="submit" class="buttonkembali" onclick="tooglePopupmenu()"> kembali </button>
-                    <button type ="submit" class="buttongantimeja">Ganti meja</button>
+    <section id = "topdimenu">
+        <br>
+        <h1 id = "menutitle">Menu</h1>
+        <section id = "sectionmenumeja">
+            @foreach ($displayMejaMenu as $hasilDisplayMejaMenu)
+                <h6 id = "labelmenumeja">Meja {{$hasilDisplayMejaMenu->NO_MEJA}}</h6>
+            @endforeach
+            <button type="submit" id="buttonpilihmeja" onclick="tooglePopupmenu()">Ganti Meja</button>
+            <div class = "popup" id = "popup-menu">
+                <div class="overlay">
+                    <div class = "content">
+                        <h6>Semua menu yang dipilih akan dihapus. Lakukan order ulang setelah memilih meja yang baru </h6>
+                        <button type ="submit" class="buttonkembali" onclick="tooglePopupmenu()"> kembali </button>
+                        <form action="{{ url('hapustransaksi/'.$hasilDisplayMejaMenu->ID_MEJA)}}" method="post">
+                            @csrf
+                            <button type ="submit" class="buttongantimeja">Ganti meja</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <hr class = "line">
-
-    <section id="menukategori">
-        <label>
-            <input type="radio" name="radio" value="food" checked>
-            <img src="../resource/food.png">
-          </label>
-
-          <label>
-            <input type="radio" name="radio" value="drink">
-            <img src="../resource/drink.png">
-          </label>
-
-          <label>
-            <input type="radio" name="radio" value="snack">
-            <img src="../resource/snack.png">
-          </label>
-    </section>
-    <br>
-    <center>
-        <section id = "inputMeja">
-            <input type="text" id="tboxMenuSearch" name="menuSearch" placeholder="Cari menu">
-            <button type="submit" class="buttonsmall">Cari</button>
         </section>
-    </center>
+
+        <hr class = "line">
+
+        {{-- <section id="menukategori">
+            <label>
+                <input type="radio" name="radio" value="food" checked>
+                <img src="../resource/food.png">
+            </label>
+
+            <label>
+                <input type="radio" name="radio" value="drink">
+                <img src="../resource/drink.png">
+            </label>
+
+            <label>
+                <input type="radio" name="radio" value="snack">
+                <img src="../resource/snack.png">
+            </label>
+        </section> --}}
+
+        <center>
+            <section id = "inputMeja">
+                <form action="{{ url('menu/'.$displayMejaMenu[0]->ID_MEJA,'/')}}" method="get">
+                    <input type="text" id="tboxMenuSearch" name="menuSearch" placeholder="Cari menu" value="{{request('menuSearch')}}">
+                    <button type="submit" class="buttonsmall"><img src="../resource/Search.png"></button>
+                </form>
+
+            </section>
+        </center>
+    </section>
+
     <br>
     <section id="allMenu">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
         <div class = "menuCard">
-            <h6>
-                <section id = "menuCardPosition">
+            @foreach ($displaySearchMenu as $hasilDisplaySearchMenu)
+            <form action="/insertpesanan" method="post">
+                    <h6>
+                        <section id = "menuCardPosition">
 
-                    <section id = "menuCardDetail">
-                        Ayam Bakar
-                        <p>Rp. 20.000</p>
-                    </section>
+                            <section id = "menuCardDetail">
+                                {{$hasilDisplaySearchMenu->NAMA_MENU}}
+                                <p>Rp. {{$hasilDisplaySearchMenu->HARGA}}</p>
+                            </section>
+                            <section id = "inputJumlah">
+                                <input type="number" id="tboxJumlahMenu" name="menuJumlah" placeholder="Jumlah" required>
+                                <button type="submit" class="buttonok">OK</button>
+                            </section>
 
-                    <section id = "inputJumlah">
-                        <input type="number" id="tboxJumlahMenu" name="jumlahMenu" placeholder="Jumlah" required>
-                        <button type="submit" class="buttonok">OK</button>
-                    </section>
-
-                </section>
-            </h6>
-            <input type="text" id="tboxNote" name="Note" placeholder="Catatan">
-
-            <h6>
-                <section id = "menuCardPosition">
-
-                    <section id = "menuCardDetail">
-                        Ayam Goreng
-                        <p>Rp. 22.000</p>
-                    </section>
-
-                    <section id = "inputJumlah">
-                        <input type="number" id="tboxJumlahMenu" name="jumlahMenu" placeholder="Jumlah" required>
-                        <button type="submit" class="buttonok">OK</button>
-                    </section>
-
-                </section>
-            </h6>
-            <input type="text" id="tboxNote" name="Note" placeholder="Catatan">
-
-
-            <h6>
-                <section id = "menuCardPosition">
-
-                    <section id = "menuCardDetail">
-                        Ayam Goreng
-                        <p>Rp. 22.000</p>
-                    </section>
-
-                    <section id = "inputJumlah">
-                        <input type="number" id="tboxJumlahMenu" name="jumlahMenu" placeholder="Jumlah" required>
-                        <button type="submit" class="buttonok">OK</button>
-                    </section>
-
-                </section>
-            </h6>
-            <input type="text" id="tboxNote" name="Note" placeholder="Catatan">
-
-            <h6>
-                <section id = "menuCardPosition">
-
-                    <section id = "menuCardDetail">
-                        Ayam Goreng
-                        <p>Rp. 22.000</p>
-                    </section>
-
-                    <section id = "inputJumlah">
-                        <input type="number" id="tboxJumlahMenu" name="jumlahMenu" placeholder="Jumlah" required>
-                        <button type="submit" class="buttonok">OK</button>
-                    </section>
-
-                </section>
-            </h6>
-            <input type="text" id="tboxNote" name="Note" placeholder="Catatan">
-
-            <h6>
-                <section id = "menuCardPosition">
-
-                    <section id = "menuCardDetail">
-                        Ayam Goreng
-                        <p>Rp. 22.000</p>
-                    </section>
-
-                    <section id = "inputJumlah">
-                        <input type="number" id="tboxJumlahMenu" name="jumlahMenu" placeholder="Jumlah" required>
-                        <button type="submit" class="buttonok">OK</button>
-                    </section>
-
-                </section>
-            </h6>
-            <input type="text" id="tboxNote" name="Note" placeholder="Catatan">
+                        </section>
+                    </h6>
+                <input type="text" id="tboxNote" name="menuCatatan" placeholder="Catatan">
+                <input type="text" id="tboxMenuHidden" name="menuIdMenu" placeholder="menuIdMenu" value = {{$hasilDisplaySearchMenu->ID_MENU}} required>
+                <input type="text" id="tboxMenuHidden" name="menuIdMeja" placeholder="Id Meja" value = {{$displayMejaMenu[0]->ID_MEJA}} required>
+            </form>
+            @endforeach
         </div>
     </section>
 
@@ -151,7 +106,7 @@
         @foreach ($displayMejaMenu as $hasilDisplayMejaMenu)
             {{-- <form action="{{ url('konfirmasipesanan/'.$hasilDisplayMejaMenu->NO_MEJA)}}" method="post">
             @csrf --}}
-            <a href="{{ url('konfirmasipesanan/'.$hasilDisplayMejaMenu->NO_MEJA)}}">
+            <a href="{{ url('konfirmasipesanan/'.$hasilDisplayMejaMenu->ID_MEJA)}}">
                 <button type="submit" class="buttonlong">Lanjut</button>
 
             </a>
@@ -160,6 +115,9 @@
     </section>
     <br>
     <br>
+    <br>
+    <br>
+
 
 <script>
     function tooglePopupmenu(){

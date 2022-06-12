@@ -25,14 +25,14 @@
     <table>
         <tr>
             <th>Menu</th>
-            <th>Jumlah</th>
+            <th style="text-align:center">Jumlah</th>
             <th>Harga</th>
             <!-- <th>Hapus</th> -->
         </tr>
         @foreach ($displayTampilkanPesanan as $hasildisplayTampilkanPesanan)
         <tr>
             <td>{{$hasildisplayTampilkanPesanan->NAMA_MENU}}</td>
-            <td>{{$hasildisplayTampilkanPesanan->TOTAL_JUMLAH}}</td>
+            <td style="text-align:center">{{$hasildisplayTampilkanPesanan->TOTAL_JUMLAH}}</td>
             <td>{{$hasildisplayTampilkanPesanan->TOTAL_HARGA_MENU}}</td>
             <!-- <th><img src="..\resource\Trash.png" alt=""></th> -->
         </tr>
@@ -52,14 +52,15 @@
         @foreach ($displayTampilkanTotalHarga as $hasilDisplayTampilkanTotalHarga)
             <div class = "flex1">
                 <h4>Total Pembayaran</h4>
-                <h4>{{$hasilDisplayTampilkanTotalHarga->TOTAL_HARGA}}</h4>
+                <h4>Rp. {{$hasilDisplayTampilkanTotalHarga->TOTAL_HARGA}}</h4>
                 {{-- <h4>{{$displayTampilkanTotalHarga->TOTAL_HARGA}}</h4> --}}
 
             </div>
         @endforeach
 
         <div class = "button">
-            {{-- DISINI INSERT KE TRANSAKSI YANG BARU DI INSERT 4 KOLOM--}}
+            {{-- NICO--}}
+            {{-- UPDATE TRANSAKSI BERDASARKAN MWNU YANG BARU DI INPUT DI PAGE SEBELUMNYA --}}
             <button type="submit" class="buttonkonfirm">Konfirmasi Pesanan</button>
         </div>
     </div>

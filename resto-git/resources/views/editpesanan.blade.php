@@ -13,6 +13,9 @@
 <section id = "editpesanan">
     <div class="title">
         <h1>Edit Pesanan</h1>
+        <div class = kotak>
+            <h5>Pastikan pesanan belum diproses dengan staff dapur sebelum melakukan pembatalan pesanan!</h5>
+        </div>
         @foreach ($displayEditTotalBayar as $hasilDisplayEditId)
             <h2>Meja {{$hasilDisplayEditId->NO_MEJA}}</h2>
         @endforeach
@@ -30,7 +33,7 @@
         @foreach ($displayEdit as $hasilDisplayEdit)
             <tr>
                 <td>{{$hasilDisplayEdit->NAMA_MENU}}</td>
-                <td>{{$hasilDisplayEdit->TOTAL_JUMLAH}}</td>
+                <td style="text-align:center">{{$hasilDisplayEdit->TOTAL_JUMLAH}}</td>
                 <td>{{$hasilDisplayEdit->TOTAL_HARGA_MENU}}</td>
                 <td class = "gambar">
                     <a href="{{url('hapuspesanan/'.$displayEditTotalBayar[0]->NO_MEJA,''.$hasilDisplayEdit->ID_MENU)}}">
@@ -57,13 +60,13 @@
 
     </div>
 
-    <div class = "bawahflex">
+    <!-- <div class = "bawahflex">
         <div class = "button">
             <a href="#">
                 <button type="submit" class="buttonsimpan">Simpan</button>
             </a>
         </div>
-    </div>
+    </div> -->
 </section>
 
 <script>

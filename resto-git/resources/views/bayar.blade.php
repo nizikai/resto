@@ -22,13 +22,13 @@
     <table>
         <tr>
             <th>Menu</th>
-            <th>Jumlah</th>
+            <th style="text-align:center">Jumlah</th>
             <th>Harga</th>
         </tr>
         @foreach ($displayBayar as $hasilDisplayBayar)
         <tr>
             <td style="max-width:18vw;">{{$hasilDisplayBayar->NAMA_MENU}}</td>
-            <td style="max-width:5vw;">{{$hasilDisplayBayar->TOTAL_JUMLAH}}</td>
+            <td style="text-align:center">{{$hasilDisplayBayar->TOTAL_JUMLAH}}</td>
             <td>{{$hasilDisplayBayar->TOTAL_HARGA_MENU}}</td>
         </tr>
         @endforeach
@@ -87,9 +87,9 @@
     <form action="{{ url('paymentprocess/update/table/go/'.$hasilDisplayTotalBayar->NO_MEJA)}}" method="POST">
         @csrf
         <div class = "button">
-
             <button type="submit" class="buttonbayar">Bayar</button>
         </div>
+        <br>
     </form>
 
     @endforeach

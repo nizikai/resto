@@ -13,7 +13,7 @@
     <title>Pesanan Dihapus</title>
 </head>
 <body>
-<section id = "pembayaranselesai">
+<section id = "pesanandihapus">
     <h1>Pesanan berhasil<br>dihapus.</h1>
 
     <a href="/pesanan">
@@ -24,33 +24,32 @@
 </body>
 
 <style>
-#pembayaranselesai h1 {
+#pesanandihapus h1 {
     font-weight: bold;
     margin-left: 2vw;
     font-weight: 5vw;
     font-size: 9vw;
-    margin-top: 60%;
-    padding-bottom:10%;
-    padding-left:3%;
+    padding-bottom:3vh;
+    padding-left:12vw;
+    padding-top:37vh;
 }
 
-.buttonlong{
+#pesanandihapus .buttonlong{
+    width: 75%;
     background-color: #FF7C04;
+    border: 2px solid #FF7C04;
     font-weight: bold;
     border-color: #FF7C04;
-    border: 2px solid #FF7C04;
     border-radius: 10px;
     color: white;
-    padding: 12px 35vw;
-    text-align: center;
     text-decoration: none;
     font-size: 14px;
-    margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
-    width: 86vw;
+    height: 4.5vh;
+    margin-left: 13vw;
 }
-.buttonlong:hover{
+#pesanandihapus .buttonlong:hover{
     background-color: #fff4e4;
     color: #ff7c04;
 }
