@@ -54,7 +54,7 @@
     border: 2px solid #FF7C04;
     border-radius: 10px;
     color: white;
-    padding: 12px 35vw;
+    padding: 9px 35vw;
     text-align: center;
     text-decoration: none;
     font-size: 14px;
@@ -97,7 +97,7 @@
 #login .col-form-label{
     font-family: Nunito;
     font-weight: bold;
-    margin-left: -1vw;
+    margin-left: 0vw;
 }
 
 #login span{
@@ -453,6 +453,7 @@
     margin: 0;
     margin-bottom: 1vh;
     font-weight: 300;
+    margin-left: 0.8vw;
 }
 
 #owner h6{
@@ -1088,9 +1089,10 @@
 
 /* Edit Pesanan ==================================================== */
 #editpesanan .title h1{
-    margin-left: 2vw;
+    margin-left: 3vw;
     font-weight: 800;
     font-size: 9vw;
+    margin-bottom: 4vh;
 }
 
 #editpesanan .title .kotak{
@@ -1248,12 +1250,21 @@
 
 #pesanan .title h1{
     font-weight:bolder;
-    margin-left: 2vw;
+    margin-left: 3vw;
     font-size:10vw;
 }
 
+#pesanan .content .kotakstick{
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    background-color: white;
+    width : 100%;
+    box-shadow: 5px 10px 10px 5px white;
+}
+
 #pesanan .content .button .buttontambahpesanan{
-    width: 95%;
+    width: 91%;
     background-color: #FF7C04;
     border: 2px solid #FF7C04;
     font-weight: bold;

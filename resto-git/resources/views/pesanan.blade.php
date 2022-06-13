@@ -10,15 +10,26 @@
 </head>
 <body>
 <section id = "pesanan">
-    <div class = "title">
-        <h1>Pesanan</h1>
-    </div>
     <div class = "content">
-        <div class = "button">
-            <a href="/pilihmeja">
-                <button type="submit" class="buttontambahpesanan">Tambah Pesanan</button>
-            </a>
+        <div class = "kotakstick">
+            <div class = "title">
+                <h1>Pesanan</h1>
+            </div>
+            <div class = "button">
+                <a href="/pilihmeja">
+                    <button type="submit" class="buttontambahpesanan">Tambah Pesanan</button>
+                </a>
+            </div>
+            <br>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         @foreach ($pesananOngoing as $pesanan)
             <div class = "kotak">
                 <div class = "text">
@@ -35,7 +46,7 @@
                 </div>
             </div>
         @endforeach
-
+        <br>
     </div>
 </section>
 </body>

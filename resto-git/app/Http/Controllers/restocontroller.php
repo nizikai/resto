@@ -405,12 +405,21 @@ class restocontroller extends Controller
     }
 
     //mengambil value meja dari page pilih meja untuk ditampilkan di page Menu
-    public function send_mejaMenu($ID_MEJA)
+    public function send_mejaMenu($ID_MEJA, Request $request)
     {
         $resto = new restoModel;
         $owner = new ownerModel;
+
+        $searchBar = $request->input('menuSearch');
+        if(isset($searchBar)){
+            $displaySearchMenu = $resto -> get_searchMenu((array)$searchBar);
+        }
+        else{
+            $displaySearchMenu = $owner ->get_semuaMenu();
+        }
+
         $displayMejaMenu = $resto -> get_mejaMenu((array)$ID_MEJA);
-        $displaySearchMenu = $owner ->get_semuaMenu();
+
         return view('menu', compact(['displayMejaMenu', 'displaySearchMenu']));
     }
 
@@ -434,14 +443,15 @@ class restocontroller extends Controller
 
     //======================================================================================
     //search menu di page menu
-    public function send_searchMenu(Request $request,$ID_MEJA)
-    {
-        $resto = new restoModel;
-        $searchBar = $request->input('menuSearch');
-        $displayMejaMenu = $resto -> get_mejaMenu((array)$ID_MEJA);
-        $displaySearchMenu = $resto -> get_searchMenu((array)$searchBar);
-        return view('menu', compact(['displayMejaMenu', 'displaySearchMenu']));
-    }
+    // public function send_searchMenu(Request $request,$ID_MEJA)
+    // {
+    //     $resto = new restoModel;
+    //     $searchBar = $request->input('menuSearch');
+    //     dd($searchBar);
+    //     $displayMejaMenu = $resto -> get_mejaMenu((array)$ID_MEJA);
+    //     // $displaySearchMenu = $resto -> get_searchMenu((array)$searchBar);
+    //     return view('menu', compact(['displayMejaMenu', 'displaySearchMenu']));
+    // }
 
     // hapus transaksi ganti meja
     public function send_hapustransaksi(Request $request, $ID_MEJA)
@@ -460,6 +470,52 @@ class restocontroller extends Controller
         $resto = new restoModel;
         //$insertPesanan = $resto -> get_insertPesanan($);
         return view('menu');
+    }
+
+    // ambil dari textbox
+    public function send_insertdetailtrans(request $request, $ID_MEJA)
+    {
+        $insertidmeja = $request->input('menuIdMeja');
+        $insertcatatan = $request->input('menuCatatan');
+        $insertjumlah = $request->input('menuJumlah');
+        $insertidmenu = $request->input('menuIdMenu');
+
+        if(!isset($insertcatatan)){
+            $insertcatatan = "-";
+        }
+
+        $sambungpostinsert = new restoModel();
+
+        $tboxinsertdetail = [
+            'menuIdMeja'=>$insertidmeja,
+            'menuCatatan'=>$insertcatatan,
+            'menuJumlah'=>$insertjumlah,
+            'menuIdMenu'=>$insertidmenu
+        ];
+        // dd($tboxinsertdetail);
+
+        if($insertjumlah > 0){
+            $sambungpostinsert->post_insertdetail($tboxinsertdetail);
+        }
+        return back();
+
+        // //get value untuk di masukkan ke page menu
+        // $resto = new restoModel;
+        // $owner = new ownerModel;
+
+        // $searchBar = $request->input('menuSearch');
+        // if(isset($searchBar)){
+        //     $displaySearchMenu = $resto -> get_searchMenu((array)$searchBar);
+        // }
+        // else{
+        //     $displaySearchMenu = $owner ->get_semuaMenu();
+        // }
+
+        // $displayMejaMenu = $resto -> get_mejaMenu((array)$ID_MEJA);
+
+        // return view('menu', compact(['displayMejaMenu', 'displaySearchMenu']));
+
+        // return view('menu');
     }
 
 

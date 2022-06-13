@@ -16,7 +16,6 @@
             <div class = "flex2">
                 <h1>Panorama Resto & Cafe</h1>
                 <h5>Jl. Gundaling Berastagi - 081397265797 <img src="..\resource\instagram.png" style="width:10%; height:10%;">panoramarestoguesthouse</h5>
-
             </div>
 
         </div>

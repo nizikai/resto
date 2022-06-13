@@ -99,10 +99,7 @@ Route::get('/menu/{NO_MEJA}', 'App\Http\Controllers\restoController@send_mejaMen
 Route::get('/getmeja/{NO_MEJA}', 'App\Http\Controllers\restoController@send_getMejaMenu');
 
 //SEARCH MENU DI PAGE MENU
-Route::get('/menu/{ID_MEJA}/', 'App\Http\Controllers\restoController@send_searchMenu');
-
-//SEARCH
-Route::get('/menu/{ID_MEJA}/', 'App\Http\Controllers\restoController@send_searchMenu');
+// Route::get('/menu/{ID_MEJA}/', 'App\Http\Controllers\restoController@send_searchMenu');
 
 //PAGE PILIH MEJA
 Route::get('/pilihmeja', 'App\Http\Controllers\restoController@send_pilihMeja');
@@ -160,4 +157,8 @@ Route::get('/konfirmasipesanan/{ID_MEJA}', 'App\Http\Controllers\restocontroller
 
 // untuk hapus transaksi
 Route::post('/hapustransaksi/{ID_MEJA}', 'App\Http\Controllers\restoController@send_hapustransaksi');
+
+// masukkan pesanan
+Route::post('/insertpesanan/{ID_MEJA}', 'App\Http\Controllers\restoController@send_insertdetailtrans');
+
 

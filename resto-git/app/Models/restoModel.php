@@ -101,9 +101,10 @@ class restoModel extends Model
         return $executequeryinserttransaksi;
     }
 
+    // query search menu dari search bar
     function get_searchMenu($searchBar){
-        $querySearchMenu = "SELECT ID_MENU, NAMA_MENU, HARGA FROM data_menu WHERE NAMA_MENU LIKE '%:searchBar%' AND DEL_STATUS = 0 ORDER BY NAMA_MENU;";
-        $executequerySearchMenu = DB::select($querySearchMenu, $searchBar);
+        $querySearchMenu = "SELECT ID_MENU, NAMA_MENU, HARGA FROM data_menu WHERE NAMA_MENU LIKE '%".$searchBar[0]."%' AND DEL_STATUS = 0 ORDER BY NAMA_MENU;";
+        $executequerySearchMenu = DB::select($querySearchMenu);
         return $executequerySearchMenu;
     }
 
@@ -113,6 +114,15 @@ class restoModel extends Model
         $executequeryhapustransaksi = DB::select($queryhapustransaksi, $ID_MEJA);
         return $executequeryhapustransaksi;
     }
+
+    // query insert transaksi
+    function post_insertdetail($tboxinsertdetail){
+        $queryinserttransaksi = "CALL insert_transaksi(:menuIdMeja, :menuCatatan, :menuJumlah, :menuIdMenu)";
+        $executequeryinserttransaksi = DB::select($queryinserttransaksi, $tboxinsertdetail);
+        return $executequeryinserttransaksi;
+    }
+
+
 
 
 

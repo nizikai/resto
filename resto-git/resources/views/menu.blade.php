@@ -57,7 +57,9 @@
 
         <center>
             <section id = "inputMeja">
-                <form action="{{ url('menu/'.$displayMejaMenu[0]->ID_MEJA,'/')}}" method="get">
+                {{-- <form action="{{ url('menu/'.$displayMejaMenu[0]->ID_MEJA.'/')}}" method="get"> --}}
+                <form action="{{ url('menu/'.$displayMejaMenu[0]->ID_MEJA)}}" method="get">
+
                     <input type="text" id="tboxMenuSearch" name="menuSearch" placeholder="Cari menu" value="{{request('menuSearch')}}">
                     <button type="submit" class="buttonsmall"><img src="../resource/Search.png"></button>
                 </form>
@@ -79,7 +81,9 @@
 
         <div class = "menuCard">
             @foreach ($displaySearchMenu as $hasilDisplaySearchMenu)
-            <form action="/insertpesanan" method="post">
+            <form action="{{ url('insertpesanan/'.$displayMejaMenu[0]->ID_MEJA)}}" method="post">
+            @csrf
+
                     <h6>
                         <section id = "menuCardPosition">
 
@@ -89,12 +93,12 @@
                             </section>
                             <section id = "inputJumlah">
                                 <input type="number" id="tboxJumlahMenu" name="menuJumlah" placeholder="Jumlah" required>
-                                <button type="submit" class="buttonok">OK</button>
+                                    <button type="submit" class="buttonok">OK</button>
                             </section>
 
                         </section>
                     </h6>
-                <input type="text" id="tboxNote" name="menuCatatan" placeholder="Catatan">
+                <input type="text" id="tboxNote" name="menuCatatan" placeholder="Catatan" value = "">
                 <input type="text" id="tboxMenuHidden" name="menuIdMenu" placeholder="menuIdMenu" value = {{$hasilDisplaySearchMenu->ID_MENU}} required>
                 <input type="text" id="tboxMenuHidden" name="menuIdMeja" placeholder="Id Meja" value = {{$displayMejaMenu[0]->ID_MEJA}} required>
             </form>
