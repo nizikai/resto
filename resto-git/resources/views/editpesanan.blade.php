@@ -25,7 +25,7 @@
     </div>
     <table>
         <tr>
-            <th>Menu</th>
+            <th style="margin-left:1vw;">Menu</th>
             <th>Jumlah</th>
             <th>Harga</th>
             <th>Hapus</th>
