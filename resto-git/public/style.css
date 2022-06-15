@@ -11,6 +11,7 @@
     padding: 20px;
     background-color: #a3f478;
     color: #22b04c;
+    z-index: 5;
 }
 
 .alertalert-successalert-block strong{
@@ -27,11 +28,14 @@
     line-height: 20px;
     cursor: pointer;
     transition: 0.3s;
+
+
   }
   .alertalert-dangeralert-dismissiblefadeshow{
     padding: 20px;
     background-color: #fe8787;
     color: #870015;
+
   }
   .alertalert-dangeralert-dismissiblefadeshow .button {
     margin-left: 15px;
@@ -43,6 +47,8 @@
     line-height: 20px;
     cursor: pointer;
     transition: 0.3s;
+    z-index: 2;
+
   }
 
 /* LOGIN =======================================================================================*/
@@ -680,7 +686,7 @@
 #bayar table {
     font-family: Nunito;
     border-collapse: collapse;
-    width: 114%;
+    width: 100%;
 }
 
 #bayar  td, th {
@@ -866,8 +872,12 @@
     transition-duration: 0.4s;
     cursor: pointer;
     height: 4.5vh;
-    margin-left: -22vw;
+    margin-left: 17vw;
     margin-top: 1vh;
+}
+
+#sectionmenumeja .popup .overlay .content .kontenflex{
+    display: flex;
 }
 
 #sectionmenumeja .popup .buttongantimeja{
@@ -882,7 +892,8 @@
     transition-duration: 0.4s;
     cursor: pointer;
     height: 4.5vh;
-    margin-left: 1vw;
+    margin-left: 2vw;
+    margin-top: 1vh;
 }
 #buttonpilihmeja{
     width: 40%;
@@ -1050,7 +1061,7 @@
 }
 
 #buttonlongbottom{
-    z-index: 1;
+    /* z-index: 1; */
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -1427,6 +1438,7 @@
     width: 95%;
     background-color: white;
     box-shadow: 0px -30px 30px white;
+    margin-top: -10vh;
 }
 
 #konfirmpesanan .button .buttonkonfirm{
@@ -1443,7 +1455,6 @@
     cursor: pointer;
     height: 4.5vh;
     margin-left: 1vw;
-    margin-top:100%;
     margin-bottom: 2vh;
 }
 
@@ -1488,6 +1499,8 @@
     padding-bottom:10%;
     padding-left:3%;
 }
+
+
 
 
 
