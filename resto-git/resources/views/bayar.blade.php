@@ -1,3 +1,4 @@
+@if (Session::has('owner') || Session::has('staff'))
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,11 +32,13 @@
             <td style="text-align:center">{{$hasilDisplayBayar->TOTAL_JUMLAH}}</td>
             <td style="text-align:right">{{$hasilDisplayBayar->TOTAL_HARGA_MENU}}</td>
         </tr>
-        <tr>
-            <td style="font-style:italic;">
-            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{$hasilDisplayBayar->NOTE_PESANAN}}
-            </td>
-        </tr>
+        @if($hasilDisplayBayar->NOTE_PESANAN != "-")
+                <tr>
+                    <td style="font-style:italic;">
+                    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{$hasilDisplayBayar->NOTE_PESANAN}}
+                    </td>
+                </tr>
+        @endif
         @endforeach
         {{-- <tr>
             <td>Ayam Goreng</td>
@@ -104,3 +107,7 @@
 </section>
 </body>
 </html>
+
+@else
+<meta http-equiv="Refresh" content="0; url='/'" />
+@endif

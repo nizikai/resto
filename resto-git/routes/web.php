@@ -167,4 +167,8 @@ Route::post('/konfirmasitransaksi/{ID_MEJA}', 'App\Http\Controllers\restoControl
 //untuk print nota
 Route::get('/print/nota', 'App\Http\Controllers\restocontroller@send_printNota');
 
+//untuk print nota bayar
+Route::get('/print/notabayar', 'App\Http\Controllers\restocontroller@send_printNotaBayar');
+
+
 

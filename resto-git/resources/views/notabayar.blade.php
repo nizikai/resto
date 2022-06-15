@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class = flex3>
-            @foreach ($dataprintExt as $hasildataprintExt)
+            @foreach ($dataprintBayarExt as $hasildataprintExt)
             <h2>Meja {{$hasildataprintExt->NO_MEJA}}</h2>
             <h2>{{$hasildataprintExt->TANGGAL}}</h2>
             @endforeach
@@ -38,7 +38,7 @@
             <th style="text-align:center">Jumlah</th>
             <th>Harga</th>
         </tr>
-        @foreach ($dataprint as $hasildataprint)
+        @foreach ($dataprintBayar as $hasildataprint)
         <tr>
             <td style="max-width:18vw;">{{$hasildataprint->NAMA_MENU}}</td>
             <td style="text-align:center">{{$hasildataprint->TOTAL_JUMLAH}}</td>
@@ -59,7 +59,7 @@
 
     </div>
 
-    @foreach ($dataprintExt as $hasildataprintExt)
+    @foreach ($dataprintBayarExt as $hasildataprintExt)
     <div class = "flex1">
         <h4>Total Pembayaran</h4>
         <h4>Rp. {{$hasildataprintExt->TOTAL_HARGA}}</h4>

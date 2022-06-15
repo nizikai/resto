@@ -1,3 +1,4 @@
+@if (Session::has('owner') || Session::has('staff'))
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,3 +62,7 @@
 
 </body>
 </html>
+
+@else
+<meta http-equiv="Refresh" content="0; url='/'" />
+@endif

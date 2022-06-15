@@ -1,3 +1,4 @@
+@if (Session::has('owner') || Session::has('staff'))
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -123,7 +124,7 @@
             {{-- <form action="{{ url('konfirmasipesanan/'.$hasilDisplayMejaMenu->NO_MEJA)}}" method="post">
             @csrf --}}
             <a href="{{ url('konfirmasipesanan/'.$hasilDisplayMejaMenu->ID_MEJA)}}">
-                <button type="submit" class="buttonlong">Lanjut</button>
+                <button type="submit" class="buttonlong">Lihat Pesanan</button>
 
             </a>
             {{-- </form> --}}
@@ -142,3 +143,6 @@
 </script>
 </body>
 </html>
+@else
+<meta http-equiv="Refresh" content="0; url='/'" />
+@endif

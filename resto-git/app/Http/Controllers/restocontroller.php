@@ -381,7 +381,7 @@ class restocontroller extends Controller
     //display semua menu di page konfirmasi pesanan
     public function send_displayKonfirmasi($NO_MEJA)
     {
-        Session::put('id', $NO_MEJA);
+        // Session::put('id', $NO_MEJA);
 
         $resto = new restoModel;
         $displayKonfirmasi = $resto -> get_display((array)$NO_MEJA);
@@ -393,9 +393,13 @@ class restocontroller extends Controller
     public function send_updatebayar($NO_MEJA)
     {
         $resto = new restoModel;
-        $updatebayar = $resto -> get_updatebayar((array)$NO_MEJA);
+        $displayBayar = $resto -> get_display((array)$NO_MEJA);
+        $displayTotalBayar = $resto -> get_displayExt((array)$NO_MEJA);
 
-        Session::put('id', $NO_MEJA);
+        Session::put('detailBayar', $displayBayar);
+        Session::put('detailBayarExt', $displayTotalBayar);
+
+        $updatebayar = $resto -> get_updatebayar((array)$NO_MEJA);
 
         return view('pembayaranselesai', ['NO_MEJA' => $NO_MEJA]);
     }
@@ -482,7 +486,7 @@ class restocontroller extends Controller
 
         $sambungpostinsert->post_insertdetail($tboxinsertdetail);
 
-        Session::flash('success', 'Pesanan berhasil dimasukkan! Tekan "Lanjut" untuk melihat semua pesanan yang sudah di input.');
+        Session::flash('success', 'Pesanan berhasil dimasukkan! Tekan "Lihat Pesanan" untuk melihat semua pesanan yang sudah di input.');
 
 
 
@@ -493,6 +497,8 @@ class restocontroller extends Controller
     public function send_konfirmasitransaksi($ID_MEJA)
     {
         $resto = new restoModel;
+        Session::put('id', $ID_MEJA);
+
         $konfirmasitransaksi = $resto -> get_konfirmasitransaksi((array)$ID_MEJA);
         return view('pesananditerima');
     }
@@ -500,12 +506,24 @@ class restocontroller extends Controller
     //untuk print nota berdasarkan session meja yang ada
     public function send_printNota()
     {
-        $NO_MEJA = Session::get('id'); //ambil data session isinya id //INI
+        $ID_MEJA = Session::get('id'); //ambil data session isinya id //INI
         $resto = new restoModel;
-        $dataprint = $resto -> get_display((array)$NO_MEJA);
-        $dataprintExt = $resto -> get_displayExt((array)$NO_MEJA);
+        $dataprint = $resto -> get_displayKonfirmasi((array)$ID_MEJA);
+        $dataprintExt = $resto -> get_displayKonfirmasiExt((array)$ID_MEJA);
 
         return view('nota', compact(['dataprint', 'dataprintExt']));
+    }
+
+    public function send_printNotaBayar()
+    {
+        $dataprintBayar = Session::get('detailBayar');
+        $dataprintBayarExt = Session::get('detailBayarExt');
+
+        // $resto = new restoModel;
+        // $dataprint = $resto -> get_displayKonfirmasi((array)$ID_MEJA);
+        // $dataprintExt = $resto -> get_displayKonfirmasiExt((array)$ID_MEJA);
+
+        return view('notabayar', compact(['dataprintBayar', 'dataprintBayarExt']));
     }
 
 

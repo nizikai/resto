@@ -1,4 +1,4 @@
-{{-- <meta http-equiv="Refresh" content='0;' /> --}}
+@if (Session::has('owner') || Session::has('staff'))
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,11 +54,13 @@
                     </div>
                 </div> --}}
             </tr>
-            <tr>
-                <td style="font-style:italic;">
-                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{$hasilDisplayEdit->NOTE_PESANAN}}
-                </td>
-            </tr>
+            @if($hasilDisplayEdit->NOTE_PESANAN != "-")
+                <tr>
+                    <td style="font-style:italic;">
+                    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{$hasilDisplayEdit->NOTE_PESANAN}}
+                    </td>
+                </tr>
+            @endif
         @endforeach
     </table>
     <div class = "garisabu">
@@ -82,3 +84,7 @@
 
 </body>
 </html>
+
+@else
+<meta http-equiv="Refresh" content="0; url='/'" />
+@endif

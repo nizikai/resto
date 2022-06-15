@@ -1,3 +1,4 @@
+@if (Session::has('owner'))
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,11 +81,15 @@ td, th {
 <tr>
 
   <td id="hasillh">{{$hasilLapBulanan->TANGGAL}}</td>
-  <td id="hasillh">{{$hasilLapBulanan->totalsumbulanan}}</td>
+  <td id="hasillh">Rp. {{$hasilLapBulanan->totalsumbulanan}}</td>
 
 </tr>
 
     @endforeach
 
 </table>
+
+@else
+<meta http-equiv="Refresh" content="0; url='/'" />
+@endif
 

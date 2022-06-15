@@ -17,7 +17,7 @@
     <h1>Pembayaran<br>Selesai.</h1>
 
     <a href="/print/nota">
-    <form action="/print/nota" method = "get">
+    <form action="/print/notabayar" method = "get">
         @csrf
         <button type="submit" id="printnota" class="buttonps">Print Nota</button>
     </form>
