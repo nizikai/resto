@@ -37,14 +37,14 @@ class restoModel extends Model
 
     //display semua menu yang sudah di pesan per meja dengan detailnya
     function get_display($NO_MEJA) {
-        $queryDisplay = "SELECT dm.NAMA_MENU, dt.ID_MENU, SUM(dt.JUMLAH) as `TOTAL_JUMLAH`, (sum(dt.jumlah) * dm.HARGA) as `TOTAL_HARGA_MENU` FROM meja m, data_menu dm, detail_transaksi dt, transaksi t WHERE m.ID_MEJA = t.ID_MEJA AND dm.ID_MENU = dt.ID_MENU AND t.ID_TRANSAKSI = dt.ID_TRANSAKSI AND t.STATUS_TRANSAKSI = 0 AND m.NO_MEJA = :NO_MEJA AND dt.DEL_STATUS = 0 GROUP BY dt.ID_MENU;";
+        $queryDisplay = "SELECT dm.NAMA_MENU, dt.ID_MENU, SUM(dt.JUMLAH) as `TOTAL_JUMLAH`, (sum(dt.jumlah) * dm.HARGA) as `TOTAL_HARGA_MENU`, dt.NOTE_PESANAN FROM meja m, data_menu dm, detail_transaksi dt, transaksi t WHERE m.ID_MEJA = t.ID_MEJA AND dm.ID_MENU = dt.ID_MENU AND t.ID_TRANSAKSI = dt.ID_TRANSAKSI AND t.STATUS_TRANSAKSI = 0 AND m.NO_MEJA = :NO_MEJA AND dt.DEL_STATUS = 0 AND dt.JUMLAH > 0 GROUP BY dt.ID_MENU;";
         $executequeryDisplay = DB::select($queryDisplay, $NO_MEJA);
         return $executequeryDisplay;
     }
 
     //berhubungan dengan get_display, menampilkan total harga per meja
     function get_displayExt($NO_MEJA) {
-        $queryDisplayExt = "SELECT m.NO_MEJA, sum(t.TOTAL_HARGA) as `TOTAL_HARGA`FROM  meja m, transaksi t WHERE t.ID_MEJA = m.ID_MEJA AND t.STATUS_TRANSAKSI = 0 AND m.NO_MEJA = :NO_MEJA GROUP BY m.NO_MEJA;";
+        $queryDisplayExt = "SELECT m.NO_MEJA, sum(t.TOTAL_HARGA) as `TOTAL_HARGA`, t.TANGGAL FROM  meja m, transaksi t WHERE t.ID_MEJA = m.ID_MEJA AND t.STATUS_TRANSAKSI = 0 AND m.NO_MEJA = :NO_MEJA GROUP BY m.NO_MEJA;";
         $executequeryDisplayExt = DB::select($queryDisplayExt, $NO_MEJA);
         return $executequeryDisplayExt;
     }
@@ -120,6 +120,13 @@ class restoModel extends Model
         $queryinserttransaksi = "CALL insert_transaksi(:menuIdMeja, :menuCatatan, :menuJumlah, :menuIdMenu)";
         $executequeryinserttransaksi = DB::select($queryinserttransaksi, $tboxinsertdetail);
         return $executequeryinserttransaksi;
+    }
+
+    // query call update transaksi
+    function get_konfirmasitransaksi($ID_MEJA){
+        $queryupdatetransaksi = "call updatetransaksi(:ID_MEJA)";
+        $executequeryupdatetransaksi = DB::select($queryupdatetransaksi, $ID_MEJA);
+        return $executequeryupdatetransaksi;
     }
 
 

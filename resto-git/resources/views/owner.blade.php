@@ -37,7 +37,7 @@
       <a href = "/editmeja">
         <button type="button" id = "editmeja"><h6>Edit Meja</h6></button>
       </a>
-      <a href = "/editmenu">
+      <a href = "/aturmenu">
         <button type="button" id = "editmenu"><h6>Edit Menu</h6></button>
       </a>
     </div>

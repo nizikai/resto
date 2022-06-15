@@ -13,8 +13,15 @@
     <title>Menu</title>
 </head>
 <body>
+
     <br>
     <section id = "topdimenu">
+        @if (Session::has('success'))
+        <div class="alertalert-successalert-block">
+            <span class="button" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong>{{ Session::get('success') }}</strong>
+        </div>
+        @endif
         <br>
         <h1 id = "menutitle">Menu</h1>
         <section id = "sectionmenumeja">
@@ -26,17 +33,21 @@
                 <div class="overlay">
                     <div class = "content">
                         <h6>Semua menu yang dipilih akan dihapus. Lakukan order ulang setelah memilih meja yang baru </h6>
-                        <button type ="submit" class="buttonkembali" onclick="tooglePopupmenu()"> kembali </button>
-                        <form action="{{ url('hapustransaksi/'.$hasilDisplayMejaMenu->ID_MEJA)}}" method="post">
-                            @csrf
-                            <button type ="submit" class="buttongantimeja">Ganti meja</button>
-                        </form>
+                        <div class = "kontenflex">
+                            <button type ="submit" class="buttonkembali" onclick="tooglePopupmenu()"> kembali </button>
+                            <form action="{{ url('hapustransaksi/'.$hasilDisplayMejaMenu->ID_MEJA)}}" method="post">
+                                @csrf
+                                <button type ="submit" class="buttongantimeja">Ganti meja</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <hr class = "line">
+
+
 
         {{-- <section id="menukategori">
             <label>
@@ -66,6 +77,7 @@
 
             </section>
         </center>
+
     </section>
 
     <br>

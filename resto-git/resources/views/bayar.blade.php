@@ -23,13 +23,18 @@
         <tr>
             <th>Menu</th>
             <th style="text-align:center">Jumlah</th>
-            <th>Harga</th>
+            <th style="text-align:right">Harga</th>
         </tr>
         @foreach ($displayBayar as $hasilDisplayBayar)
         <tr>
             <td style="max-width:18vw;">{{$hasilDisplayBayar->NAMA_MENU}}</td>
             <td style="text-align:center">{{$hasilDisplayBayar->TOTAL_JUMLAH}}</td>
-            <td>{{$hasilDisplayBayar->TOTAL_HARGA_MENU}}</td>
+            <td style="text-align:right">{{$hasilDisplayBayar->TOTAL_HARGA_MENU}}</td>
+        </tr>
+        <tr>
+            <td style="font-style:italic;">
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{$hasilDisplayBayar->NOTE_PESANAN}}
+            </td>
         </tr>
         @endforeach
         {{-- <tr>
@@ -53,7 +58,7 @@
 
         <div class = "flex1">
             <h4>Total Pembayaran</h4>
-            <h4>{{$hasilDisplayTotalBayar->TOTAL_HARGA}}</h4>
+            <h4>Rp. {{$hasilDisplayTotalBayar->TOTAL_HARGA}}</h4>
         </div>
 
             <div class = "flex2">

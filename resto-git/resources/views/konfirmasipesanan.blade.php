@@ -26,15 +26,20 @@
         <tr>
             <th>Menu</th>
             <th style="text-align:center">Jumlah</th>
-            <th>Harga</th>
+            <th style="text-align:right">Harga</th>
             <!-- <th>Hapus</th> -->
         </tr>
         @foreach ($displayTampilkanPesanan as $hasildisplayTampilkanPesanan)
         <tr>
             <td>{{$hasildisplayTampilkanPesanan->NAMA_MENU}}</td>
             <td style="text-align:center">{{$hasildisplayTampilkanPesanan->TOTAL_JUMLAH}}</td>
-            <td>{{$hasildisplayTampilkanPesanan->TOTAL_HARGA_MENU}}</td>
+            <td style="text-align:right">{{$hasildisplayTampilkanPesanan->TOTAL_HARGA_MENU}}</td>
             <!-- <th><img src="..\resource\Trash.png" alt=""></th> -->
+        </tr>
+        <tr>
+            <td style="font-style:italic;">
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{$hasildisplayTampilkanPesanan->NOTE_PESANAN}}
+            </td>
         </tr>
         @endforeach
         {{-- <tr>
@@ -59,9 +64,15 @@
         @endforeach
 
         <div class = "button">
-            {{-- NICO--}}
+
             {{-- UPDATE TRANSAKSI BERDASARKAN MWNU YANG BARU DI INPUT DI PAGE SEBELUMNYA --}}
+        @foreach ($displayTampilkanTotalHarga as $hasildisplayTampilkanTotalHarga)
+
+            <form action="{{ url('konfirmasitransaksi/'.$hasildisplayTampilkanTotalHarga->ID_MEJA)}}" method="post">
+                @csrf
             <button type="submit" class="buttonkonfirm">Konfirmasi Pesanan</button>
+            </form>
+        @endforeach
         </div>
     </div>
 </section>

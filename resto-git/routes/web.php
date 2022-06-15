@@ -161,4 +161,10 @@ Route::post('/hapustransaksi/{ID_MEJA}', 'App\Http\Controllers\restoController@s
 // masukkan pesanan
 Route::post('/insertpesanan/{ID_MEJA}', 'App\Http\Controllers\restoController@send_insertdetailtrans');
 
+// update transaksi berdasarkan apa yang baru saja di input oleh user
+Route::post('/konfirmasitransaksi/{ID_MEJA}', 'App\Http\Controllers\restoController@send_konfirmasitransaksi');
+
+//untuk print nota
+Route::get('/print/nota', 'App\Http\Controllers\restocontroller@send_printNota');
+
 

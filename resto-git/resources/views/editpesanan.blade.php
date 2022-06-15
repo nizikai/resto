@@ -14,7 +14,7 @@
     <div class="title">
         <h1>Edit Pesanan</h1>
         <div class = kotak>
-            <h5>Pastikan pesanan belum diproses dengan staff dapur sebelum melakukan pembatalan pesanan!</h5>
+            <h5>Pastikan pesanan belum dimasak atau dikerjakan oleh dapur sebelum melakukan pembatalan pesanan!</h5>
         </div>
         @foreach ($displayEditTotalBayar as $hasilDisplayEditId)
             <h2>Meja {{$hasilDisplayEditId->NO_MEJA}}</h2>
@@ -53,6 +53,11 @@
                         </div>
                     </div>
                 </div> --}}
+            </tr>
+            <tr>
+                <td style="font-style:italic;">
+                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{$hasilDisplayEdit->NOTE_PESANAN}}
+                </td>
             </tr>
         @endforeach
     </table>

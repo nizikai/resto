@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,38 @@
 <section id = "pesananditerima">
     <h1>Pesanan<br> Diterima.</h1>
 
-    <button type="submit" id="printnota" class="buttonlong">Print Nota</button>
-
+    <form action="/print/nota" method = "get">
+        @csrf
+        <button type="submit" id="printnota" class="buttonlong">Print Nota</button>
+    </form>
+</section>
 </body>
+<style>
+#pesananditerima h1 {
+    font-weight: bold;
+    margin-left: 2vw;
+    font-weight: 5vw;
+    font-size: 9vw;
+    margin-top: 60%;
+    padding-bottom: 3vh;
+    padding-left: 16vw;
+    padding-top: 10vh;
+}
+
+#pesananditerima .buttonlong{
+    width: 60%;
+    background-color: #FF7C04;
+    border: 2px solid #FF7C04;
+    font-weight: bold;
+    border-color: #FF7C04;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    height: 4.5vh;
+    margin-left: 17vw;
+}
+</style>
 </html>

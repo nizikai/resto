@@ -371,6 +371,7 @@ class restocontroller extends Controller
     //display semua menu di page bayar
     public function send_displayBayar($NO_MEJA)
     {
+
         $resto = new restoModel;
         $displayBayar = $resto -> get_display((array)$NO_MEJA);
         $displayTotalBayar = $resto -> get_displayExt((array)$NO_MEJA);
@@ -380,8 +381,11 @@ class restocontroller extends Controller
     //display semua menu di page konfirmasi pesanan
     public function send_displayKonfirmasi($NO_MEJA)
     {
+        Session::put('id', $NO_MEJA);
+
         $resto = new restoModel;
         $displayKonfirmasi = $resto -> get_display((array)$NO_MEJA);
+
         return view('pesananditerima', ['displayKonfirmasi' => $displayKonfirmasi]);
     }
 
@@ -390,7 +394,10 @@ class restocontroller extends Controller
     {
         $resto = new restoModel;
         $updatebayar = $resto -> get_updatebayar((array)$NO_MEJA);
-        return view('pembayaranselesai');
+
+        Session::put('id', $NO_MEJA);
+
+        return view('pembayaranselesai', ['NO_MEJA' => $NO_MEJA]);
     }
 
     //update delete menu = 1 berdasarkan button hapus menu di page edit pesanan
@@ -442,18 +449,8 @@ class restocontroller extends Controller
     }
 
     //======================================================================================
-    //search menu di page menu
-    // public function send_searchMenu(Request $request,$ID_MEJA)
-    // {
-    //     $resto = new restoModel;
-    //     $searchBar = $request->input('menuSearch');
-    //     dd($searchBar);
-    //     $displayMejaMenu = $resto -> get_mejaMenu((array)$ID_MEJA);
-    //     // $displaySearchMenu = $resto -> get_searchMenu((array)$searchBar);
-    //     return view('menu', compact(['displayMejaMenu', 'displaySearchMenu']));
-    // }
 
-    // hapus transaksi ganti meja
+    // hapus transaksi ganti meja di page menu
     public function send_hapustransaksi(Request $request, $ID_MEJA)
     {
         $resto = new restoModel;
@@ -461,18 +458,7 @@ class restocontroller extends Controller
         return redirect('/pesanan');
     }
 
-    //insert pesanan di pagee menu berdasarkan meja
-    public function send_insertPesanan(Request $request, $ID_MEJA)
-    {
-        //NICO
-        //masukin value dari tbox dan jadiin array. masukin ke model untuk run prosedur insert
-
-        $resto = new restoModel;
-        //$insertPesanan = $resto -> get_insertPesanan($);
-        return view('menu');
-    }
-
-    // ambil dari textbox
+    // ambil dari textbox di page menu, insert ke database
     public function send_insertdetailtrans(request $request, $ID_MEJA)
     {
         $insertidmeja = $request->input('menuIdMeja');
@@ -494,29 +480,34 @@ class restocontroller extends Controller
         ];
         // dd($tboxinsertdetail);
 
-        if($insertjumlah > 0){
-            $sambungpostinsert->post_insertdetail($tboxinsertdetail);
-        }
+        $sambungpostinsert->post_insertdetail($tboxinsertdetail);
+
+        Session::flash('success', 'Pesanan berhasil dimasukkan! Tekan "Lanjut" untuk melihat semua pesanan yang sudah di input.');
+
+
+
         return back();
-
-        // //get value untuk di masukkan ke page menu
-        // $resto = new restoModel;
-        // $owner = new ownerModel;
-
-        // $searchBar = $request->input('menuSearch');
-        // if(isset($searchBar)){
-        //     $displaySearchMenu = $resto -> get_searchMenu((array)$searchBar);
-        // }
-        // else{
-        //     $displaySearchMenu = $owner ->get_semuaMenu();
-        // }
-
-        // $displayMejaMenu = $resto -> get_mejaMenu((array)$ID_MEJA);
-
-        // return view('menu', compact(['displayMejaMenu', 'displaySearchMenu']));
-
-        // return view('menu');
     }
+
+    //untuk update transaksi berdasarkan apa yang baru di input di page konfirmasi
+    public function send_konfirmasitransaksi($ID_MEJA)
+    {
+        $resto = new restoModel;
+        $konfirmasitransaksi = $resto -> get_konfirmasitransaksi((array)$ID_MEJA);
+        return view('pesananditerima');
+    }
+
+    //untuk print nota berdasarkan session meja yang ada
+    public function send_printNota()
+    {
+        $NO_MEJA = Session::get('id'); //ambil data session isinya id //INI
+        $resto = new restoModel;
+        $dataprint = $resto -> get_display((array)$NO_MEJA);
+        $dataprintExt = $resto -> get_displayExt((array)$NO_MEJA);
+
+        return view('nota', compact(['dataprint', 'dataprintExt']));
+    }
+
 
 
 

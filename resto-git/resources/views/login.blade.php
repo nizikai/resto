@@ -17,7 +17,7 @@
                 <span class="button" onclick="this.parentElement.style.display='none';">&times;</span>
                 <strong>{{ Session::get('success') }}</strong>
             </div>
-        @endif
+@endif
 
 
 @if(session()->has('loginError'))
