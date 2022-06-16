@@ -47,8 +47,8 @@
         </tr>
             @if($hasildataprint->NOTE_PESANAN != "-")
                 <tr>
-                    <td style="font-style:italic;">
-                    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{$hasildataprint->NOTE_PESANAN}}
+                    <td style="font-style:italic; max-width:18vw;">
+                    {{$hasildataprint->NOTE_PESANAN}}
                     </td>
                 </tr>
             @endif
@@ -62,7 +62,7 @@
     @foreach ($dataprintBayarExt as $hasildataprintExt)
     <div class = "flex1">
         <h4>Total Pembayaran</h4>
-        <h4>Rp. {{$hasildataprintExt->TOTAL_HARGA}}</h4>
+        <h4>Rp. {{number_format($hasildataprintExt->TOTAL_HARGA, 2, '.')}}</h4>
     </div>
     @endforeach
 
@@ -82,7 +82,7 @@
     window.print();
 </script>
 
-<meta http-equiv="Refresh" content='8; url="/pesanan"'/>
+<meta http-equiv="Refresh" content='5; url="/pesanan"'/>
 
 </html>
 

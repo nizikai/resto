@@ -33,11 +33,11 @@
             <td style="text-align:right">{{$hasilDisplayBayar->TOTAL_HARGA_MENU}}</td>
         </tr>
         @if($hasilDisplayBayar->NOTE_PESANAN != "-")
-                <tr>
-                    <td style="font-style:italic;">
-                    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{$hasilDisplayBayar->NOTE_PESANAN}}
-                    </td>
-                </tr>
+            <tr>
+                <td style="font-style:italic;">
+                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{$hasilDisplayBayar->NOTE_PESANAN}}
+                </td>
+            </tr>
         @endif
         @endforeach
         {{-- <tr>
@@ -61,7 +61,7 @@
 
         <div class = "flex1">
             <h4>Total Pembayaran</h4>
-            <h4>Rp. {{$hasilDisplayTotalBayar->TOTAL_HARGA}}</h4>
+            <h4>Rp. {{number_format($hasilDisplayTotalBayar->TOTAL_HARGA, 2, '.')}}</h4>
         </div>
 
             <div class = "flex2">

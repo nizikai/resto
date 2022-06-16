@@ -23,7 +23,7 @@
             <div class = "pemasukanCard">
                 <h6>
                     @foreach ($pemasukanBulanan as $hasilPemasukanBulanan)
-                        Rp. {{$hasilPemasukanBulanan->pemasukanbulan}}
+                        Rp. {{number_format($hasilPemasukanBulanan->pemasukanbulan, 2, '.')}}
                     @endforeach
                 </h6>
             </div>
@@ -81,7 +81,7 @@ td, th {
 <tr>
 
   <td id="hasillh">{{$hasilLapBulanan->TANGGAL}}</td>
-  <td id="hasillh">Rp. {{$hasilLapBulanan->totalsumbulanan}}</td>
+  <td id="hasillh">Rp. {{number_format($hasilLapBulanan->totalsumbulanan, 2, '.')}}</td>
 
 </tr>
 

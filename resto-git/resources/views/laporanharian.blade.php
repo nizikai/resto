@@ -24,7 +24,9 @@
         <div class = "pemasukanCard">
             <h6>
                 @foreach ($pemasukanHarian as $hasilPemasukanHarian)
-                    Rp. {{$hasilPemasukanHarian->pemasukanHari}}
+<!-- COBA"------------------------------------------------------------------------- -->
+                    Rp. {{number_format($hasilPemasukanHarian->pemasukanHari, 2, '.')}}
+
                 @endforeach
             </h6>
         </div>
@@ -78,7 +80,7 @@ td, th {
   <tr>
 
     <td id="hasillh">{{$hasilLapHarian->NO_MEJA}}</td>
-    <td id="hasillh">Rp. {{$hasilLapHarian->TOTAL_HARGA}}</td>
+    <td id="hasillh">Rp. {{number_format($hasilLapHarian->TOTAL_HARGA, 2, '.')}}</td>
     {{-- <td>Germany</td> --}}
   </tr>
   @endforeach

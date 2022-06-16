@@ -35,7 +35,7 @@
             <div class = "kotak">
                 <div class = "text">
                     <h3>{{$pesanan->NO_MEJA}}</h3>
-                    <h3>Rp. {{$pesanan->TOTAL_HARGA}}</h3>
+                    <h3>Rp. {{number_format($pesanan->TOTAL_HARGA, 2, '.')}}</h3>
                 </div>
                 <div class = "button2">
                     <a href="{{ url('edit/'.$pesanan->NO_MEJA)}}">

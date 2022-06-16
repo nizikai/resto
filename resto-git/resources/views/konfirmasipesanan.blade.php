@@ -60,7 +60,7 @@
         @foreach ($displayTampilkanTotalHarga as $hasilDisplayTampilkanTotalHarga)
             <div class = "flex1">
                 <h4>Total Pembayaran</h4>
-                <h4>Rp. {{$hasilDisplayTampilkanTotalHarga->TOTAL_HARGA}}</h4>
+                <h4>Rp. {{number_format($hasilDisplayTampilkanTotalHarga->TOTAL_HARGA, 2, '.')}}</h4>
                 {{-- <h4>{{$displayTampilkanTotalHarga->TOTAL_HARGA}}</h4> --}}
 
             </div>

@@ -102,7 +102,7 @@
 
                             <section id = "menuCardDetail">
                                 {{$hasilDisplaySearchMenu->NAMA_MENU}}
-                                <p>Rp. {{$hasilDisplaySearchMenu->HARGA}}</p>
+                                <p>Rp. {{number_format($hasilDisplaySearchMenu->HARGA, 2, '.')}}</p>
                             </section>
                             <section id = "inputJumlah">
                                 <input type="number" id="tboxJumlahMenu" name="menuJumlah" placeholder="Jumlah" required>

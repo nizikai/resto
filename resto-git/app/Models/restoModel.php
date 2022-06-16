@@ -13,7 +13,7 @@ class restoModel extends Model
     public function cekLogin($tboxLogin){
         $queryCekLogin = "SELECT count(*) is_exist ".
                         "FROM SAD_NICO.admin_karyawan ".
-                        "WHERE EMAIL = :loginEmail AND PASSWORD = :loginPassword AND STAFF = '1' ;";
+                        "WHERE EMAIL = :loginEmail AND PASSWORD = :loginPassword AND STAFF = '1' AND DEL_STATUS = 0 ;";
         $executeQueryCekLogin = DB::select($queryCekLogin, $tboxLogin);
         // dd($executeQueryCekLogin);
 
@@ -79,10 +79,12 @@ class restoModel extends Model
         ];
         // dd($dataUpdateHapusMenu);
 
-        $queryupdateHapusPesanan = "UPDATE detail_transaksi dt JOIN transaksi t on dt.ID_TRANSAKSI = t.ID_TRANSAKSI JOIN meja m ON t.ID_MEJA = m.ID_MEJA JOIN data_menu dm on dm.ID_MENU = dt.ID_MENU SET dt.DEL_STATUS = 1 WHERE t.STATUS_TRANSAKSI = 0 AND t.DEL_STATUS = 0 AND m.NO_MEJA = :HAPUS_NO_MEJA AND dt.ID_MENU = :HAPUS_ID_MENU;";
+        // $queryupdateHapusPesanan = "UPDATE detail_transaksi dt JOIN transaksi t on dt.ID_TRANSAKSI = t.ID_TRANSAKSI JOIN meja m ON t.ID_MEJA = m.ID_MEJA JOIN data_menu dm on dm.ID_MENU = dt.ID_MENU SET dt.DEL_STATUS = 1 WHERE t.STATUS_TRANSAKSI = 0 AND t.DEL_STATUS = 0 AND m.NO_MEJA = :HAPUS_NO_MEJA AND dt.ID_MENU = :HAPUS_ID_MENU;";
         // dd($queryupdateHapusPesanan);
-        $executequeryupdateHapusPesanan = DB::update($queryupdateHapusPesanan, $dataUpdateHapusMenu);
+        // $executequeryupdateHapusPesanan = DB::update($queryupdateHapusPesanan, $dataUpdateHapusMenu);
 
+        $queryupdateHapusPesanan = "CALL hapus_pesanan(:HAPUS_NO_MEJA, :HAPUS_ID_MENU);";
+        $executequeryupdateHapusPesanan = DB::select($queryupdateHapusPesanan, $dataUpdateHapusMenu);
         // dd($executequeryupdateHapusPesanan);
         return $executequeryupdateHapusPesanan;
     }
