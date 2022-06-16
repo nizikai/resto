@@ -47,7 +47,7 @@
             <div class = "kotak">
                 <div class = "text">
                     <h3>{{$hasilAturMenu->NAMA_MENU}}</h3>
-                    <h3>Rp. {{number_format($hasilAturMenu->HARGA, 2, '.')}}</h3>
+                    <h3>Rp. {{number_format($hasilAturMenu->HARGA,0, '.')}}</h3>
                 </div>
             </div>
         </a>
